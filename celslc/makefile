@@ -1,7 +1,7 @@
 # MAKEFILE for compiling and linking celslc
 # Defining variables
 f90comp = ifort
-switch3_parallel = -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -parallel -qopt-report-phase=par,vec -qopt-report5
+switch3_parallel = -guide -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -parallel -qopt-report-phase=par,vec -qopt-report5
 switch3 = -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
 switch2 = -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
 switch1 = -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
