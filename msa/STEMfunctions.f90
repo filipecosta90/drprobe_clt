@@ -1393,19 +1393,19 @@ CONTAINS
 
 
     if( dir .eq. 'for' .or. dir .eq. 'FOR') then
-      call dfftw_plan_dft_2d_ ( plan_forward, nx, ny, cdata, cdata, FFTW_FORWARD, &
+      call sfftw_plan_dft_2d_ ( plan_forward, nx, ny, cdata, cdata, FFTW_FORWARD, &
         FFTW_ESTIMATE )
-      call dfftw_execute_dft ( plan_forward, cdata, cdata )
+      call sfftw_execute_dft ( plan_forward, cdata, cdata )
       !  Discard the information associated with the plans
-      call dfftw_destroy_plan_ ( plan_forward )
+      call sfftw_destroy_plan_ ( plan_forward )
       transformed = 1
     else 
 
-      call dfftw_plan_dft_2d_ ( plan_backward, nx, ny, cdata, cdata, FFTW_BACKWARD, &
+      call sfftw_plan_dft_2d_ ( plan_backward, nx, ny, cdata, cdata, FFTW_BACKWARD, &
         FFTW_ESTIMATE )
-      call dfftw_execute_dft ( plan_backward, cdata, cdata )
+      call sfftw_execute_dft ( plan_backward, cdata, cdata )
       !  Discard the information associated with the plans
-      call dfftw_destroy_plan_ ( plan_backward )
+      call sfftw_destroy_plan_ ( plan_backward )
       transformed = 1
     endif
 
