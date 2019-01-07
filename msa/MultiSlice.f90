@@ -2114,8 +2114,7 @@ CONTAINS
     ! DECLARATION
     integer*4, parameter :: subnum = 3400
     integer*4, intent(in) :: nx,ny
-    complex*8, intent(inout) :: cdata(FFT_BOUND,FFT_BOUND)   
-    complex*8 :: out_cdata(FFT_BOUND,FFT_BOUND)
+    complex*8, intent(inout) :: cdata(nx,ny)   
     integer*8 :: plan_backward, plan_forward
 
     character*(*) :: dir
@@ -2125,7 +2124,7 @@ CONTAINS
 
     ! ------------
     ! INIT
-    write(unit=*,fmt=*) " > MS_FFT: INIT."
+    !write(unit=*,fmt=*) " > MS_FFT: INIT."
     transformed = 0
     tdir = dir
     ! ------------
@@ -2135,7 +2134,7 @@ CONTAINS
     if( tdir .eq. 'for' .or. tdir .eq. 'FOR') then
       call dfftw_plan_dft_2d_ ( plan_forward, nx, ny, cdata, cdata, FFTW_FORWARD, &
         FFTW_ESTIMATE )
-      call dfftw_execute_ ( plan_forward )
+      call dfftw_execute_dft ( plan_forward, cdata, cdata )
       !  Discard the information associated with the plans
       call dfftw_destroy_plan_ ( plan_forward )
       transformed = 1
@@ -2143,7 +2142,7 @@ CONTAINS
 
       call dfftw_plan_dft_2d_ ( plan_backward, nx, ny, cdata, cdata, FFTW_BACKWARD, &
         FFTW_ESTIMATE )
-      call dfftw_execute_ ( plan_backward )
+      call dfftw_execute_dft ( plan_backward, cdata, cdata )
       !  Discard the information associated with the plans
       call dfftw_destroy_plan_ ( plan_backward )
       transformed = 1
@@ -2153,7 +2152,7 @@ CONTAINS
     ! ------------
 
     ! ------------
-    write(unit=*,fmt=*) " > MS_FFT: EXIT."
+    !write(unit=*,fmt=*) " > MS_FFT: EXIT."
     return
 
   END SUBROUTINE MS_FFT
