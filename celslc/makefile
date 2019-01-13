@@ -1,10 +1,11 @@
 # MAKEFILE for compiling and linking celslc
 # Defining variables
 f90comp = ifort
-switch3 = -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel
-switch2 = -g -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel
-switch1 = -g -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel
-switch0 = -g -nologo -O0 -recursive -132 -assume byterecl -threads -static-intel
+switch3_parallel = -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -parallel -qopt-report-phase=par,vec -qopt-report5
+switch3 = -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch2 = -g -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch1 = -g -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch0 = -g -nologo -O0 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
 # removed switches
 #	 -libs:static ???
 # Start of the makefile
@@ -70,7 +71,7 @@ celslcsubs.o: CellSlicer.mod emsdata.mod celslcprm.mod celslcsubs.f90
 celslc.o: spacegroups.mod symops.mod cifio.mod emsdata.mod CellSlicer.mod fscatab.mod m3dpot.mod celslcprm.mod celslc.f90
 	$(f90comp) -c $(switch3) celslc.f90
 clean:
-	rm *.mod *.o celslc
+	rm *.mod *.o *.optrpt celslc
 # End of the makefile
 # J. Barthel, ju.barthel@fz-juelich.de, 2018
 # Forschungszentrum Juelich GmbH, 52425 Juelich, Germany

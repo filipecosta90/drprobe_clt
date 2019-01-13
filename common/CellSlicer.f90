@@ -57,9 +57,9 @@
 !**********************************************************************!
 MODULE CellSlicer
 
-  implicit none
-  
-  SAVE
+implicit none
+
+SAVE
 
 
 !**********************************************************************!
@@ -67,53 +67,53 @@ MODULE CellSlicer
 ! SUBS AND FUNCTIONS
 !
 !  public ::
-  public :: CS_INIT, CS_UNINIT
-  public :: CS_LOAD_EMSCELL
-  public :: CS_LOAD_EMSCELLINFO
-  public :: CS_LOAD_EMSCELLINFO2
-  public :: CS_SAVE_EMSCELL
-  public :: CS_LOAD_CIFCELL
-  public :: CS_LOAD_CIFCELLINFO
-  public :: CS_LOAD_CIFCELLINFO2
-  public :: CS_SAVE_CIFCELL
-  public :: CS_DEALLOC_CELLMEM
-  public :: CS_ALLOC_CELLMEM
-  public :: CS_DEALLOC_SLICEMEM
-  public :: CS_ALLOC_SLICEMEM
-  public :: CS_DEALLOC_SCAMPMEM
-  public :: CS_SETSLICE_AUTO
-  public :: CS_SETSLICE_EQUIDIST
-  public :: CS_GETSLICE_PRO
-  public :: CS_GETSLICE_PRO2
-  public :: CS_GETSLICE_POT
-  public :: CS_GETSLICE_POT2
-  public :: CS_GETSLICE_PGR
-  public :: CS_GETCELL_POT
-  public :: CS_GETCELL_VOL
-  public :: CS_PREPARE_SCATTAMPS
-  public :: CS_WRITE_FFDEC
-  public :: CS_WRITE_F2DEC
-  public :: CS_GET_MEANINNERPOT
-  public :: CS_POLINT
-  public :: CS_GETSCATTAMP
-  public :: CS_GETSLICETITLE
-  public :: CS_GET_SAMESITE
-  public :: CS_GET_NNAT
-  public :: CS_ORIENT_CELL
-  public :: CS_SHIFT_ATOMS
-  public :: CS_DICE_PARTIALOCC
-  public :: CS_SUGGEST_NSLCEQUI
+public :: CS_INIT, CS_UNINIT
+public :: CS_LOAD_EMSCELL
+public :: CS_LOAD_EMSCELLINFO
+public :: CS_LOAD_EMSCELLINFO2
+public :: CS_SAVE_EMSCELL
+public :: CS_LOAD_CIFCELL
+public :: CS_LOAD_CIFCELLINFO
+public :: CS_LOAD_CIFCELLINFO2
+public :: CS_SAVE_CIFCELL
+public :: CS_DEALLOC_CELLMEM
+public :: CS_ALLOC_CELLMEM
+public :: CS_DEALLOC_SLICEMEM
+public :: CS_ALLOC_SLICEMEM
+public :: CS_DEALLOC_SCAMPMEM
+public :: CS_SETSLICE_AUTO
+public :: CS_SETSLICE_EQUIDIST
+public :: CS_GETSLICE_PRO
+public :: CS_GETSLICE_PRO2
+public :: CS_GETSLICE_POT
+public :: CS_GETSLICE_POT2
+public :: CS_GETSLICE_PGR
+public :: CS_GETCELL_POT
+public :: CS_GETCELL_VOL
+public :: CS_PREPARE_SCATTAMPS
+public :: CS_WRITE_FFDEC
+public :: CS_WRITE_F2DEC
+public :: CS_GET_MEANINNERPOT
+public :: CS_POLINT
+public :: CS_GETSCATTAMP
+public :: CS_GETSLICETITLE
+public :: CS_GET_SAMESITE
+public :: CS_GET_NNAT
+public :: CS_ORIENT_CELL
+public :: CS_SHIFT_ATOMS
+public :: CS_DICE_PARTIALOCC
+public :: CS_SUGGEST_NSLCEQUI
 !
 !  private ::
-  private :: CS_ERROR
-  private :: CS_MESSAGE
-  private :: CS_GETFREELUN
-  private :: CS_WL2HT, CS_HT2WL
-  private :: CS_CCFFT2D
-  private :: CS_PROG_START
-  private :: CS_PROG_STOP
-  private :: CS_PROG_UPDATE
-  private :: CS_PROG_ABORT
+private :: CS_ERROR
+private :: CS_MESSAGE
+private :: CS_GETFREELUN
+private :: CS_WL2HT, CS_HT2WL
+private :: CS_CCFFT2D
+private :: CS_PROG_START
+private :: CS_PROG_STOP
+private :: CS_PROG_UPDATE
+private :: CS_PROG_ABORT
 
 !
 !
@@ -124,11 +124,11 @@ MODULE CellSlicer
 ! PARAMETERS
 !
 ! logical unit number limits
-  integer*4, public, parameter :: CS_LUNMIN = 20
-  integer*4, public, parameter :: CS_LUNMAX = 99
+integer*4, public, parameter :: CS_LUNMIN = 20
+integer*4, public, parameter :: CS_LUNMAX = 99
 !
 ! number of cell file record end characters
-  integer*4, public, parameter :: CS_CFRECNUM = 1
+integer*4, public, parameter :: CS_CFRECNUM = 1
 !
 ! math and physics constants used by CellSlicer routines:
 ! pi
@@ -188,10 +188,10 @@ MODULE CellSlicer
 !
 !
 ! std string or table length
-  integer*4, public, parameter :: CS_ll = 1024
+integer*4, public, parameter :: CS_ll = 1024
 !
 ! atom identification string length
-  integer*4, public, parameter :: CS_atsl = 4
+integer*4, public, parameter :: CS_atsl = 4
 !
 !! FFT min/max size
 !  integer*4, public :: CS_FFT_BOUND_MAX = 8192
@@ -201,17 +201,17 @@ MODULE CellSlicer
   !integer*4, private, parameter :: FFT_BOUND = 4096
   !integer*4, private, parameter :: FFT_BOUND = 8192
 ! INTERNAL FFT CODE min and max size / see routines made available by FFTs.f
-  integer*4, private, parameter :: NFT_MIN = 128
-  integer*4, private, parameter :: NFT_MAX = 8192
+integer*4, private, parameter :: NFT_MIN = 128
+integer*4, private, parameter :: NFT_MAX = 8192
 !
 ! Propagator fix relative size aperture (to cut of scattering wrap arounds)
-  real*4, private, parameter :: CS_PROSIZE_THR = 2.0 / 3.0
+real*4, private, parameter :: CS_PROSIZE_THR = 2.0 / 3.0
 !
 ! Max. atomic number
-  integer*4, private, parameter :: CS_maxz = 98
+integer*4, private, parameter :: CS_maxz = 98
 !
 ! scattering amplitude rel. threshold
-  real*4, private, parameter :: CS_scamprthr = 1.0e-5
+real*4, private, parameter :: CS_scamprthr = 1.0e-5
 !
 ! switch to bandwidth limiting of potentials and propagators
 ! potential bandwidth limitation
@@ -234,7 +234,7 @@ MODULE CellSlicer
 !         The bandwidth limitation of phase gratings seems unphysical
 !         at first glance and is in fact a numerical measure applied
 !         solely to avoid alias beams to appear after scattering.
-  logical, private, parameter :: CS_do_bwl_pgr = .true.
+logical, private, parameter :: CS_do_bwl_pgr = .true.
 !
 ! Atomic form factor oversampling
 ! We precalculate the spherical symmetrical atomic form factors on a
@@ -244,7 +244,7 @@ MODULE CellSlicer
 ! to 2D and 3D potential grids, a significant oversampling needs to be
 ! applied.
 ! Keep the oversampling rate above 10!
-  integer*4, private, parameter :: CS_scaf_oversamp = 12
+integer*4, private, parameter :: CS_scaf_oversamp = 12
 !
 ! Atomic form factor interpolation mode
 ! An interpolation is applied when transferring the atomic form factors
@@ -253,11 +253,11 @@ MODULE CellSlicer
 !   CS_scaf_iptype = 0 -> nearest neighbor interpolation
 !   CS_scaf_iptype = 1 -> linear interpolation (default)
 !   CS_scaf_iptype > 1 -> polynomial interpolation order
-  integer*4, private, parameter :: CS_scaf_iptype = 4
+integer*4, private, parameter :: CS_scaf_iptype = 4
 !
 ! Atomic form factor table to be used, can be triggered as an option
-  integer*4, public :: CS_scaf_table
-  DATA CS_scaf_table /1/
+integer*4, public :: CS_scaf_table
+DATA CS_scaf_table /1/
 !   CS_scaf_table = 1 ! -> Weickenmeier & Kohl (default & fallback)
 !   CS_scaf_table = 2 ! -> Waasmaier & Kirfel
 !
@@ -268,83 +268,83 @@ MODULE CellSlicer
 ! VARIABLES
 !
 ! error counter  
-  integer*4, public :: CS_err_num, CS_warn_num
-  DATA CS_err_num /0/
-  DATA CS_warn_num /0/
+integer*4, public :: CS_err_num, CS_warn_num
+DATA CS_err_num /0/
+DATA CS_warn_num /0/
 !  
 ! status
-  integer*4, public :: CS_status
-  DATA CS_status /0/
+integer*4, public :: CS_status
+DATA CS_status /0/
 !
 ! last error message
-  character(len=CS_ll), public :: CS_errmsg, CS_warnmsg
+character(len=CS_ll), public :: CS_errmsg, CS_warnmsg
 !
 ! console message flag
-  integer*4, public :: CS_doconsolemsg
-  DATA CS_doconsolemsg /0/
+integer*4, public :: CS_doconsolemsg
+DATA CS_doconsolemsg /0/
 !
 ! cell file record end characters
-  character*1, dimension(1:CS_CFRECNUM), public :: CS_CFREC
-  DATA CS_CFREC(1) /Z'A'/
+character*1, dimension(1:CS_CFRECNUM), public :: CS_CFREC
+DATA CS_CFREC(1) /Z'A'/
 !
 ! workspace
 !  complex*8, allocatable, dimension(:,:), private :: cw
 !
 ! progress output control
-  integer*4, private :: CS_prog_on
-  DATA CS_prog_on /0/
-  integer*4, private :: CS_prog_num
-  DATA CS_prog_num /100/
-  integer*4, private :: CS_prog_idx
-  DATA CS_prog_idx /0/
-  real*4, private :: CS_prog_pproc
-  DATA CS_prog_pproc /1.0/
-  real*4, private :: CS_prog_last
-  DATA CS_prog_last /-1000.0/  
+integer*4, private :: CS_prog_on
+DATA CS_prog_on /0/
+integer*4, private :: CS_prog_num
+DATA CS_prog_num /100/
+integer*4, private :: CS_prog_idx
+DATA CS_prog_idx /0/
+real*4, private :: CS_prog_pproc
+DATA CS_prog_pproc /1.0/
+real*4, private :: CS_prog_last
+DATA CS_prog_last /-1000.0/  
 !
 ! supercell data
 !
 !   number of atoms per super cell
-  integer*4, public :: CS_numat
-  DATA CS_numat /0/
+integer*4, public :: CS_numat
+DATA CS_numat /0/
 !
 !   super cell size
-  real*4, public :: CS_scsx, CS_scsy, CS_scsz
-  DATA CS_scsx, CS_scsy, CS_scsz /0.0,0.0,0.0/
+real*4, public :: CS_scsx, CS_scsy, CS_scsz
+DATA CS_scsx, CS_scsy, CS_scsz /0.0,0.0,0.0/
 !
 !   supercell axis angles [deg]
-  real*4, public :: CS_scalpha, CS_scbeta, CS_scgamma
-  DATA CS_scalpha, CS_scbeta, CS_scgamma /90.0,90.0,90.0/
+real*4, public :: CS_scalpha, CS_scbeta, CS_scgamma
+DATA CS_scalpha, CS_scbeta, CS_scgamma /90.0,90.0,90.0/
 !
 !   orthogonality flag
-  integer*4, public :: CS_scorth_check
-  DATA CS_scorth_check /0/
+integer*4, public :: CS_scorth_check
+DATA CS_scorth_check /0/
 !
 !
 !   atomic data
 !
 !     memory allocation flag
-  logical, public :: CS_cellmem_allocated
-  DATA CS_cellmem_allocated /.FALSE./
+logical, public :: CS_cellmem_allocated
+DATA CS_cellmem_allocated /.FALSE./
 !
 !     atomic type
-  character(len=CS_atsl), allocatable, dimension(:), public :: CS_attype
+character(len=CS_atsl), allocatable, dimension(:), public :: CS_attype
 !
 !     atomic numbers
-  integer*4, allocatable, dimension(:), public :: CS_atnum
+integer*4, allocatable, dimension(:), public :: CS_atnum
 !
 !     atomic charges
-  real*4, allocatable, dimension(:), public :: CS_atcrg
+real*4, allocatable, dimension(:), public :: CS_atcrg
 
 !
 !     atomic position in supercell
-  real*4, allocatable, dimension(:,:), public :: CS_atpos
+real*4, allocatable, dimension(:,:), public :: CS_atpos
 !
 !     position occupancy
-  real*4, allocatable, dimension(:), public :: CS_atocc
+real*4, allocatable, dimension(:), public :: CS_atocc
 !
 !     debye-waller factor
-  real*4, allocatable, dimension(:), public :: CS_atdwf
+real*4, allocatable, dimension(:), public :: CS_atdwf
 !
 !     Link list of atoms sharing the same site.
 !     This is a list of indices, one index per atom.
@@ -358,113 +358,113 @@ MODULE CellSlicer
 !     atom #(CS_atlnk(i)), with CS_atlnk(i) < i.
 !     The links are reset before slices are generated, or before
 !     a 3D potential is calculated.
-  integer*4, allocatable, dimension(:), public :: CS_atlnk
+integer*4, allocatable, dimension(:), public :: CS_atlnk
 !
 !
 ! scattering amplitudes
 !
 !   usage of external scattering table data
-  integer*4, public :: CS_useextsca
+integer*4, public :: CS_useextsca
   DATA CS_useextsca /0/ ! 0 = off, default, use Weickenmeier&Kohl data
                         ! 1 = try to use what is present in module FSCATAB
                         !     if not possible, switch back to W&K
-  
+
 !
 !   preparation + memory allocation flag
-  logical, public :: CS_scattamp_prepared
-  DATA CS_scattamp_prepared /.FALSE./
+logical, public :: CS_scattamp_prepared
+DATA CS_scattamp_prepared /.FALSE./
 !
 !   number of identified atom types = number of different scattering amplitudes
-  integer*4, public :: CS_scampnum
-  DATA CS_scampnum /0/
+integer*4, public :: CS_scampnum
+DATA CS_scampnum /0/
 !
 !   pointer identifying the scattering table to be used for each atom in the cell
-  integer*4, public, allocatable, dimension(:) :: CS_scampptr
+integer*4, public, allocatable, dimension(:) :: CS_scampptr
 !
 !   atom type-wise atomic symbol for scattering data
-  character(len=CS_atsl), public, allocatable, dimension(:) :: &
-                                                & CS_scampsym
+character(len=CS_atsl), public, allocatable, dimension(:) :: &
+& CS_scampsym
 !
 !   atom type-wise atomic numbers for scattering data
-  integer*4, public, allocatable, dimension(:) :: CS_scampatn
+integer*4, public, allocatable, dimension(:) :: CS_scampatn
 !
 !   atom type-wise ionic charge
-  real*4, public, allocatable, dimension(:) :: CS_scampcrg
+real*4, public, allocatable, dimension(:) :: CS_scampcrg
 !
 !   atom type-wise Debye-Waller factors
-  real*4, public, allocatable, dimension(:) :: CS_scampdwf
-  
+real*4, public, allocatable, dimension(:) :: CS_scampdwf
+
 !   atom type-wise temporary data used during calculations
-  real*4, public, allocatable, dimension(:,:) :: CS_scamptmp
+real*4, public, allocatable, dimension(:,:) :: CS_scamptmp
 
 !!
 !!   atom type-wise max. scattering vector in 1/nm
 !  real*4, public, allocatable, dimension(:) :: CS_scampgmax
 !
 !   dimension of allocated scattering data
-  integer*4, public :: CS_scadim
-  DATA CS_scadim /0/
+integer*4, public :: CS_scadim
+DATA CS_scadim /0/
 !
 !   scattering data sampling rate
-  real*4, public :: CS_scaitog
-  DATA CS_scaitog /0.0/
+real*4, public :: CS_scaitog
+DATA CS_scaitog /0.0/
 !
 !
 !   absorption calculation parameters
-  integer*4, public :: CS_useabsorption
-  DATA CS_useabsorption /0/
-  real*4, public :: CS_absorptionprm
-  DATA CS_absorptionprm /0.0/
+integer*4, public :: CS_useabsorption
+DATA CS_useabsorption /0/
+real*4, public :: CS_absorptionprm
+DATA CS_absorptionprm /0.0/
 !
 !
   integer*4, public :: CS_useppot ! flag: using projected potentials
   DATA CS_useppot /1/ ! on by default
 !   complex scattering amplitudes (will be allocated when needed)
-  complex*8, public, allocatable, dimension (:,:) :: CS_scampdat
-  complex*8, public, allocatable, dimension (:,:,:) :: CS_scaff2d
-  complex*8, public, allocatable, dimension (:,:,:) :: CS_scagn
-  real*4, public, allocatable, dimension (:,:,:) :: CS_scadwf
+complex*8, public, allocatable, dimension (:,:) :: CS_scampdat
+complex*8, public, allocatable, dimension (:,:,:) :: CS_scaff2d
+complex*8, public, allocatable, dimension (:,:,:) :: CS_scagn
+real*4, public, allocatable, dimension (:,:,:) :: CS_scadwf
 !
 !
 ! slice data
 !
 !   memory allocation flag
-  logical, public :: CS_slicemem_allocated
-  DATA CS_slicemem_allocated /.FALSE./
+logical, public :: CS_slicemem_allocated
+DATA CS_slicemem_allocated /.FALSE./
 !
 !   repetition of supercell data in x- and y-direction
 !     (for construction of slices containing the supercell several times,
 !      for multislice on a larger area)
-  integer*4 :: CS_repx, CS_repy, CS_repz
+integer*4 :: CS_repx, CS_repy, CS_repz
 !
 !   numeric size of slices
-  integer*4 :: CS_sdimx, CS_sdimy, CS_sdimz
+integer*4 :: CS_sdimx, CS_sdimy, CS_sdimz
 !
 !   reals-space sampling for slices, results from CS_scsx*CS_repx/CS_sdimx
-  real*4, public :: CS_sampx, CS_sampy, CS_sampz
+real*4, public :: CS_sampx, CS_sampy, CS_sampz
 !
 !   number of slices per supercell
-  integer*4, public :: CS_nspsc
-  DATA CS_nspsc /0/
+integer*4, public :: CS_nspsc
+DATA CS_nspsc /0/
 !
 !   slicing, z-limits of slices, thickness
 !   - allows non-equidistant slicing (TODO)
-  real*4, allocatable, dimension(:,:), public :: CS_slczlim
+real*4, allocatable, dimension(:,:), public :: CS_slczlim
 !
-  real*4, public :: CS_slcztol
+real*4, public :: CS_slcztol
   DATA CS_slcztol /0.003/ ! 3 pm default tolerated minimum slice thickness
 !
 !   number of atoms in slice
-  integer*4, allocatable, dimension(:), public :: CS_slcatnum
+integer*4, allocatable, dimension(:), public :: CS_slcatnum
 !
 !   slicing, atom association to slices
 !    (contains indices of CS_at*** arrays,
 !     is thus a quasi pointer to these lists)
-  integer*4, allocatable, dimension(:,:), public :: CS_slcatacc
+integer*4, allocatable, dimension(:,:), public :: CS_slcatacc
 !
 !   accumulated maximum value of phase shifts (do reset this in the beginning
-  real*4, public :: CS_maxphase
-  DATA CS_maxphase /0.0/
+real*4, public :: CS_maxphase
+DATA CS_maxphase /0.0/
 !
 !   potential backup functionality setup
 !   - setup these variable from external code
@@ -483,14 +483,14 @@ MODULE CellSlicer
 
 !**********************************************************************!
 !**********************************************************************!
-  CONTAINS
+CONTAINS
 !**********************************************************************!
 !**********************************************************************!  
 
 
 
-  
-  
+
+
 !**********************************************************************!
 !
 ! CS_INIT
@@ -500,25 +500,25 @@ MODULE CellSlicer
 !
 subroutine CS_INIT()
 
-  implicit none
-  
-  integer*4 :: nalloc
-  
-  CS_err_num = 0
-  CS_errmsg = ""
-  CS_status = 0
-  
-  call InitRand()
-  
+implicit none
+
+integer*4 :: nalloc
+
+CS_err_num = 0
+CS_errmsg = ""
+CS_status = 0
+
+call InitRand()
+
   if (allocated(CS_backup_pot)) then ! deallocate previous potential backup memory
-    deallocate(CS_backup_pot,stat=nalloc)
+  deallocate(CS_backup_pot,stat=nalloc)
   end if
   
   CS_status = 1
   
   return
 
-end subroutine CS_INIT
+  end subroutine CS_INIT
 !**********************************************************************!
 
 !**********************************************************************!
@@ -529,38 +529,38 @@ end subroutine CS_INIT
 !
 subroutine CS_UNINIT()
 
-  implicit none
-  
-  integer*4 :: nerr, nalloc
-  
+implicit none
+
+integer*4 :: nerr, nalloc
+
   !
   ! deallocate atom data array
   !
   nerr = 0
   if (CS_cellmem_allocated) then
-    call CS_DEALLOC_CELLMEM(nerr)
-    if (nerr/=0) return
+  call CS_DEALLOC_CELLMEM(nerr)
+  if (nerr/=0) return
   end if
   if (CS_slicemem_allocated) then
-    call CS_DEALLOC_SLICEMEM(nerr)
-    if (nerr/=0) return
+  call CS_DEALLOC_SLICEMEM(nerr)
+  if (nerr/=0) return
   end if
   if (CS_scattamp_prepared) then
-    call CS_DEALLOC_SCAMPMEM(nerr)
-    if (nerr/=0) return
+  call CS_DEALLOC_SCAMPMEM(nerr)
+  if (nerr/=0) return
   end if
 !  if (allocated(cw)) then
 !    deallocate(cw,stat=nalloc)
 !  end if
   if (allocated(CS_backup_pot)) then ! deallocate previous potential backup memory
-    deallocate(CS_backup_pot,stat=nalloc)
+  deallocate(CS_backup_pot,stat=nalloc)
   end if
   
   CS_status = 0
   
   return
 
-end subroutine CS_UNINIT
+  end subroutine CS_UNINIT
 !**********************************************************************!
 
 !**********************************************************************!
@@ -571,15 +571,15 @@ end subroutine CS_UNINIT
 !
 subroutine CS_ERROR(sErrMsg)
 
-  implicit none
-  
-  character(len=*), intent(in) :: sErrMsg
-  
-  CS_err_num = CS_err_num + 1
-  CS_errmsg = "Error: "//trim(sErrMsg)
-  call CS_MESSAGE(trim(CS_errmsg))
-  
-  return
+implicit none
+
+character(len=*), intent(in) :: sErrMsg
+
+CS_err_num = CS_err_num + 1
+CS_errmsg = "Error: "//trim(sErrMsg)
+call CS_MESSAGE(trim(CS_errmsg))
+
+return
 
 end subroutine CS_ERROR
 !**********************************************************************!
@@ -592,14 +592,14 @@ end subroutine CS_ERROR
 !
 subroutine CS_MESSAGE(smsg)
 
-  implicit none
-  
-  character(len=*), intent(in) :: smsg
-  
-  if (CS_doconsolemsg<=0) return
-  write(unit=6,fmt='(A)') trim(smsg)
-  
-  return
+implicit none
+
+character(len=*), intent(in) :: smsg
+
+if (CS_doconsolemsg<=0) return
+write(unit=6,fmt='(A)') trim(smsg)
+
+return
 
 end subroutine CS_MESSAGE
 !**********************************************************************!
@@ -614,25 +614,25 @@ end subroutine CS_MESSAGE
 !
 subroutine CS_PROG_START(nmax,pstep)
 
-  implicit none
-  
-  integer*4, intent(in) :: nmax
-  real*4, intent(in) :: pstep
-  
-  if (CS_doconsolemsg<=0) return
-  
-  if (CS_PROG_on==1) call CS_PROG_ABORT()
-  
-  CS_PROG_on = 1
-  CS_PROG_num = nmax
-  CS_PROG_idx = 0
-  CS_PROG_pproc = pstep
-  CS_PROG_last = 0.0
-  
-  OPEN (UNIT=6,FORM='FORMATTED',CARRIAGECONTROL='FORTRAN')
-  write(unit=6,fmt='("+",A,F5.1,A)') "Progress: ",0.0,"%   "
-  
-  return
+implicit none
+
+integer*4, intent(in) :: nmax
+real*4, intent(in) :: pstep
+
+if (CS_doconsolemsg<=0) return
+
+if (CS_PROG_on==1) call CS_PROG_ABORT()
+
+CS_PROG_on = 1
+CS_PROG_num = nmax
+CS_PROG_idx = 0
+CS_PROG_pproc = pstep
+CS_PROG_last = 0.0
+
+OPEN (UNIT=6,FORM='FORMATTED',CARRIAGECONTROL='FORTRAN')
+write(unit=6,fmt='("+",A,F5.1,A)') "Progress: ",0.0,"%   "
+
+return
 
 end subroutine CS_PROG_START
 !**********************************************************************!
@@ -647,22 +647,22 @@ end subroutine CS_PROG_START
 !
 subroutine CS_PROG_UPDATE(idx)
 
-  implicit none
-  
-  integer*4, intent(in) :: idx
-  real*4 :: pcur
-  
-  if ( CS_doconsolemsg<=0 .or. CS_PROG_on==0 ) return
-  
-  CS_PROG_idx = idx
-  pcur = 100.*real(idx)/real(CS_PROG_num)
-  
-  if ( pcur - CS_PROG_last >= CS_PROG_pproc ) then
-    CS_PROG_last = CS_PROG_last + CS_PROG_pproc
-    write(unit=6,fmt='("+",A,F5.1,A)') "Progress: ",pcur,"%   "
-  end if
-  
-  return
+implicit none
+
+integer*4, intent(in) :: idx
+real*4 :: pcur
+
+if ( CS_doconsolemsg<=0 .or. CS_PROG_on==0 ) return
+
+CS_PROG_idx = idx
+pcur = 100.*real(idx)/real(CS_PROG_num)
+
+if ( pcur - CS_PROG_last >= CS_PROG_pproc ) then
+CS_PROG_last = CS_PROG_last + CS_PROG_pproc
+write(unit=6,fmt='("+",A,F5.1,A)') "Progress: ",pcur,"%   "
+end if
+
+return
 
 end subroutine CS_PROG_UPDATE
 !**********************************************************************!
@@ -677,23 +677,23 @@ end subroutine CS_PROG_UPDATE
 !
 subroutine CS_PROG_STOP(idx)
 
-  implicit none
-  
-  integer*4, intent(in) :: idx
-  real*4 :: pcur
-  
-  if ( CS_doconsolemsg<=0 .or. CS_PROG_on==0) return
-  pcur = 100.*real(idx)/real(CS_PROG_num)
-  write(unit=6,fmt='("+",A,F5.1,A)') "Progress: ",pcur,"%   "
-  OPEN (UNIT=6,FORM='FORMATTED',CARRIAGECONTROL='LIST')
-  
-  CS_PROG_on = 0
-  CS_PROG_num = 100
-  CS_PROG_idx = 0
-  CS_PROG_pproc = 1.0
-  CS_PROG_last = -1000.0
-  
-  return
+implicit none
+
+integer*4, intent(in) :: idx
+real*4 :: pcur
+
+if ( CS_doconsolemsg<=0 .or. CS_PROG_on==0) return
+pcur = 100.*real(idx)/real(CS_PROG_num)
+write(unit=6,fmt='("+",A,F5.1,A)') "Progress: ",pcur,"%   "
+OPEN (UNIT=6,FORM='FORMATTED',CARRIAGECONTROL='LIST')
+
+CS_PROG_on = 0
+CS_PROG_num = 100
+CS_PROG_idx = 0
+CS_PROG_pproc = 1.0
+CS_PROG_last = -1000.0
+
+return
 
 end subroutine CS_PROG_STOP
 !**********************************************************************!
@@ -708,17 +708,17 @@ end subroutine CS_PROG_STOP
 !
 subroutine CS_PROG_ABORT()
 
-  implicit none
-  
-  OPEN (UNIT=6,FORM='FORMATTED',CARRIAGECONTROL='LIST')
-  
-  CS_PROG_on = 0
-  CS_PROG_num = 100
-  CS_PROG_idx = 0
-  CS_PROG_pproc = 1.0
-  CS_PROG_last = -1000.0
-  
-  return
+implicit none
+
+OPEN (UNIT=6,FORM='FORMATTED',CARRIAGECONTROL='LIST')
+
+CS_PROG_on = 0
+CS_PROG_num = 100
+CS_PROG_idx = 0
+CS_PROG_pproc = 1.0
+CS_PROG_last = -1000.0
+
+return
 
 end subroutine CS_PROG_ABORT
 !**********************************************************************!
@@ -735,37 +735,37 @@ end subroutine CS_PROG_ABORT
 !
 integer*4 function CS_GETFREELUN(nerr)
 
-  implicit none
-  
-  integer*4, intent(inout) :: nerr
-  
+implicit none
+
+integer*4, intent(inout) :: nerr
+
   logical :: isopen             ! isopen request from inquire
   integer*4 :: lun, nret        ! temporary luns
   
   nret = 0
   
   do lun = CS_LUNMIN, CS_LUNMAX
-    inquire(unit=lun,opened=isopen,iostat=nerr)
-    if (nerr/=0) then
-      CS_GETFREELUN = 0
-      return
-    end if
-    if (.not.isopen) then
-      nret = lun
-      exit
-    end if
+  inquire(unit=lun,opened=isopen,iostat=nerr)
+  if (nerr/=0) then
+  CS_GETFREELUN = 0
+  return
+  end if
+  if (.not.isopen) then
+  nret = lun
+  exit
+  end if
   end do
   
   if (nret>0) then
-    nerr = 0
-    CS_GETFREELUN = nret
+  nerr = 0
+  CS_GETFREELUN = nret
   else
-    nerr = -1
+  nerr = -1
   end if
   
   return
 
-end function CS_GETFREELUN
+  end function CS_GETFREELUN
 !**********************************************************************!
 
 !**********************************************************************!
@@ -778,17 +778,17 @@ end function CS_GETFREELUN
 !   integer*4 :: nerr = error flag
 !
 subroutine CS_DEALLOC_CELLMEM(nerr)
-  implicit none
-  integer*4, intent(inout) :: nerr
-  nerr = 0
-  if (CS_cellmem_allocated) then
-    deallocate(CS_attype, CS_atnum, CS_atlnk, CS_atcrg, &
-     &         CS_atpos, CS_atocc, CS_atdwf, stat=nerr)
-    if (nerr==0) then
-      CS_cellmem_allocated = .FALSE.
-    end if
-  end if
-  return
+implicit none
+integer*4, intent(inout) :: nerr
+nerr = 0
+if (CS_cellmem_allocated) then
+deallocate(CS_attype, CS_atnum, CS_atlnk, CS_atcrg, &
+ &         CS_atpos, CS_atocc, CS_atdwf, stat=nerr)
+if (nerr==0) then
+CS_cellmem_allocated = .FALSE.
+end if
+end if
+return
 end subroutine CS_DEALLOC_CELLMEM
 !**********************************************************************!
 
@@ -815,35 +815,35 @@ end subroutine CS_DEALLOC_CELLMEM
 !   integer*4 :: nerr = error flag
 !
 subroutine CS_ALLOC_CELLMEM(n,nerr)
-  implicit none
-  integer*4, intent(in) :: n
-  integer*4, intent(inout) :: nerr
-  integer*4 :: i
-  nerr = 0
-  i = n+3
-  if (.not.CS_cellmem_allocated) then
-    allocate(CS_attype(i), stat=nerr)
-    if (nerr==0) allocate(CS_atnum(i), stat=nerr)
-    if (nerr==0) allocate(CS_atcrg(i), stat=nerr)
-    if (nerr==0) allocate(CS_atpos(3,i), stat=nerr)
-    if (nerr==0) allocate(CS_atocc(i), stat=nerr)
-    if (nerr==0) allocate(CS_atdwf(i), stat=nerr)
-    if (nerr==0) allocate(CS_atlnk(i), stat=nerr)
-    if (nerr==0) then
-      CS_attype = ""
-      CS_atnum = 0
-      CS_atlnk = 0
-      CS_atcrg = 0.0
-      CS_atpos = 0.0
-      CS_atocc = 0.0
-      CS_atdwf = 0.0
-      CS_numat = n
-      CS_cellmem_allocated = .TRUE.
-    end if
-  else
-    nerr = -1
-  end if
-  return
+implicit none
+integer*4, intent(in) :: n
+integer*4, intent(inout) :: nerr
+integer*4 :: i
+nerr = 0
+i = n+3
+if (.not.CS_cellmem_allocated) then
+allocate(CS_attype(i), stat=nerr)
+if (nerr==0) allocate(CS_atnum(i), stat=nerr)
+if (nerr==0) allocate(CS_atcrg(i), stat=nerr)
+if (nerr==0) allocate(CS_atpos(3,i), stat=nerr)
+if (nerr==0) allocate(CS_atocc(i), stat=nerr)
+if (nerr==0) allocate(CS_atdwf(i), stat=nerr)
+if (nerr==0) allocate(CS_atlnk(i), stat=nerr)
+if (nerr==0) then
+CS_attype = ""
+CS_atnum = 0
+CS_atlnk = 0
+CS_atcrg = 0.0
+CS_atpos = 0.0
+CS_atocc = 0.0
+CS_atdwf = 0.0
+CS_numat = n
+CS_cellmem_allocated = .TRUE.
+end if
+else
+nerr = -1
+end if
+return
 end subroutine CS_ALLOC_CELLMEM
 !**********************************************************************!
 
@@ -857,16 +857,16 @@ end subroutine CS_ALLOC_CELLMEM
 !   integer*4 :: nerr = error flag
 !
 subroutine CS_DEALLOC_SLICEMEM(nerr)
-  implicit none
-  integer*4, intent(inout) :: nerr
-  nerr = 0
-  if (CS_slicemem_allocated) then
-    deallocate(CS_slczlim, CS_slcatacc, CS_slcatnum, stat=nerr)
-    if (nerr==0) then
-      CS_slicemem_allocated = .FALSE.
-    end if
-  end if
-  return
+implicit none
+integer*4, intent(inout) :: nerr
+nerr = 0
+if (CS_slicemem_allocated) then
+deallocate(CS_slczlim, CS_slcatacc, CS_slcatnum, stat=nerr)
+if (nerr==0) then
+CS_slicemem_allocated = .FALSE.
+end if
+end if
+return
 end subroutine CS_DEALLOC_SLICEMEM
 !**********************************************************************!
 
@@ -891,35 +891,35 @@ end subroutine CS_DEALLOC_SLICEMEM
 !   integer*4 :: nerr = error flag
 !
 subroutine CS_ALLOC_SLICEMEM(n,nerr)
-  implicit none
-  integer*4, intent(in) :: n
-  integer*4, intent(inout) :: nerr
-  integer*4 :: i
-  nerr = 0
-  i = n+3
+implicit none
+integer*4, intent(in) :: n
+integer*4, intent(inout) :: nerr
+integer*4 :: i
+nerr = 0
+i = n+3
   ! need size of cell data, thus check if cell data is ready
   if (.not.CS_cellmem_allocated) then
-    nerr = -1
-    return
+  nerr = -1
+  return
   end if
   ! check allocation state
   if (CS_slicemem_allocated) then
-    call CS_DEALLOC_SLICEMEM(nerr)
-    if (nerr/=0) return
+  call CS_DEALLOC_SLICEMEM(nerr)
+  if (nerr/=0) return
   end if
   ! ready to allocate
   allocate(CS_slczlim(2,i), stat=nerr)
   if (nerr==0) allocate(CS_slcatnum(i), stat=nerr)
   if (nerr==0) allocate(CS_slcatacc(CS_numat+3,i), stat=nerr)
   if (nerr==0) then
-    CS_slczlim = 0.0
-    CS_slcatnum = 0
-    CS_slcatacc = 0
-    CS_nspsc = n
-    CS_slicemem_allocated = .TRUE.
+  CS_slczlim = 0.0
+  CS_slcatnum = 0
+  CS_slcatacc = 0
+  CS_nspsc = n
+  CS_slicemem_allocated = .TRUE.
   end if
   return
-end subroutine CS_ALLOC_SLICEMEM
+  end subroutine CS_ALLOC_SLICEMEM
 !**********************************************************************!
 
 !**********************************************************************!
@@ -932,10 +932,10 @@ end subroutine CS_ALLOC_SLICEMEM
 !   integer*4 :: nerr = error flag
 !
 subroutine CS_DEALLOC_SCAMPMEM(nerr)
-  implicit none
-  integer*4, intent(inout) :: nerr
-  nerr = 0
-  if (CS_scattamp_prepared) then
+implicit none
+integer*4, intent(inout) :: nerr
+nerr = 0
+if (CS_scattamp_prepared) then
     ! data is prepared, throw away data and prepare again
     deallocate(CS_scampdat, &
      &         CS_scampsym, &
@@ -948,14 +948,14 @@ subroutine CS_DEALLOC_SCAMPMEM(nerr)
     if (allocated(CS_scagn)) deallocate(CS_scagn, stat=nerr)
     if (allocated(CS_scadwf)) deallocate(CS_scadwf, stat=nerr)
     if (nerr==0) then
-      CS_scattamp_prepared = .FALSE.
-      CS_scadim = 0
-      CS_scaitog = 0.0
-      CS_scampnum = 0
+    CS_scattamp_prepared = .FALSE.
+    CS_scadim = 0
+    CS_scaitog = 0.0
+    CS_scampnum = 0
     end if
-  end if
-  return
-end subroutine CS_DEALLOC_SCAMPMEM
+    end if
+    return
+    end subroutine CS_DEALLOC_SCAMPMEM
 !**********************************************************************!
 
 !**********************************************************************!
@@ -968,11 +968,11 @@ end subroutine CS_DEALLOC_SCAMPMEM
 !   real*4 :: wl = wavelength [nm]
 !
 function CS_WL2HT(wl)
-  implicit none
-  real*4, intent(in) :: wl
-  real*4 :: CS_WL2HT
-  CS_WL2HT = CS_elm0*( sqrt( 1. + (CS_elwl/wl/CS_elm0)**2 ) - 1. )
-  return
+implicit none
+real*4, intent(in) :: wl
+real*4 :: CS_WL2HT
+CS_WL2HT = CS_elm0*( sqrt( 1. + (CS_elwl/wl/CS_elm0)**2 ) - 1. )
+return
 end function CS_WL2HT
 !**********************************************************************!
 
@@ -987,11 +987,11 @@ end function CS_WL2HT
 !   real*4 :: ht = high tension [kV]
 !
 function CS_HT2WL(ht)
-  implicit none
-  real*4, intent(in) :: ht
-  real*4 :: CS_HT2WL
-  CS_HT2WL = CS_elwl / sqrt( ht * (2*CS_elm0+ht) )
-  return
+implicit none
+real*4, intent(in) :: ht
+real*4 :: CS_HT2WL
+CS_HT2WL = CS_elwl / sqrt( ht * (2*CS_elm0+ht) )
+return
 end function CS_HT2WL
 !**********************************************************************!
 
@@ -1012,30 +1012,30 @@ end function CS_HT2WL
 !
 subroutine CS_CCFFT2D(crs,cfs,nx,ny,ndir)
 
-  implicit none
-  
+implicit none
+
   integer*4, parameter :: nmaxft = 8192 ! max. dimensions supported
   
   integer*4, intent(in) :: nx, ny, ndir
   complex*8, intent(inout) :: crs(nx,ny), cfs(ny,nx) 
   
 ! external routines for 2D Fourier transform (link FFTs.f)
-  external :: ODDCC128S, ODDCC256S,  ODDCC512S,  ODDCC1024S
-  external :: ODDCC2048S, ODDCC4096S, ODDCC8192S
-  
-  integer*4 :: nft, nalloc, n1, n2, i
-  complex*8, allocatable, dimension(:,:) :: cft
-  character*40 :: direc
-  
-  nalloc = 0
-  direc = 'FORWARD'
-  n1 = nx
-  n2 = ny
-  if (ndir<0) then
-    direc = 'BACKWARD'
-    n1 = ny
-    n2 = nx
-  end if
+external :: ODDCC128S, ODDCC256S,  ODDCC512S,  ODDCC1024S
+external :: ODDCC2048S, ODDCC4096S, ODDCC8192S
+
+integer*4 :: nft, nalloc, n1, n2, i
+complex*8, allocatable, dimension(:,:) :: cft
+character*40 :: direc
+
+nalloc = 0
+direc = 'FORWARD'
+n1 = nx
+n2 = ny
+if (ndir<0) then
+direc = 'BACKWARD'
+n1 = ny
+n2 = nx
+end if
   nft = 2**CEILING(LOG(real(max(nx,ny)))/LOG(2.0)) ! next 2^N above max(nx,ny)
   nft = max(nft, 128)
   if (nft>nmaxft) goto 14
@@ -1043,51 +1043,51 @@ subroutine CS_CCFFT2D(crs,cfs,nx,ny,ndir)
   if (nalloc/=0) goto 13
   cft(1:nft,1:nft) = cmplx(0.0,0.0)
   if (ndir<0) then ! cfs is input
-    do i=1, n2
-      cft(1:n1,i) = cfs(1:n1,i)
-    end do
+  do i=1, n2
+  cft(1:n1,i) = cfs(1:n1,i)
+  end do
   else ! crs is input
-    do i=1, n2
-      cft(1:n1,i) = crs(1:n1,i)
-    end do
+  do i=1, n2
+  cft(1:n1,i) = crs(1:n1,i)
+  end do
   end if
   ! FT or iFT on cft
   select case (nft)
   case  (128)
-    call  ODDCC128S(cft,nx,ny,direc)
+  call  ODDCC128S(cft,nx,ny,direc)
   case  (256)
-    call  ODDCC256S(cft,nx,ny,direc)
+  call  ODDCC256S(cft,nx,ny,direc)
   case  (512)
-    call  ODDCC512S(cft,nx,ny,direc)
+  call  ODDCC512S(cft,nx,ny,direc)
   case (1024)
-    call ODDCC1024S(cft,nx,ny,direc)
+  call ODDCC1024S(cft,nx,ny,direc)
   case (2048)
-    call ODDCC2048S(cft,nx,ny,direc)
+  call ODDCC2048S(cft,nx,ny,direc)
   case (4096)
-    call ODDCC4096S(cft,nx,ny,direc)
+  call ODDCC4096S(cft,nx,ny,direc)
   case (8192)
-    call ODDCC8192S(cft,nx,ny,direc)
+  call ODDCC8192S(cft,nx,ny,direc)
   end select
   if (ndir<0) then ! crs is output
-    do i=1, n1
-      crs(1:n2,i) = cft(1:n2,i)
-    end do
+  do i=1, n1
+  crs(1:n2,i) = cft(1:n2,i)
+  end do
   else ! cfs is output
-    do i=1, n1
-      cfs(1:n2,i) = cft(1:n2,i)
-    end do
+  do i=1, n1
+  cfs(1:n2,i) = cft(1:n2,i)
+  end do
   end if
   deallocate(cft, stat=nalloc)
   !
   return
 
 13 continue !
-  call CS_ERROR("FFT array allocation failed.")
-  return
+call CS_ERROR("FFT array allocation failed.")
+return
 14 continue ! 
-  call CS_ERROR("Requested FFT size is out of bounds (8192).")
-  return
-  
+call CS_ERROR("Requested FFT size is out of bounds (8192).")
+return
+
 end subroutine CS_CCFFT2D
 !
 !**********************************************************************!
@@ -1109,10 +1109,10 @@ end subroutine CS_CCFFT2D
 !
 subroutine CS_WRITE_FFDEC(vdectrg,nerr)
 
-  use FSCATAB
-  
-  implicit none
-  
+use FSCATAB
+
+implicit none
+
   real*4, parameter :: threq = 0.000001 ! decay equivalence threshold
   real*4, parameter :: thrqs = 0.000001 ! qstep threshold
   
@@ -1137,10 +1137,10 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
   real*4, external :: wekoscar
   complex*8, external :: wekosca    !(g,dw,z,accvlt,absflg) from wekoscatt.f90,
                                     !    calculates scatt amp complex
-  real*4, external :: wakiscar
+                                    real*4, external :: wakiscar
   complex*8, external :: wakisca    !(g,dw,z,accvlt,absflg) from wakiscatt.f90,
                                     !    calculates scatt amp complex
-  
+
   !
   ! preset error flag
   !
@@ -1155,20 +1155,20 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
   ! prepare parameters
   !
   if (CS_useextsca==1) then ! use external table fit
-    i1 = FST_nat
+  i1 = FST_nat
   else ! use internal table by ...
     if (CS_scaf_table == 2) then ! ... Waasmaier & Kirfel
-      i1 = 92
+    i1 = 92
     else ! ... Weickenmeier & Kohl
-      i1 = 98
+    i1 = 98
     end if
-  end if
-  
+    end if
+
   !
   if (i1<1) then
-    nerr = 1
-    call CS_ERROR("No atomic form factor data.")
-    return
+  nerr = 1
+  call CS_ERROR("No atomic form factor data.")
+  return
   end if
   
   !
@@ -1176,15 +1176,15 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
   lfu = getfreelun()
   open (unit=lfu, file='ffdec.txt', status='REPLACE', action='WRITE', iostat=ioerr)
   if (ioerr/=0) then
-    nerr = 2
-    call CS_ERROR("Failed to open output file 'ffdec.txt'.")
-    return
+  nerr = 2
+  call CS_ERROR("Failed to open output file 'ffdec.txt'.")
+  return
   end if
   !
   ! write the header line
   !
-1000 FORMAT(A4,", ",A6,", ",A12,", ",A12)
-1001 FORMAT(I4,", ",A6,", ",F12.4,", ",F12.6)
+  1000 FORMAT(A4,", ",A6,", ",A12,", ",A12)
+  1001 FORMAT(I4,", ",A6,", ",F12.4,", ",F12.6)
   write(unit=lfu, fmt=1000) "Z", "Symbol", "kmax [1/nm]", "f(kmax)/f(0)"
   !
   ! loop over all atomic numbers starting with 1 to maximum
@@ -1196,20 +1196,20 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
     z = 0
     ff0 = 1.
     if (CS_useextsca==1) then ! use external table fit
-      z = nint(FST_crg(2,i))
-      sym = FST_sym(i)
-      ff0 = FST_GETSCAR(sym, 0., 0., 100., dwfflg )
+    z = nint(FST_crg(2,i))
+    sym = FST_sym(i)
+    ff0 = FST_GETSCAR(sym, 0., 0., 100., dwfflg )
     else ! use internal table by ...
       if (CS_scaf_table == 2) then ! ... Waasmaier & Kirfel
-        z = i
-        call wakisymb(z, sym(1:2))
-        ff0 = wakiscar(0., 0., z, 100., dwfflg )
+      z = i
+      call wakisymb(z, sym(1:2))
+      ff0 = wakiscar(0., 0., z, 100., dwfflg )
       else ! ... Weickenmeier & Kohl
-        z = i
-        call wekosymb(z, sym(1:2))
-        ff0 = wekoscar(0., 0., z, 100., dwfflg )
+      z = i
+      call wekosymb(z, sym(1:2))
+      ff0 = wekoscar(0., 0., z, 100., dwfflg )
       end if
-    end if
+      end if
     !
     ! loop until the decay value is met
     !
@@ -1225,14 +1225,14 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
       !
       ! get ffq
       if (CS_useextsca==1) then ! use external table fit
-        ffq = FST_GETSCAR(sym, qcur, 0., 100., dwfflg )
+      ffq = FST_GETSCAR(sym, qcur, 0., 100., dwfflg )
       else ! use internal table by ...
         if (CS_scaf_table == 2) then ! ... Waasmaier & Kirfel
-          ffq = wakiscar(qcur, 0., z, 100., dwfflg )
+        ffq = wakiscar(qcur, 0., z, 100., dwfflg )
         else ! ... Weickenmeier & Kohl
-          ffq = wekoscar(qcur, 0., z, 100., dwfflg )
+        ffq = wekoscar(qcur, 0., z, 100., dwfflg )
         end if
-      end if
+        end if
       !
       ! update vdeccur
       vdeccur = ffq / ff0
@@ -1245,7 +1245,7 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
           qstepdir = -1.
           ! reduce
           qstep = qstep * 0.5
-        end if
+          end if
         ! the case where vdeccur is not lower than vdectrg requires further going right
       else ! went left ...
         ! ... expect higher ff
@@ -1254,9 +1254,9 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
           qstepdir = 1.
           ! reduce
           qstep = qstep * 0.5
-        end if
+          end if
         ! the case where vdeccur is not higher than vdectrg requires further going left
-      end if
+        end if
       !
     end do ! convergence loop
     !
@@ -1269,7 +1269,7 @@ subroutine CS_WRITE_FFDEC(vdectrg,nerr)
   
   return
   
-end subroutine CS_WRITE_FFDEC
+  end subroutine CS_WRITE_FFDEC
 !**********************************************************************!
 
 
@@ -1291,10 +1291,10 @@ end subroutine CS_WRITE_FFDEC
 !
 subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
 
-  use FSCATAB
-  
-  implicit none
-  
+use FSCATAB
+
+implicit none
+
   real*8, parameter :: threq = 0.000001 ! decay equivalence threshold
   real*8, parameter :: thrqs = 0.0001 ! qstep threshold
   
@@ -1330,20 +1330,20 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
   ! prepare parameters
   !
   if (CS_useextsca==1) then ! use external table fit
-    i1 = FST_nat
+  i1 = FST_nat
   else ! use internal table by ...
     if (CS_scaf_table == 2) then ! ... Waasmaier & Kirfel
-      i1 = 92
+    i1 = 92
     else ! ... Weickenmeier & Kohl
-      i1 = 98
+    i1 = 98
     end if
-  end if
-  
+    end if
+
   !
   if (i1<1) then
-    nerr = 1
-    call CS_ERROR("No atomic form factor data.")
-    return
+  nerr = 1
+  call CS_ERROR("No atomic form factor data.")
+  return
   end if
   
   !
@@ -1351,15 +1351,15 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
   lfu = getfreelun()
   open (unit=lfu, file='f2dec.txt', status='REPLACE', action='WRITE', iostat=ioerr)
   if (ioerr/=0) then
-    nerr = 2
-    call CS_ERROR("Failed to open output file 'f2dec.txt'.")
-    return
+  nerr = 2
+  call CS_ERROR("Failed to open output file 'f2dec.txt'.")
+  return
   end if
   !
   ! write the header line
   !
-1000 FORMAT(A4,", ",A6,", ",A12,", ",A12)
-1001 FORMAT(I4,", ",A6,", ",F12.4,", ",F12.6)
+  1000 FORMAT(A4,", ",A6,", ",A12,", ",A12)
+  1001 FORMAT(I4,", ",A6,", ",F12.4,", ",F12.6)
   write(unit=lfu, fmt=1000) "Z", "Symbol", "kmax [1/nm]", "1-f2(kmax)/f2(0)"
   !
   ! loop over all atomic numbers starting with 1 to maximum
@@ -1371,20 +1371,20 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
     z = 0
     f20 = 1.
     if (CS_useextsca==1) then ! use external table fit
-      z = nint(FST_crg(2,i))
-      sym = FST_sym(i)
-      f20 = FST_GETSCAF2(sym, CS_pi, 0., ht)
+    z = nint(FST_crg(2,i))
+    sym = FST_sym(i)
+    f20 = FST_GETSCAF2(sym, CS_pi, 0., ht)
     else ! use internal table by ...
       if (CS_scaf_table == 2) then ! ... Waasmaier & Kirfel
-        z = i
-        call wakisymb(z, sym(1:2))
-        f20 = wakif2(CS_pi, 0., z, k0)
+      z = i
+      call wakisymb(z, sym(1:2))
+      f20 = wakif2(CS_pi, 0., z, k0)
       else ! ... Weickenmeier & Kohl
-        z = i
-        call wekosymb(z, sym(1:2))
-        f20 = wekof2(CS_pi, 0., z, k0)
+      z = i
+      call wekosymb(z, sym(1:2))
+      f20 = wekof2(CS_pi, 0., z, k0)
       end if
-    end if
+      end if
     !
     ! loop until the decay value is met
     !
@@ -1407,14 +1407,14 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
       !
       ! get f2q
       if (CS_useextsca==1) then ! use external table fit
-        f2q = FST_GETSCAF2(sym, tcur, 0., ht)
+      f2q = FST_GETSCAF2(sym, tcur, 0., ht)
       else ! use internal table by ...
         if (CS_scaf_table == 2) then ! ... Waasmaier & Kirfel
-          f2q = wakif2(tcur, 0., z, k0)
+        f2q = wakif2(tcur, 0., z, k0)
         else ! ... Weickenmeier & Kohl
-          f2q = wekof2(tcur, 0., z, k0)
+        f2q = wekof2(tcur, 0., z, k0)
         end if
-      end if
+        end if
       !
       ! update vdeccur
       vdcur = 1.0D+0 - f2q / f20
@@ -1427,7 +1427,7 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
           qstepdir = -1.
           ! reduce
           qstep = qstep * 0.5
-        end if
+          end if
         ! the case where vdeccur is not lower than vdectrg requires further going right
       else ! went left ...
         ! ... expect higher ff
@@ -1436,9 +1436,9 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
           qstepdir = 1.
           ! reduce
           qstep = qstep * 0.5
-        end if
+          end if
         ! the case where vdeccur is not higher than vdectrg requires further going left
-      end if
+        end if
       !
     end do ! convergence loop
     !
@@ -1451,7 +1451,7 @@ subroutine CS_WRITE_F2DEC(vdectrg, ht, nerr)
   
   return
   
-end subroutine CS_WRITE_F2DEC
+  end subroutine CS_WRITE_F2DEC
 !**********************************************************************!
 
 
@@ -1497,13 +1497,13 @@ end subroutine CS_WRITE_F2DEC
 !   integer*4 :: nerr           = error flag
 subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
 
-  use FSCATAB
-  
-  implicit none
-  
-  integer*4, intent(in) :: nx, ny, nz, ndwf, nabs
-  real*4, intent(in) :: wl
-  integer*4, intent(inout) :: nerr
+use FSCATAB
+
+implicit none
+
+integer*4, intent(in) :: nx, ny, nz, ndwf, nabs
+real*4, intent(in) :: wl
+integer*4, intent(inout) :: nerr
 
   logical :: dwfflg                 ! dwf-flag  
   logical :: absflg                 ! absorption flag
@@ -1528,10 +1528,10 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
   real*4, external :: wekoscar
   complex*8, external :: wekosca    !(g,dw,z,accvlt,absflg) from wekoscatt.f90,
                                     !    calculates scatt amp complex
-  real*4, external :: wakiscar
+                                    real*4, external :: wakiscar
   complex*8, external :: wakisca    !(g,dw,z,accvlt,absflg) from wakiscatt.f90,
                                     !    calculates scatt amp complex
-  
+
   !
   ! preset error flag
   !
@@ -1541,8 +1541,8 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
   absflg = .FALSE.
   CS_useabsorption = 0
   if (nabs/=0) then 
-    absflg = .TRUE.
-    CS_useabsorption = nabs
+  absflg = .TRUE.
+  CS_useabsorption = nabs
   end if
   scaos = min(max(10, CS_scaf_oversamp),100) ! limits the applied oversampling rate between 10 and 100
   !
@@ -1583,7 +1583,7 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
   dwf = 0.0
   
   do i=1, CS_numat ! loop i over all atoms in supercell
-    sym = CS_attype(i)
+  sym = CS_attype(i)
     z = CS_atnum(i)               ! get atom number / type
     dz = CS_atcrg(i)
     dwf = 0.0
@@ -1592,18 +1592,18 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
     if (CS_scampnum>0) then
       do j=1, CS_scampnum ! loop j over known atom types
         if ((trim(CS_scampsym(j))==trim(sym)).and.(CS_scampdwf(j)==dwf)) then ! atom is known
-          k = j
+        k = j
           exit  ! loop j
-        end if
+          end if
       end do ! loop j over known atom types
-    end if
+      end if
     if (k==0) then ! current atom is not known
-      CS_scampnum = CS_scampnum + 1
-      k = CS_scampnum
-      CS_scampsym(k) = sym
-      CS_scampatn(k) = z
-      CS_scampcrg(k) = dz
-      CS_scampdwf(k) = dwf
+    CS_scampnum = CS_scampnum + 1
+    k = CS_scampnum
+    CS_scampsym(k) = sym
+    CS_scampatn(k) = z
+    CS_scampcrg(k) = dz
+    CS_scampdwf(k) = dwf
     end if
     CS_scampptr(i) = k ! set pointer
   end do ! loop i over all atoms in supercell
@@ -1626,17 +1626,17 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
   CS_scamptmp = 0.0
   
   if (CS_useppot==1) then
-    allocate(CS_scaff2d(ny,nx,CS_scampnum), stat=nerr)
-    if (nerr/=0) goto 17
-    CS_scaff2d = cmplx(0.,0.)
-    allocate(CS_scagn(ny,nx,3), stat=nerr)
-    if (nerr/=0) goto 17
-    CS_scagn = cmplx(0.,0.)
-    if (dwfflg) then
-      allocate(CS_scadwf(ny,nx,CS_scampnum), stat=nerr)
-      if (nerr/=0) goto 17
-      CS_scadwf = 1.0
-    end if
+  allocate(CS_scaff2d(ny,nx,CS_scampnum), stat=nerr)
+  if (nerr/=0) goto 17
+  CS_scaff2d = cmplx(0.,0.)
+  allocate(CS_scagn(ny,nx,3), stat=nerr)
+  if (nerr/=0) goto 17
+  CS_scagn = cmplx(0.,0.)
+  if (dwfflg) then
+  allocate(CS_scadwf(ny,nx,CS_scampnum), stat=nerr)
+  if (nerr/=0) goto 17
+  CS_scadwf = 1.0
+  end if
   end if
   
   !
@@ -1673,38 +1673,38 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
   
   case (2) ! alternative msa absorption model: HASHIMOTO, HOWIE, WHELAN, Proc. R. Soc. London Ser. A, 269, 80-103 (1962)   
   
-    call CS_MESSAGE("Calculating real scattering amplitudes with proportional absorption.")
-    
+  call CS_MESSAGE("Calculating real scattering amplitudes with proportional absorption.")
+
     do k=1, CS_scampnum ! loop k over atom-type lists
     
-      sym = CS_scampsym(k)
+    sym = CS_scampsym(k)
       z = CS_scampatn(k)    ! get atomic number
       !dz = CS_scampcrg(k)
       dwf = 0.0
       if (dwfflg) dwf = CS_scampdwf(k)  ! get Debye-Waller factor
-          
+
       if (CS_doconsolemsg>0) then
-        write(unit=smsg,fmt='(A,I3,A,F12.8,A)') "Preparing data for Z = ",z," and DW-prm = ",dwf,"."
-        call CS_MESSAGE(trim(smsg))
+      write(unit=smsg,fmt='(A,I3,A,F12.8,A)') "Preparing data for Z = ",z," and DW-prm = ",dwf,"."
+      call CS_MESSAGE(trim(smsg))
       end if
       
       !call CS_PROG_START(CS_scadim,1.0)
       
       do i=1, CS_scadim ! loop g-axis
-        
-        g = CS_scaitog*real(i-1)
-        ftmp = 0.0
-        j = 0
-        if (CS_useextsca==1) j = FST_GETIDX(sym)
-        if (j>0) then
-          ftmp = FST_GETSCAR(sym, g, dwf, ht, dwfflg )
-        else
-          if (CS_scaf_table == 2) then
+
+      g = CS_scaitog*real(i-1)
+      ftmp = 0.0
+      j = 0
+      if (CS_useextsca==1) j = FST_GETIDX(sym)
+      if (j>0) then
+      ftmp = FST_GETSCAR(sym, g, dwf, ht, dwfflg )
+      else
+      if (CS_scaf_table == 2) then
             ftmp = wakiscar(g, dwf, z, ht, dwfflg)  ! get scattering amplitude from Wa&Ki's table
-          else
+            else
             ftmp = wekoscar(g, dwf, z, ht, dwfflg) ! get scattering amplitude from default table
-          end if
-        end if
+            end if
+            end if
         CS_scampdat(i,k) = cmplx(ftmp,CS_absorptionprm*ftmp) ! save scattering amplitude as real and absorption part as imag
         
         ! update progress indicator
@@ -1713,45 +1713,45 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
       end do ! loop g-axis
       
       !call CS_PROG_STOP(CS_scadim)
-    
+
     end do ! loop k over atom-type lists
-  
+
   case (1) ! standard msa absorption model:
            ! - WEICKENMEYER&KOHL, Acta Cryst. A 47 (1991) p. 597
            ! or
            ! - numerical integration according to HALL&HIRSCH Proc.Roy.Soc. A 286 (1965) p165 eq. (14a+b)
-  
-    call CS_MESSAGE("Calculating real and imaginary scattering amplitudes.")
-  
+
+           call CS_MESSAGE("Calculating real and imaginary scattering amplitudes.")
+
     do k=1, CS_scampnum ! loop k over atom-type lists
     
-      sym = CS_scampsym(k)
+    sym = CS_scampsym(k)
       z = CS_scampatn(k)    ! get atomic number
       !dz = CS_scampcrg(k)
       dwf = 0.0
       if (dwfflg) dwf = CS_scampdwf(k)  ! get Debye-Waller factor
       
       if (CS_doconsolemsg>0) then
-        write(unit=smsg,fmt='(A,I3,A,F12.8,A)') "Preparing data for Z = ",z," and DW-prm = ",dwf,"."
-        call CS_MESSAGE(trim(smsg))
+      write(unit=smsg,fmt='(A,I3,A,F12.8,A)') "Preparing data for Z = ",z," and DW-prm = ",dwf,"."
+      call CS_MESSAGE(trim(smsg))
       end if
       
       !call CS_PROG_START(CS_scadim,1.0)
-    
+
       do i=1, CS_scadim ! loop g-axis
-          
-        g = CS_scaitog*real(i-1)
-        j = 0
-        if (CS_useextsca==1) j = FST_GETIDX(sym)
-        if (j>0) then
-          csf = FST_GETSCAC(sym, g, dwf, ht, dwfflg, absflg )
-        else
-          if (CS_scaf_table == 2) then
+
+      g = CS_scaitog*real(i-1)
+      j = 0
+      if (CS_useextsca==1) j = FST_GETIDX(sym)
+      if (j>0) then
+      csf = FST_GETSCAC(sym, g, dwf, ht, dwfflg, absflg )
+      else
+      if (CS_scaf_table == 2) then
             csf = wakisca(g, dwf, z, ht, dwfflg, absflg)  ! get scattering amplitude from Wa&Ki's table
-          else
+            else
             csf = wekosca(g, dwf, z, ht, dwfflg, absflg) ! get scattering amplitude from default table
-          end if
-        end if
+            end if
+            end if
         CS_scampdat(i,k) = csf              ! save scattering amplitude
         
         ! update progress indicator
@@ -1760,43 +1760,43 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
       end do ! loop g-axis
       
       !call CS_PROG_STOP(CS_scadim)
-    
+
     end do ! loop k over atom-type lists
-  
+
   case (0) ! no absorption, use faster fscatt version
   
     !call CS_MESSAGE("Calculating real scattering amplitudes only, no absorption.")
-  
+
     do k=1, CS_scampnum ! loop k over atom-type lists
 
-      sym = CS_scampsym(k)
+    sym = CS_scampsym(k)
       z = CS_scampatn(k)    ! get atomic number
       !dz = CS_scampcrg(k)
       dwf = 0.0
       if (dwfflg) dwf = CS_scampdwf(k)  ! get Debye-Waller factor
       
       if (CS_doconsolemsg>0) then
-        write(unit=smsg,fmt='(A,I3,A,F12.8,A)') "Preparing data for Z = ",z," and DW-prm = ",dwf,"."
-        call CS_MESSAGE(trim(smsg))
+      write(unit=smsg,fmt='(A,I3,A,F12.8,A)') "Preparing data for Z = ",z," and DW-prm = ",dwf,"."
+      call CS_MESSAGE(trim(smsg))
       end if
       
       ! call CS_PROG_START(CS_scadim,1.0)
-    
+
       do i=1, CS_scadim ! loop g-axis
-       
-        g = CS_scaitog*real(i-1)
-        ftmp = 0.0
-        j = 0
-        if (CS_useextsca==1) j = FST_GETIDX(sym)
-        if (j>0) then
-          ftmp = FST_GETSCAR(sym, g, dwf, ht, dwfflg )
-        else
-          if (CS_scaf_table == 2) then
+
+      g = CS_scaitog*real(i-1)
+      ftmp = 0.0
+      j = 0
+      if (CS_useextsca==1) j = FST_GETIDX(sym)
+      if (j>0) then
+      ftmp = FST_GETSCAR(sym, g, dwf, ht, dwfflg )
+      else
+      if (CS_scaf_table == 2) then
             ftmp = wakiscar(g, dwf, z, ht, dwfflg) ! get scattering amplitude from Wa&Ki's table
-          else
+            else
             ftmp = wekoscar(g, dwf, z, ht, dwfflg) ! get scattering amplitude from default table
-          end if
-        end if
+            end if
+            end if
         CS_scampdat(i,k) = cmplx(ftmp,0.0)    ! save scattering amplitude
         
         ! update progress indicator
@@ -1805,17 +1805,17 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
       end do ! loop g-axis
       
       !call CS_PROG_STOP(CS_scadim)
-    
+
     end do ! loop k over atom-type lists
-  
+
   end select ! case (nabs)
   
   
-12 CS_scattamp_prepared = .TRUE.
+  12 CS_scattamp_prepared = .TRUE.
 
 
   if (CS_useppot) then
-    if (CS_doconsolemsg>0) call CS_MESSAGE("Preparing 2d form factor arrays.")
+  if (CS_doconsolemsg>0) call CS_MESSAGE("Preparing 2d form factor arrays.")
     pfacio = rc * CS_scaprea * CS_fpi * 10. ! prefactor for the ionic rest charge potential: rel-corr * C * 4 Pi * 10. [-> nm^-1]
     ! prepare all form factors and the shift kernels in fourier space
     ! (scrambled and transposed)
@@ -1834,39 +1834,39 @@ subroutine CS_PREPARE_SCATTAMPS(nx,ny,nz,ndwf,nabs,wl,nerr)
         CS_scagn(i,j,2) = cmplx(0., -CS_tpi*gy) ! store -2*Pi*I*gy(i,j) ! for y-translations
         CS_scagn(i,j,3) = apxy*cmplx(pfacio/(0.25*g2+CS_iyr*CS_iyr), 0.) ! store rc*C1/(s^2+al^2)(i,j) ! for ionic potentials
         do k=1, CS_scampnum ! loop k over atom-type lists
-          call CS_GETSCATTAMP(csf,g,k)
+        call CS_GETSCATTAMP(csf,g,k)
           CS_scaff2d(i,j,k) = csf*apxy ! store f_gz=0(i,j,atom type)
           if (dwfflg) then
-            dwf = CS_scampdwf(k)
+          dwf = CS_scampdwf(k)
             CS_scadwf(i,j,k) = real( exp(-0.25*dwf*g2) , kind=4 ) ! Debye-Waller factor map
-          end if
-        end do
-      end do
-    end do
-  end if
-  
-  return
-  
+            end if
+            end do
+            end do
+            end do
+            end if
+
+            return
+
   !
   ! handle errors
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Cell data not ready.")
   return
-14 nerr=-2
+  14 nerr=-2
   call CS_ERROR("Memory deallocation failed.")
   return
-15 nerr=-3
+  15 nerr=-3
   call CS_ERROR("Memory allocation failed.")
   return
-16 nerr=-4
+  16 nerr=-4
   call CS_ERROR("There are no atoms?")
   return
-17 nerr=-5
+  17 nerr=-5
   call CS_ERROR("Failed to allocate memory for projected form fractors")
   return
   
-end subroutine CS_PREPARE_SCATTAMPS
+  end subroutine CS_PREPARE_SCATTAMPS
 !**********************************************************************!
 
 !**********************************************************************!
@@ -1887,12 +1887,12 @@ end subroutine CS_PREPARE_SCATTAMPS
 subroutine CS_GET_MEANINNERPOT(meanpot, ht, ierr)
 
 !  use celslcprm
-  
-  implicit none
-  
-  real*4, intent(inout) :: meanpot
-  real*4, intent(in)    :: ht
-  integer*4, intent(inout) :: ierr
+
+implicit none
+
+real*4, intent(inout) :: meanpot
+real*4, intent(in)    :: ht
+integer*4, intent(inout) :: ierr
 
   real*4, parameter :: e0 = 510.9989461 ! electron rest mass in keV
   
@@ -1905,7 +1905,7 @@ subroutine CS_GET_MEANINNERPOT(meanpot, ht, ierr)
   real*4 :: rc                      ! relativistic correction factor
   
 !  character(len=400) :: smsg        ! message string
-  
+
   !
   ! check cell data presence
   !
@@ -1937,20 +1937,20 @@ subroutine CS_GET_MEANINNERPOT(meanpot, ht, ierr)
   ! scale to volts and remove relativistic correction
   meanpot = pfac * sf0 / rc ! > eV  
   
-12 continue
+  12 continue
 
   return  
   !
   ! handle errors
   !
-13 ierr=-1
+  13 ierr=-1
   call CS_ERROR("Cell data not ready.")
   return
-14 ierr=-2
+  14 ierr=-2
   call CS_ERROR("Scattering factors not prepared.")
   return
   
-end subroutine CS_GET_MEANINNERPOT
+  end subroutine CS_GET_MEANINNERPOT
 !**********************************************************************!
 
 !**********************************************************************!
@@ -1976,12 +1976,12 @@ end subroutine CS_GET_MEANINNERPOT
 !   integer*4 :: nerr = error code
 !
 subroutine CS_SETSLICE_AUTO(nrev,nerr)
-  
-  implicit none
-  
-  integer*4, intent(in) :: nrev
-  integer*4, intent(inout) :: nerr
-  
+
+implicit none
+
+integer*4, intent(in) :: nrev
+integer*4, intent(inout) :: nerr
+
   integer*4 :: nalloc ! allocation status
   integer*4 :: i, j, k ! iterators
   integer*4 :: nslc ! number of slices to generate
@@ -2004,8 +2004,8 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
   ! we need the super-cell to do the slicing
   !
   if (.not.CS_cellmem_allocated) then
-    nerr = -1
-    return
+  nerr = -1
+  return
   end if
   
   !
@@ -2013,8 +2013,8 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
   !
   ztol = CS_slcztol / CS_scsz ! get tolerate z distance for atomic planes in fractional cell coordinates
   if (CS_numat>0) then ! ... if we have atoms
-    allocate(slcset(2,CS_numat), stat=nalloc)
-    if (nalloc/=0) goto 13
+  allocate(slcset(2,CS_numat), stat=nalloc)
+  if (nalloc/=0) goto 13
     slcset = 0.0 ! preset with starting coordinate
     nslc = 1 ! start with one slice
     allocate(atz(CS_numat), stat=nalloc)
@@ -2022,41 +2022,41 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
     atz = 0.0
     do i=1, CS_numat ! copy atom z coordinates
       if (nrev==0) then ! normal slining order (0 ... 1)
-        atz(i) = CS_atpos(3,i)
+      atz(i) = CS_atpos(3,i)
       else ! reversed slicing order (1 ... 0)
-        atz(i) = 1.0 - CS_atpos(3,i)
+      atz(i) = 1.0 - CS_atpos(3,i)
       end if
-    end do
+      end do
     !
     ! determine the super-cell partitions (destroys atz)
     !
     do i=1, CS_numat
-      iminl = minloc(atz)
+    iminl = minloc(atz)
       znext = atz(iminl(1)) ! this is the next atom z position
       atz(iminl(1)) = 2.0 ! invalidate to not trigger again
       if (znext>slcset(2,nslc)+ztol) then ! the next atom is well beyond the tolerated distance
         ! terminate the current slice
         slcset(2,nslc) = znext
         if (znext<1.0) then ! initiate a new slice at this atom position
-          nslc = nslc + 1
-          slcset(1:2,nslc) = znext
+        nslc = nslc + 1
+        slcset(1:2,nslc) = znext
         else
           exit ! znext == 1 -> terminate
-        end if
-      end if
-    end do
+          end if
+          end if
+          end do
     ! terminate the final slice to max. cell coordinate
     slcset(2,nslc) = 1.0
     deallocate(atz, stat=nalloc) ! don't need atz anymore
     !
   else ! ... for an empty slice
-    allocate(slcset(2,1), stat=nalloc)
-    if (nalloc/=0) goto 13
+  allocate(slcset(2,1), stat=nalloc)
+  if (nalloc/=0) goto 13
     nslc = 1 ! just one empty slice
     slcset(1,1) = 0.0
     slcset(2,1) = 1.0
-  end if
-  
+    end if
+
   !
   ! check allocation state of slice memory
   !
@@ -2064,8 +2064,8 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
     ! is allocated, thus deallocate to set new data
     call CS_DEALLOC_SLICEMEM(nerr)
     if (nerr/=0) goto 14
-  end if
-  
+    end if
+
   !
   ! allocate slice data memory reflecting new slice number in size
   !
@@ -2076,8 +2076,8 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
   ! set z-limits for each slice
   !
   do j=1, nslc ! loop for each slice
-    CS_slczlim(1,j) = slcset(1,j)*CS_scsz
-    CS_slczlim(2,j) = slcset(2,j)*CS_scsz
+  CS_slczlim(1,j) = slcset(1,j)*CS_scsz
+  CS_slczlim(2,j) = slcset(2,j)*CS_scsz
   end do
   
   !
@@ -2087,7 +2087,7 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
   CS_atlnk = 0 ! reset atom link list
   dcell = (/ CS_scsz, CS_scsy, CS_scsz/)
   do j=1, CS_numat
-    z = CS_atpos(3,j)
+  z = CS_atpos(3,j)
     if (nrev/=0) z = 1.0 - CS_atpos(3,j) ! reverse order solved by mirroring the SC at z=0.5
     k = nslc ! default slice is final slice, this includes z = 1.0, which is not handled by the search loop below
              ! although we initially used modulo to all coordinates, z=1 might appear here for the reverse slicing scheme.
@@ -2095,8 +2095,8 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
       if (z>=slcset(1,i) .and. z<slcset(2,i)) then ! the z position of the atom is within bounds [z_i,z_i+1[ of slice i
         k = i ! set target slice index
         exit
-      end if
-    end do
+        end if
+        end do
     ! assign atom j to slice k
     CS_slcatnum(k) = CS_slcatnum(k) + 1 ! raise atom count of slice
     CS_slcatacc(CS_slcatnum(k),k) = j ! save atom index in slice list
@@ -2107,29 +2107,29 @@ subroutine CS_SETSLICE_AUTO(nrev,nerr)
       ! use CS_GET_SAMESITE( fpos,            l_fpos,              &
       !    &                 scal,  ssthr,          idxss, rdss, nerr )
       call  CS_GET_SAMESITE( CS_atpos(1:3,j), CS_atpos(1:3,1:j-1), &
-           &                 dcell, CS_atdst_thrnm, k,     dist, nerr )
+       &                 dcell, CS_atdst_thrnm, k,     dist, nerr )
       if (k>0) CS_atlnk(j) = k
-    end if
-  end do
-  
+      end if
+      end do
+
   !
   ! done
   !
-10 continue
+  10 continue
   if (allocated(slcset)) deallocate(slcset,stat=nalloc)
   if (allocated(atz)) deallocate(atz,stat=nalloc)
   return
   
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Failed to allocate slice data memory.")
   goto 10
-14 nerr=-2
+  14 nerr=-2
   call CS_ERROR("Failed to deallocate slice data memory.")
   goto 10
   
   return
   
-end subroutine CS_SETSLICE_AUTO
+  end subroutine CS_SETSLICE_AUTO
 !**********************************************************************!
 
 !**********************************************************************!
@@ -2154,12 +2154,12 @@ end subroutine CS_SETSLICE_AUTO
 !   integer*4 :: nerr = error code
 !
 subroutine CS_SETSLICE_EQUIDIST(nslc,nrev,nerr)
-  
-  implicit none
-  
-  integer*4, intent(in) :: nslc, nrev
-  integer*4, intent(inout) :: nerr
-  
+
+implicit none
+
+integer*4, intent(in) :: nslc, nrev
+integer*4, intent(inout) :: nerr
+
   integer*4 :: i, j, k ! iterators
   real*4 :: z ! z offset of slice
   real*4 :: dz ! z increment per slice
@@ -2181,8 +2181,8 @@ subroutine CS_SETSLICE_EQUIDIST(nslc,nrev,nerr)
   ! check allocation state of super cell data memory
   !
   if (.not.CS_cellmem_allocated) then
-    nerr = -1
-    return
+  nerr = -1
+  return
   end if
   
   !
@@ -2192,8 +2192,8 @@ subroutine CS_SETSLICE_EQUIDIST(nslc,nrev,nerr)
     ! is allocated, thus deallocate to set new data
     call CS_DEALLOC_SLICEMEM(nerr)
     if (nerr/=0) goto 14
-  end if
-  
+    end if
+
   !
   ! allocate slice data memory reflecting new slice number in size
   !
@@ -2204,8 +2204,8 @@ subroutine CS_SETSLICE_EQUIDIST(nslc,nrev,nerr)
   ! set z-limits for each slice
   !
   do j=1, nslc ! loop for each slice
-    CS_slczlim(1,j) = real(j-1)*CS_scsz/real(nslc)
-    CS_slczlim(2,j) = real(j)*CS_scsz/real(nslc)
+  CS_slczlim(1,j) = real(j-1)*CS_scsz/real(nslc)
+  CS_slczlim(2,j) = real(j)*CS_scsz/real(nslc)
   end do
   
   !
@@ -2215,7 +2215,7 @@ subroutine CS_SETSLICE_EQUIDIST(nslc,nrev,nerr)
   CS_atlnk = 0 ! reset atom link list
   dcell = (/ CS_scsx, CS_scsy, CS_scsz/)
   do j=1, CS_numat
-    z = CS_atpos(3,j)
+  z = CS_atpos(3,j)
     if (nrev/=0) z = 1.0 - CS_atpos(3,j) ! reverse order solved by mirroring the SC at z=0.5
     i = int(slcnumscal*z)+1 ! convert relative position to slice number
     if (i<1) i = 1 ! limit lower slice number to 1
@@ -2229,24 +2229,24 @@ subroutine CS_SETSLICE_EQUIDIST(nslc,nrev,nerr)
       ! use CS_GET_SAMESITE( fpos,            l_fpos,              &
       !    &                 scal,  ssthr,          idxss, rdss, nerr )
       call  CS_GET_SAMESITE( CS_atpos(1:3,j), CS_atpos(1:3,1:j-1), &
-           &                 dcell, CS_atdst_thrnm, k,     dist, nerr )
+       &                 dcell, CS_atdst_thrnm, k,     dist, nerr )
       if (k>0) CS_atlnk(j) = k
-    end if
-  end do
-  
+      end if
+      end do
+
   !
   ! done
   !
   return
   
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Failed to allocate slice data memory.")
   return
-14 nerr=-2
+  14 nerr=-2
   call CS_ERROR("Failed to deallocate slice data memory.")
   return
   
-end subroutine CS_SETSLICE_EQUIDIST
+  end subroutine CS_SETSLICE_EQUIDIST
 !**********************************************************************!
 
 !**********************************************************************!
@@ -2271,12 +2271,12 @@ end subroutine CS_SETSLICE_EQUIDIST
 !
 subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
 
-  implicit none
-  
-  integer*4, intent(in) :: nslc
-  integer*4, intent(inout) :: nerr
-  character(len=*), intent(inout) :: stitle
-  
+implicit none
+
+integer*4, intent(in) :: nslc
+integer*4, intent(inout) :: nerr
+character(len=*), intent(inout) :: stitle
+
   integer*4 :: na                       ! number of atoms in requested slice
   integer*4 :: i, j, ia, k, l, m        ! iterators
   integer*4 :: occ_int, occ_frc         ! occupancy count integer value and fractional value
@@ -2305,7 +2305,7 @@ subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
   !
   !
   if (3>len(stitle)) then ! string too short
-    goto 17
+  goto 17
   end if
   
   !
@@ -2328,8 +2328,8 @@ subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
   !
   na = CS_slcatnum(nslc)
   if (na<=0) then ! nothing in slice
-    stitle(1:11) = "Empty slice"
-    goto 12
+  stitle(1:11) = "Empty slice"
+  goto 12
   else
   
     ! there is a number of atoms, count the atom types
@@ -2338,7 +2338,7 @@ subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
     composit = 0 ! preset composition counter to zero
     compocc = 0.0 ! preset occupancy info to zero
     compsym = "    "
-  
+
     !
     ! iterate through the atoms of a slice
     !
@@ -2353,17 +2353,17 @@ subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
         if (trim(compsym(j))==trim(symbol)) then ! atom type found already
           compocc(j) = compocc(j) + occ ! raise slice occupancy with this atom type
           exit
-        end if
+          end if
         if (len_trim(compsym(j))==0) then ! end of current list reached, new entry
           compsym(j) = symbol ! set new symbol
           composit(j) = ia ! add new atom type to composition list
           compocc(j) = occ ! register 1st atom of the new type with current occupancy
           ncomp = ncomp + 1 ! increase number of components
           exit
-        end if
-      end do
-    end do
-    
+          end if
+          end do
+          end do
+
     !
     ! iterate through composition list and create the string
     !
@@ -2381,21 +2381,21 @@ subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
       occ_frc = int(100.0*(occ-real(occ_int)))
       l = 1
       if (occ_int>0) then ! get length of the integer part string
-        l = 1 + int(log10(real(abs(occ_int))))
+      l = 1 + int(log10(real(abs(occ_int))))
       end if
       if (occ_frc<1) then ! non-fractional occupancy
-        write(unit=stmp,fmt=110) trim(symbol), occ_int
-110     format(A<k>,"_",I<l>)
+      write(unit=stmp,fmt=110) trim(symbol), occ_int
+      110     format(A<k>,"_",I<l>)
       else ! fractional occupancy
-        write(unit=stmp,fmt=111) trim(symbol), occ_int, occ_frc
-111     format(A<k>,"_",I<l>,".",I2.2) 
+      write(unit=stmp,fmt=111) trim(symbol), occ_int, occ_frc
+      111     format(A<k>,"_",I<l>,".",I2.2) 
       end if
       ! add things to the string ...
       if (j>1) then ! add separator of this is not the first entry
-        stitle(j:j) = ' '
+      stitle(j:j) = ' '
         j = j + 1 ! move one character forth
         if (j>=len(stitle)-1) goto 11 ! stop, string full
-      end if
+        end if
       ! determine sub-string position
       ! j ist sub-string start position
       l = len_trim(stmp) ! sub-string trim length
@@ -2404,47 +2404,47 @@ subroutine CS_GETSLICETITLE(nslc, stitle, nerr)
       stitle(j:k) = stmp(1:m) ! copy
       j = k+1 ! update start position for next things to add ...
       if (j>=len(stitle)-1) goto 11 ! stop, string full
-    end do
-    
-11  deallocate(composit, compocc, stat=nalloc)
-    if (nalloc/=0) goto 16
-    
-    if ( (j>=len(stitle)-1) .and. (i<=ncomp) ) then
+      end do
+
+      11  deallocate(composit, compocc, stat=nalloc)
+      if (nalloc/=0) goto 16
+
+      if ( (j>=len(stitle)-1) .and. (i<=ncomp) ) then
       ! the string writing was not finished. mark this by setting the last usable character to '+'
       k = len(stitle)-1
       stitle(k:k) = '+'
-    end if
-    
-  end if
-  
-  
-12 k = len(stitle)
+      end if
+
+      end if
+
+
+      12 k = len(stitle)
    stitle(k:k) = char(0) ! for fool proofness, always set the last character to 0.
 
    return
-  
-13 nerr=1
-  call CS_ERROR("Cell and slice memory not allocated.")
-  return
-  
-14 nerr=2
-  call CS_ERROR("Invalid parameter, slice index.")
-  return
-  
-15 nerr=3
-  call CS_ERROR("Memory allocation failed.")
-  return
-  
-16 nerr=4
-  call CS_ERROR("Memory deallocation failed.")
-  return
 
-17 nerr=5
-  call CS_ERROR("Invalid parameter, title string length insufficient.")
-  return
+   13 nerr=1
+   call CS_ERROR("Cell and slice memory not allocated.")
+   return
 
-    
-end subroutine CS_GETSLICETITLE
+   14 nerr=2
+   call CS_ERROR("Invalid parameter, slice index.")
+   return
+
+   15 nerr=3
+   call CS_ERROR("Memory allocation failed.")
+   return
+
+   16 nerr=4
+   call CS_ERROR("Memory deallocation failed.")
+   return
+
+   17 nerr=5
+   call CS_ERROR("Invalid parameter, title string length insufficient.")
+   return
+
+
+   end subroutine CS_GETSLICETITLE
 !**********************************************************************!
 
 !**********************************************************************!
@@ -2461,15 +2461,15 @@ end subroutine CS_GETSLICETITLE
 !
 subroutine CS_LOAD_EMSCELL(sfile, nerr)
 
-  use FSCATAB
-  use cifio
-  
-  implicit none
-  
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: nerr
-  
-  integer*4 :: lun
+use FSCATAB
+use cifio
+
+implicit none
+
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: nerr
+
+integer*4 :: lun
   integer*4 :: nlines ! number of lines in file
   integer*4 :: natoms ! number of atom definitions
   integer*4 :: ndummy, ntmp, ntmp2, nct
@@ -2493,28 +2493,28 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
   ! check success
   !
   if (nerr/=0) then
-    goto 13
+  goto 13
   end if
   !
   ! open file for unformatted sequential reading
   !
   open( file=trim(sfile),unit=lun,iostat=nerr, &
-     &  action='READ',status='OLD',err=14)
-     
+   &  action='READ',status='OLD',err=14)
+
   !
   ! determine number of lines in file
   !
   nlines = 0
   do
-    ndummy = nlines
-    read(unit=lun,iostat=nerr,fmt='(A)') sline
-    if (nerr==0) then
-      nlines = nlines + 1
-    end if
+  ndummy = nlines
+  read(unit=lun,iostat=nerr,fmt='(A)') sline
+  if (nerr==0) then
+  nlines = nlines + 1
+  end if
     if (sline(1:1)=='*') exit ! done reading, CEL finalizer found , EMS eof signature
     if (ndummy==nlines) exit
-  end do
-  rewind(unit=lun,iostat=nerr)
+    end do
+    rewind(unit=lun,iostat=nerr)
   natoms = nlines-3 ! substract tilte, cell definition, and EOF line
   CS_numat = natoms
   
@@ -2522,7 +2522,7 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
   ! allocate atom data array
   !
   if (CS_cellmem_allocated) then
-    call CS_DEALLOC_CELLMEM(nerr)
+  call CS_DEALLOC_CELLMEM(nerr)
   end if
   if (nerr==0) call CS_ALLOC_CELLMEM(CS_numat,nerr)
   if (nerr/=0) goto 19
@@ -2541,7 +2541,7 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
   ! parse supercell definitions
   !
   read(unit=sline,err=17,fmt=*,iostat=nerr) ndummy, CS_scsx, CS_scsy, CS_scsz, &
-     &                          CS_scalpha, CS_scbeta, CS_scgamma
+  &                          CS_scalpha, CS_scbeta, CS_scgamma
   if (nerr/=0) goto 17
   !
   ! loop through atom data and read
@@ -2565,17 +2565,17 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
     if (ntmp==1.and.ntmp<ndummy) then
       ! loop
       do
-        ntmp2 = index(sline(ntmp+1:ndummy)," ")
+      ntmp2 = index(sline(ntmp+1:ndummy)," ")
         if (ntmp2==0) goto 18 ! no following space character found -> error
         if (ntmp2>1) then ! other characters follow before the next space character -> exit
            ntmp = ntmp + ntmp2 ! step there
            exit ! done
-        end if
+           end if
         ! still here -> thus next space char follows directly
         ntmp = ntmp + ntmp2 ! step one position right, try again
         if (ntmp>=ndummy) goto 18 ! end of string reached -> error
-      end do
-    end if
+        end do
+        end if
     ! positionen error checks
     if (ntmp==0) goto 18
     if (ntmp==1) goto 18
@@ -2598,39 +2598,39 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
     CS_atpos(2,nct) = modulo(apy,1.0)
     CS_atpos(3,nct) = modulo(apz,1.0)
     if (apz<0.0 .or. apz>=1.0 .or. apy<0.0 .or. apy>=1.0 .or. apx<0.0 .or. apx>=1.0) then
-      write(unit=smsg,fmt='(A,I4,A,A2,1x,3F10.6)') "Atom(",nct,"): ",adjustl(atomid), apx, apy, apz
-      call CS_MESSAGE(trim(smsg))
-      write(unit=smsg,fmt='(A,3F10.6)') "         ->    ", CS_atpos(1,nct), CS_atpos(2,nct), CS_atpos(3,nct)
-      call CS_MESSAGE(trim(smsg))
+    write(unit=smsg,fmt='(A,I4,A,A2,1x,3F10.6)') "Atom(",nct,"): ",adjustl(atomid), apx, apy, apz
+    call CS_MESSAGE(trim(smsg))
+    write(unit=smsg,fmt='(A,3F10.6)') "         ->    ", CS_atpos(1,nct), CS_atpos(2,nct), CS_atpos(3,nct)
+    call CS_MESSAGE(trim(smsg))
     end if
     
     CS_atocc(nct) = aoc
     CS_atdwf(nct) = dwf
 !    write(unit=smsg,fmt='(A,I4,A,A2,1x,5F10.6)') "Atom data (",nct,"): ",adjustl(atomid), apx, apy, apz, aoc, dwf
 !    call CS_MESSAGE(trim(smsg))
-    
+
     !
     ! identify atom, save atomic number Z
     ! ... this is for checking that we can recognize the input
     !
     ntmp = 0
     if (CS_useextsca==1) then ! try to identify atom in external list 1
-      ntmp = FST_GETIDX(CS_attype(nct))
-      if (ntmp>0) then
-        CS_atnum(nct) = nint(FST_crg(2,ntmp))
-        CS_atcrg(nct) = FST_crg(3,ntmp)
-      end if
+    ntmp = FST_GETIDX(CS_attype(nct))
+    if (ntmp>0) then
+    CS_atnum(nct) = nint(FST_crg(2,ntmp))
+    CS_atcrg(nct) = FST_crg(3,ntmp)
+    end if
     end if
     if (ntmp<=0) then ! fall-back to default table
-      crg = 0.0D+0
-      call CIF_get_atnum(CS_attype(nct),ntmp,crg)
-      if (ntmp<0) goto 20
-      CS_atnum(nct) = ntmp
-      CS_atcrg(nct) = real(crg, kind=4)
+    crg = 0.0D+0
+    call CIF_get_atnum(CS_attype(nct),ntmp,crg)
+    if (ntmp<0) goto 20
+    CS_atnum(nct) = ntmp
+    CS_atcrg(nct) = real(crg, kind=4)
     end if
     
-  end do
-  
+    end do
+
   !
   ! close
   !
@@ -2643,42 +2643,42 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 continue
+  13 continue
   nerr = -1
   call CS_ERROR("Failed to get free logical unit number.")
   return
-14 continue
+  14 continue
   nerr = -2
   call CS_ERROR("Failed to open cell file.")
   return
-15 continue
+  15 continue
   nerr = -3
   call CS_ERROR("Failed to read data from cell file.")
   close(unit=lun,err=16,iostat=nerr)
   return
-16 continue
+  16 continue
   nerr = -4
   call CS_ERROR("Failed to close cell file.")
   return
-17 continue
+  17 continue
   nerr=-5
   call CS_ERROR("Failed to parse cell definitions.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: 0 <size-x> <size-y> <size-z> <alpha> <beta> <gamma>")
   close(unit=lun,err=16,iostat=nerr)
   return
-18 continue
+  18 continue
   nerr=-5
   call CS_ERROR("Failed to parse atom definitions.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: <Symbol> <pos-x> <pos-y> <pos-z> <occup.> <DW-param.> <not used> <not used> <not used>")
   close(unit=lun,err=16,iostat=nerr)
   return
-19 continue
+  19 continue
   nerr=-6
   call CS_ERROR("Failed to allocate cell data memory.")
   return
-20 continue
+  20 continue
   nerr=-1
   call CS_ERROR("Failed to identify atom.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
@@ -2686,7 +2686,7 @@ subroutine CS_LOAD_EMSCELL(sfile, nerr)
   close(unit=lun,err=16,iostat=nerr)
   return
   
-end subroutine CS_LOAD_EMSCELL
+  end subroutine CS_LOAD_EMSCELL
 !**********************************************************************!
 
 
@@ -2706,14 +2706,14 @@ end subroutine CS_LOAD_EMSCELL
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_LOAD_EMSCELLINFO(sx, sy, sz, natom, sfile, nerr)
-  
-  implicit none
-  
-  real*4, intent(inout) :: sx, sy, sz
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: natom, nerr
-  
-  integer*4 :: lun
+
+implicit none
+
+real*4, intent(inout) :: sx, sy, sz
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: natom, nerr
+
+integer*4 :: lun
   integer*4 :: nlines ! number of lines in file
   integer*4 :: natoms ! number of atom definitions
   integer*4 :: ndummy
@@ -2732,28 +2732,28 @@ subroutine CS_LOAD_EMSCELLINFO(sx, sy, sz, natom, sfile, nerr)
   ! check success
   !
   if (nerr/=0) then
-    goto 13
+  goto 13
   end if
   !
   ! open file for unformatted sequential reading
   !
   open( file=trim(sfile),unit=lun,iostat=nerr, &
-     &  action='READ',status='OLD',err=14)
-     
+   &  action='READ',status='OLD',err=14)
+
   !
   ! determine number of lines in file
   !
   nlines = 0
   do
-    ndummy = nlines
-    read(unit=lun,iostat=nerr,fmt='(A)') sline
-    if (nerr==0) then
-      nlines = nlines + 1
-    end if
+  ndummy = nlines
+  read(unit=lun,iostat=nerr,fmt='(A)') sline
+  if (nerr==0) then
+  nlines = nlines + 1
+  end if
     if (sline(1:1)=='*') exit ! done reading, CEL finalizer found , EMS eof signature
     if (ndummy==nlines) exit
-  end do
-  rewind(unit=lun,iostat=nerr)
+    end do
+    rewind(unit=lun,iostat=nerr)
   natoms = nlines-3 ! substract tilte, cell definition, and EOF line
   
   
@@ -2787,42 +2787,42 @@ subroutine CS_LOAD_EMSCELLINFO(sx, sy, sz, natom, sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed to get free logical unit number.")
   return
-14 nerr = -2
+  14 nerr = -2
   call CS_ERROR("Failed to open cell file.")
   return
-15 nerr = -3
+  15 nerr = -3
   call CS_ERROR("Failed to read data from cell file.")
   close(unit=lun,err=16,iostat=nerr)
   return
-16 nerr = -4
+  16 nerr = -4
   call CS_ERROR("Failed to close cell file.")
   return
-17 nerr=-5
+  17 nerr=-5
   call CS_ERROR("Failed to parse cell definitions.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: 0 <size-x> <size-y> <size-z> <alpha> <beta> <gamma>")
   close(unit=lun,err=16,iostat=nerr)
   return
-18 nerr=-5
+  18 nerr=-5
   call CS_ERROR("Failed to parse atom definitions.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: <Symbol> <pos-x> <pos-y> <pos-z> <occup.> <DW-param.> <not used> <not used> <not used>")
   close(unit=lun,err=16,iostat=nerr)
   return
-19 nerr=-6
+  19 nerr=-6
   call CS_ERROR("Failed to allocate cell data memory.")
   return
-20 nerr=-1
+  20 nerr=-1
   call CS_ERROR("Failed to identify atom.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: <Symbol> <pos-x> <pos-y> <pos-z> <occup.> <DW-param.> <not used> <not used> <not used>")
   close(unit=lun,err=16,iostat=nerr)
   return
   
-end subroutine CS_LOAD_EMSCELLINFO
+  end subroutine CS_LOAD_EMSCELLINFO
 !**********************************************************************!
 
 
@@ -2843,14 +2843,14 @@ end subroutine CS_LOAD_EMSCELLINFO
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_LOAD_EMSCELLINFO2(dims, angs, natom, sfile, nerr)
-  
-  implicit none
-  
-  real*4, intent(inout) :: dims(3), angs(3)
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: natom, nerr
-  
-  integer*4 :: lun
+
+implicit none
+
+real*4, intent(inout) :: dims(3), angs(3)
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: natom, nerr
+
+integer*4 :: lun
   integer*4 :: nlines ! number of lines in file
   integer*4 :: natoms ! number of atom definitions
   integer*4 :: ndummy
@@ -2871,28 +2871,28 @@ subroutine CS_LOAD_EMSCELLINFO2(dims, angs, natom, sfile, nerr)
   ! check success
   !
   if (nerr/=0) then
-    goto 13
+  goto 13
   end if
   !
   ! open file for unformatted sequential reading
   !
   open( file=trim(sfile),unit=lun,iostat=nerr, &
-     &  action='READ',status='OLD',err=14)
-     
+   &  action='READ',status='OLD',err=14)
+
   !
   ! determine number of lines in file
   !
   nlines = 0
   do
-    ndummy = nlines
-    read(unit=lun,iostat=nerr,fmt='(A)') sline
-    if (nerr==0) then
-      nlines = nlines + 1
-    end if
+  ndummy = nlines
+  read(unit=lun,iostat=nerr,fmt='(A)') sline
+  if (nerr==0) then
+  nlines = nlines + 1
+  end if
     if (sline(1:1)=='*') exit ! done reading, CEL finalizer found , EMS eof signature
     if (ndummy==nlines) exit
-  end do
-  rewind(unit=lun,iostat=nerr)
+    end do
+    rewind(unit=lun,iostat=nerr)
   natoms = nlines-3 ! substract tilte, cell definition, and EOF line
   !
   ! read header line (unimportant blabla)
@@ -2920,8 +2920,8 @@ subroutine CS_LOAD_EMSCELLINFO2(dims, angs, natom, sfile, nerr)
     if (nerr/=0) then
       ! all reading attempts failed
       goto 17
-    end if
-  end if
+      end if
+      end if
   !
   
   natom = natoms ! set number of atoms return value
@@ -2931,35 +2931,35 @@ subroutine CS_LOAD_EMSCELLINFO2(dims, angs, natom, sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed to get free logical unit number.")
   return
-14 nerr = -2
+  14 nerr = -2
   call CS_ERROR("Failed to open cell file.")
   return
-15 nerr = -3
+  15 nerr = -3
   call CS_ERROR("Failed to read data from cell file.")
   close(unit=lun,err=16,iostat=nerr)
   return
-16 nerr = -4
+  16 nerr = -4
   call CS_ERROR("Failed to close cell file.")
   return
-17 nerr=-5
+  17 nerr=-5
   call CS_ERROR("Failed to parse cell definitions.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: 0 <size-x> <size-y> <size-z> <alpha> <beta> <gamma>")
   close(unit=lun,err=16,iostat=nerr)
   return
-18 nerr=-5
+  18 nerr=-5
   call CS_ERROR("Failed to parse atom definitions.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: <Symbol> <pos-x> <pos-y> <pos-z> <occup.> <DW-param.> <not used> <not used> <not used>")
   close(unit=lun,err=16,iostat=nerr)
   return
-19 nerr=-6
+  19 nerr=-6
   call CS_ERROR("Failed to allocate cell data memory.")
   return
-20 nerr=-1
+  20 nerr=-1
   call CS_ERROR("Failed to identify atom.")
   call CS_MESSAGE(" last line reads: "//trim(sline))
   call CS_MESSAGE(" expected format: <Symbol> <pos-x> <pos-y> <pos-z> <occup.> <DW-param.> <not used> <not used> <not used>")
@@ -2967,7 +2967,7 @@ subroutine CS_LOAD_EMSCELLINFO2(dims, angs, natom, sfile, nerr)
   return
   
 501 FORMAT(4x, 6f8.4) ! taken from EMS (P. Stadelmann, file sc5ems.f, line 196)
-  
+
 end subroutine CS_LOAD_EMSCELLINFO2
 !**********************************************************************!
 
@@ -2986,13 +2986,13 @@ end subroutine CS_LOAD_EMSCELLINFO2
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_SAVE_EMSCELL(sfile, nerr)
-  
-  implicit none
-  
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: nerr
-  
-  integer*4 :: lun, i
+
+implicit none
+
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: nerr
+
+integer*4 :: lun, i
   integer*4 :: nlines ! number of lines in file
   
   external :: createfilefolder
@@ -3009,18 +3009,18 @@ subroutine CS_SAVE_EMSCELL(sfile, nerr)
   ! check success
   !
   if (nerr/=0) then
-    goto 13
+  goto 13
   end if
   !
   ! open file for unformatted sequential reading
   !
   call createfilefolder(trim(sfile),nerr)
   if (nerr/=0) then
-    goto 18
+  goto 18
   end if
   open( file=trim(sfile),unit=lun,iostat=nerr, &
-     &  action='WRITE',status='REPLACE',err=14)
-     
+   &  action='WRITE',status='REPLACE',err=14)
+
   !
   ! determine number of lines in file
   !
@@ -3036,7 +3036,7 @@ subroutine CS_SAVE_EMSCELL(sfile, nerr)
   !
   !1001 FORMAT(1x,i2,a1,6f8.4)
   write(unit=lun,err=15,fmt=1001) 0," ",CS_scsx, CS_scsy, CS_scsz, &
-     &                          CS_scalpha, CS_scbeta, CS_scgamma
+  &                          CS_scalpha, CS_scbeta, CS_scgamma
   !
   ! loop through atom data and write
   !
@@ -3046,10 +3046,10 @@ subroutine CS_SAVE_EMSCELL(sfile, nerr)
     !
     !1002 FORMAT(1x,a2,a1,8f8.4)
     write(unit=lun,fmt=1002,err=15) trim(CS_attype(i)), " ", &
-     &                             CS_atpos(1,i), CS_atpos(2,i), CS_atpos(3,i), &
-     &                             CS_atocc(i), CS_atdwf(i), 0.0, 0.0, 0.0
+    &                             CS_atpos(1,i), CS_atpos(2,i), CS_atpos(3,i), &
+    &                             CS_atocc(i), CS_atdwf(i), 0.0, 0.0, 0.0
     
-  end do
+    end do
   !
   ! write closing line
   !
@@ -3067,36 +3067,36 @@ subroutine CS_SAVE_EMSCELL(sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed to acquire logical file unit.")
   return
   
-14 nerr = -2
+  14 nerr = -2
   call CS_ERROR("Failed to open file.")
   return
 
-15 nerr = -3
+  15 nerr = -3
   call CS_ERROR("Failed writing data to file.")
   close(unit=lun,err=17,iostat=nerr)
   return
 
-16 nerr = -4
+  16 nerr = -4
   call CS_ERROR("Sorry, no atom data.")
   return
   
-17 nerr = -5
+  17 nerr = -5
   call CS_ERROR("Failed to close cell file.")
   return
   
-18 nerr = -6
+  18 nerr = -6
   call CS_ERROR("Failed to create output path.")
   return
 
   
-1001 FORMAT(1x,i2,a1,6f9.5)
-1002 FORMAT(1x,a4,a1,8f9.6)
+  1001 FORMAT(1x,i2,a1,6f9.5)
+  1002 FORMAT(1x,a4,a1,8f9.6)
   
-end subroutine CS_SAVE_EMSCELL
+  end subroutine CS_SAVE_EMSCELL
 !**********************************************************************!
 
 
@@ -3119,15 +3119,15 @@ end subroutine CS_SAVE_EMSCELL
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_LOAD_CIFCELLINFO(sx, sy, sz, natom, sfile, nerr)
-  
-  use cifio
-  
-  implicit none
-  
-  real*4, intent(inout) :: sx, sy, sz
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: natom, nerr
-  
+
+use cifio
+
+implicit none
+
+real*4, intent(inout) :: sx, sy, sz
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: natom, nerr
+
   !
   ! preset error flag
   !
@@ -3153,11 +3153,11 @@ subroutine CS_LOAD_CIFCELLINFO(sx, sy, sz, natom, sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed reading CIF information from file ["//trim(sfile)//"].")
   return
   
-end subroutine CS_LOAD_CIFCELLINFO
+  end subroutine CS_LOAD_CIFCELLINFO
 !**********************************************************************!
 
 
@@ -3179,15 +3179,15 @@ end subroutine CS_LOAD_CIFCELLINFO
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_LOAD_CIFCELLINFO2(dims, angs, natom, sfile, nerr)
-  
-  use cifio
-  
-  implicit none
-  
-  real*4, intent(inout) :: dims(3), angs(3)
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: natom, nerr
-  
+
+use cifio
+
+implicit none
+
+real*4, intent(inout) :: dims(3), angs(3)
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: natom, nerr
+
   !
   ! preset error flag
   !
@@ -3217,11 +3217,11 @@ subroutine CS_LOAD_CIFCELLINFO2(dims, angs, natom, sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed reading CIF information from file ["//trim(sfile)//"].")
   return
   
-end subroutine CS_LOAD_CIFCELLINFO2
+  end subroutine CS_LOAD_CIFCELLINFO2
 !**********************************************************************!
 
 
@@ -3242,15 +3242,15 @@ end subroutine CS_LOAD_CIFCELLINFO2
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_LOAD_CIFCELL(sfile, nerr)
-  
-  use cifio
-  
-  implicit none
-  
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: nerr
-  integer*4 :: i, ierr
-  real(SELECTED_REAL_KIND(15,307)) :: rtmp
+
+use cifio
+
+implicit none
+
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: nerr
+integer*4 :: i, ierr
+real(SELECTED_REAL_KIND(15,307)) :: rtmp
   !
   ! preset error flag
   !
@@ -3280,7 +3280,7 @@ subroutine CS_LOAD_CIFCELL(sfile, nerr)
   ! allocate atom data array
   ierr = 0
   if (CS_cellmem_allocated) then
-    call CS_DEALLOC_CELLMEM(ierr)
+  call CS_DEALLOC_CELLMEM(ierr)
   end if
   if (ierr==0) call CS_ALLOC_CELLMEM(CS_numat,ierr)
   if (ierr/=0) goto 19
@@ -3288,18 +3288,18 @@ subroutine CS_LOAD_CIFCELL(sfile, nerr)
   if (CS_numat>0) then ! are there atomic sites ?
     ! transfer all data (apply unit conversions on that way)
     do i=1, CS_numat
-      call CIF_get_atom_site_type_symbol(i,CS_attype(i))
-      CS_atpos(1,i) = real(CIF_atom_site(1,i),kind=4)
-      CS_atpos(2,i) = real(CIF_atom_site(2,i),kind=4)
-      CS_atpos(3,i) = real(CIF_atom_site(3,i),kind=4)
-      CS_atnum(i)   = nint(CIF_atom_site(4,i),kind=4)
-      CS_atcrg(i)   = real(CIF_atom_site(5,i),kind=4)
-      CS_atocc(i)   = real(CIF_atom_site(6,i),kind=4)
+    call CIF_get_atom_site_type_symbol(i,CS_attype(i))
+    CS_atpos(1,i) = real(CIF_atom_site(1,i),kind=4)
+    CS_atpos(2,i) = real(CIF_atom_site(2,i),kind=4)
+    CS_atpos(3,i) = real(CIF_atom_site(3,i),kind=4)
+    CS_atnum(i)   = nint(CIF_atom_site(4,i),kind=4)
+    CS_atcrg(i)   = real(CIF_atom_site(5,i),kind=4)
+    CS_atocc(i)   = real(CIF_atom_site(6,i),kind=4)
       call CIF_get_atom_site_biso(i,rtmp) ! get the biso value (A^2)
       CS_atdwf(i)   = real(rtmp,kind=4)*0.01 ! scale to (nm^2)
-    end do
+      end do
     !
-  end if
+    end if
   !
   ! free memory in the cifio module
   call CIF_CLEAR()
@@ -3313,14 +3313,14 @@ subroutine CS_LOAD_CIFCELL(sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed read CIF structure data from ["//trim(sfile)//"].")
   return
-19 nerr = -6
+  19 nerr = -6
   call CS_ERROR("Failed to allocate cell data memory.")
   return
   
-end subroutine CS_LOAD_CIFCELL
+  end subroutine CS_LOAD_CIFCELL
 !**********************************************************************!
 
 
@@ -3340,21 +3340,21 @@ end subroutine CS_LOAD_CIFCELL
 !   integer*4 :: nerr         = error flag
 !
 subroutine CS_SAVE_CIFCELL(sfile, nerr)
-  
-  use cifio
-  
-  implicit none
-  
-  character(len=*), intent(in) :: sfile
-  integer*4, intent(inout) :: nerr
-  integer*4 :: i, nalloc
+
+use cifio
+
+implicit none
+
+character(len=*), intent(in) :: sfile
+integer*4, intent(inout) :: nerr
+integer*4 :: i, nalloc
   !
   ! preset error flag
   !
   nerr = 0
   if (.not.CS_cellmem_allocated) then
     return ! no data, just return
-  end if
+    end if
   !
   ! use cifio module for writing
   !
@@ -3382,17 +3382,17 @@ subroutine CS_SAVE_CIFCELL(sfile, nerr)
     CIF_atom_site_number = CS_numat
     ! transfer all data (apply unit conversions on that way)
     do i=1, CS_numat
-      CIF_atom_site(1,i) = dble(CS_atpos(1,i))
-      CIF_atom_site(2,i) = dble(CS_atpos(2,i))
-      CIF_atom_site(3,i) = dble(CS_atpos(3,i))
-      CIF_atom_site(4,i) = dble(CS_atnum(i))
-      CIF_atom_site(5,i) = dble(CS_atcrg(i))
-      CIF_atom_site(6,i) = dble(CS_atocc(i))
+    CIF_atom_site(1,i) = dble(CS_atpos(1,i))
+    CIF_atom_site(2,i) = dble(CS_atpos(2,i))
+    CIF_atom_site(3,i) = dble(CS_atpos(3,i))
+    CIF_atom_site(4,i) = dble(CS_atnum(i))
+    CIF_atom_site(5,i) = dble(CS_atcrg(i))
+    CIF_atom_site(6,i) = dble(CS_atocc(i))
       CIF_atom_site(7,i) = dble(2.0) ! adf type = biso
       CIF_atom_site(8,i) = dble(CS_atdwf(i)*100.0) ! biso value (A^2)
-    end do
+      end do
     !
-  end if
+    end if
   !
   ! - write
   !
@@ -3409,14 +3409,14 @@ subroutine CS_SAVE_CIFCELL(sfile, nerr)
   !
   ! handle errors here, call specific error messages
   !
-13 nerr = -1
+  13 nerr = -1
   call CS_ERROR("Failed write CIF structure to ["//trim(sfile)//"].")
   return
-19 nerr = -6
+  19 nerr = -6
   call CS_ERROR("Failed to allocate cell data memory.")
   return
   
-end subroutine CS_SAVE_CIFCELL
+  end subroutine CS_SAVE_CIFCELL
 !**********************************************************************!
 
 
@@ -3457,13 +3457,13 @@ end subroutine CS_SAVE_CIFCELL
 !
 subroutine CS_GETSLICE_PRO(nslc, nx, ny, nrx, nry, wl, tx, ty, pro, nerr)
 
-  implicit none
-  
-  integer*4, intent(in) :: nslc, nx, ny, nrx, nry
-  real*4, intent(in) :: wl, tx, ty
-  integer*4, intent(inout) :: nerr
-  complex*8, intent(inout) :: pro(ny*nry,nx*nrx)
-  
+implicit none
+
+integer*4, intent(in) :: nslc, nx, ny, nrx, nry
+real*4, intent(in) :: wl, tx, ty
+integer*4, intent(inout) :: nerr
+complex*8, intent(inout) :: pro(ny*nry,nx*nrx)
+
   integer*4 :: i, j, i1, j1 ! iterators
   integer*4 :: dimx, dimy ! full size
   integer*4 :: nyqx, nyqy ! nyquist numbers
@@ -3520,40 +3520,40 @@ subroutine CS_GETSLICE_PRO(nslc, nx, ny, nrx, nry, wl, tx, ty, pro, nerr)
   ! fourier space is transposed and scrambled !!! as with FFTs
   !
   do j=1, dimx ! x is with rows
-    j1 = mod((j+nyqx-1),dimx)-nyqx
-    wx = itowx*real(j1)
+  j1 = mod((j+nyqx-1),dimx)-nyqx
+  wx = itowx*real(j1)
     wcx2 = wx*wx ! store angle wrt central beam
     wx = wx + tx ! apply tilt
     wx2 = wx*wx
     do i=1, dimy ! y is with columns
-      i1 = mod((i+nyqy-1),dimy)-nyqy
-      wy = itowy*real(i1)
+    i1 = mod((i+nyqy-1),dimy)-nyqy
+    wy = itowy*real(i1)
       wc2 = wcx2 + wy*wy    ! store angle wrt central beam for aperture check
       wy = wy + ty          ! apply tilt
       w2 = wx2 + wy*wy
       if (wc2>pwthr) then ! hard aperture
-        pro(i,j) = cval0
+      pro(i,j) = cval0
       else
         chi = pco*w2-chit ! correct for central beam phase
         cval = cmplx(cos(chi),sin(chi)) ! (###)
         pro(i,j) = cval
-      end if
-    end do
-  end do
-  
-  return
-  
+        end if
+        end do
+        end do
+
+        return
+
   !
   ! error handling
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Propagator memory not allocated.")
   return
-14 nerr=-1
+  14 nerr=-1
   call CS_ERROR("Invalid parameters for projector calculations.")
   return
   
-end subroutine CS_GETSLICE_PRO
+  end subroutine CS_GETSLICE_PRO
 !**********************************************************************!
 
 
@@ -3592,15 +3592,15 @@ end subroutine CS_GETSLICE_PRO
 !
 subroutine CS_GETSLICE_PRO2(nslc, nx, ny, nrx, nry, wl, tx, ty, pro, nerr)
 
-  implicit none
-  
-  real*8, parameter :: dpi  = 3.141592653589D+000
-  
-  integer*4, intent(in) :: nslc, nx, ny, nrx, nry
-  real*4, intent(in) :: wl, tx, ty
-  integer*4, intent(inout) :: nerr
-  complex*8, intent(inout) :: pro(ny*nry,nx*nrx)
-  
+implicit none
+
+real*8, parameter :: dpi  = 3.141592653589D+000
+
+integer*4, intent(in) :: nslc, nx, ny, nrx, nry
+real*4, intent(in) :: wl, tx, ty
+integer*4, intent(inout) :: nerr
+complex*8, intent(inout) :: pro(ny*nry,nx*nrx)
+
   integer*4 :: i, j, i1, j1 ! iterators
   integer*4 :: dimx, dimy ! full size
   integer*4 :: nyqx, nyqy ! nyquist numbers
@@ -3668,46 +3668,46 @@ subroutine CS_GETSLICE_PRO2(nslc, nx, ny, nrx, nry, wl, tx, ty, pro, nerr)
   ! fourier space is transposed and scrambled
   !
   do j=1, dimx ! L+ all lines ! x frequencies
-    j1 = mod((j+nyqx-1),dimx)-nyqx
-    gx = itogx*dble(j1)
-    gx2 = gx * gx
+  j1 = mod((j+nyqx-1),dimx)-nyqx
+  gx = itogx*dble(j1)
+  gx2 = gx * gx
     do i=1, dimy ! L+ all columns ! y frequencies
-      i1 = mod((i+nyqy-1),dimy)-nyqy
-      gy = itogy*real(i1)
+    i1 = mod((i+nyqy-1),dimy)-nyqy
+    gy = itogy*real(i1)
       g2 = gx2 + gy*gy      ! g^2
       if (g2>gthresh) then ! hard aperture in wave frame (2/3)
         pro(i,j) = cval0 ! no transfer beyond aperture
-      else
+        else
         dt = 2.D+0*dasin( 0.5D+0 * dwl * dsqrt(g2) ) ! |theta|
         dd = 0.D+0
         if (dt>0.D+0) dd = datan2(gy,gx) ! theta_phi
         ! calculate phase shift to non-diffracted beam
         ! actually (-chi) since dz was negative in pfac
         chi = pfac*(  &
-              &   1.D+0/(cot*dcos(dt) + sot*dcos(od-dd)*dsin(dt) ) &
-              & - 1.D+0/cot )
+          &   1.D+0/(cot*dcos(dt) + sot*dcos(od-dd)*dsin(dt) ) &
+          & - 1.D+0/cot )
         ! calculate complex phase factor to wavefunction, exp(I*(-chi))
         cval = cmplx( dcos(chi), dsin(chi), 4) ! (###)
         ! store the phase factor
         pro(i,j) = cval
         !
-      end if
-    end do
-  end do
-  
-  return
-  
+        end if
+        end do
+        end do
+
+        return
+
   !
   ! error handling
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Propagator memory not allocated.")
   return
-14 nerr=-1
+  14 nerr=-1
   call CS_ERROR("Invalid parameters for projector calculations.")
   return
   
-end subroutine CS_GETSLICE_PRO2
+  end subroutine CS_GETSLICE_PRO2
 !**********************************************************************!
 
 
@@ -3735,18 +3735,18 @@ end subroutine CS_GETSLICE_PRO2
 !   real*4 :: dy                    = interpolation error estimate
 !
 subroutine CS_POLINT(xa,ya,n,x,y,dy)
-  
-  implicit none
-  
-  real*4, intent(in) :: xa(n), ya(n), x
-  integer*4, intent(in) :: n
-  real*4, intent(out) :: y, dy
-  
-  integer*4 :: i, m, ns
-  integer*4 :: nalloc
-  real*4 :: den, dif, dift, ho, hp, w
-  real*4, allocatable :: c(:), d(:)
-  
+
+implicit none
+
+real*4, intent(in) :: xa(n), ya(n), x
+integer*4, intent(in) :: n
+real*4, intent(out) :: y, dy
+
+integer*4 :: i, m, ns
+integer*4 :: nalloc
+real*4 :: den, dif, dift, ho, hp, w
+real*4, allocatable :: c(:), d(:)
+
   ! init
   ns = 1
   y = ya(1)
@@ -3760,11 +3760,11 @@ subroutine CS_POLINT(xa,ya,n,x,y,dy)
   
   ! find the index ns of the closest table value
   do i=1,n
-    dift = abs(x-xa(i))
-	if (dift<dif) then
-	  ns = i
-	  dif = dift
-	end if
+  dift = abs(x-xa(i))
+  if (dift<dif) then
+  ns = i
+  dif = dift
+  end if
 	! .. and init tableaus of c and d with y values
 	c(i) = ya(i)
 	d(i) = ya(i)
@@ -3776,19 +3776,19 @@ subroutine CS_POLINT(xa,ya,n,x,y,dy)
   
   ! For each column of the tableau, update c and d
   do m=1, n-1
-    do i=1, n-m
-	  ho = xa(i)-x
-	  hp = xa(i+m)-x
-	  w = c(i+1)-d(i)
-	  den = ho - hp
+  do i=1, n-m
+  ho = xa(i)-x
+  hp = xa(i+m)-x
+  w = c(i+1)-d(i)
+  den = ho - hp
 	  ! if (den==0.) return ! Error when two xa's are equal.
 	                        ! We will make sure that this doesn't
 							! happen in the calling routines.
-	  den = w/den
+             den = w/den
 	  ! update c's and d's here
 	  d(i) = hp*den
 	  c(i) = ho*den
-	end do
+   end do
 	!
 	! After each column in the tableau is completed, we descide
 	! which correction, c or d, we want to add to our accumulating
@@ -3801,18 +3801,18 @@ subroutine CS_POLINT(xa,ya,n,x,y,dy)
     ! error indication.
 	!
 	if (2*ns < n-m) then
-	  dy = c(ns+1)
-	else
-	  dy = d(ns)
-	  ns = ns-1
-	end if
-	y = y + dy
-  end do
-  
-  deallocate(c, d, stat=nalloc)
-  return
-  
-end subroutine CS_POLINT
+ dy = c(ns+1)
+ else
+ dy = d(ns)
+ ns = ns-1
+ end if
+ y = y + dy
+ end do
+
+ deallocate(c, d, stat=nalloc)
+ return
+
+ end subroutine CS_POLINT
 !**********************************************************************!
 
 
@@ -3840,13 +3840,13 @@ end subroutine CS_POLINT
 !
 subroutine CS_GETSCATTAMP(csf,g,nat)
 
-  implicit none
-  
-  integer*4, parameter :: nmax = 11
-  integer*4, intent(in) :: nat
-  real*4, intent(in) :: g
-  complex*8, intent(inout) :: csf
-  
+implicit none
+
+integer*4, parameter :: nmax = 11
+integer*4, intent(in) :: nat
+real*4, intent(in) :: g
+complex*8, intent(inout) :: csf
+
   integer*4 :: ix                   ! closest table point (shifted by -1)
   integer*4 :: i0,i1,i2             ! target table range (shifted by -1) or neighbouring pixels
   integer*4 :: nt, nth              ! section size and half size
@@ -3866,16 +3866,16 @@ subroutine CS_GETSCATTAMP(csf,g,nat)
   select case (nipo)                ! switch for interpolation order >0
     !
     case (1)                        !                                            <--- 1st order interpolation
-      pg = g/CS_scaitog + 1.0
-      i0 = int(pg)
-      i1 = i0 + 1
-      pf = pg - real(i0)
-      csf = CS_scampdat(i0,nat)*(1.0-pf) + CS_scampdat(i1,nat)*pf
+    pg = g/CS_scaitog + 1.0
+    i0 = int(pg)
+    i1 = i0 + 1
+    pf = pg - real(i0)
+    csf = CS_scampdat(i0,nat)*(1.0-pf) + CS_scampdat(i1,nat)*pf
     !
     case (2:)                       !                                            <--- 2nd order interpolation
-      scx = 0.0
-      sca1 = 0.0
-      sca2 = 0.0
+    scx = 0.0
+    sca1 = 0.0
+    sca2 = 0.0
       nt = nipo + 1                 ! we need one point more than the polynomial order
       nth = (nt-mod(nt,2))/2        ! half size of the section
       i1 = ix - nth                 ! section start index (may be negative)
@@ -3897,7 +3897,7 @@ subroutine CS_GETSCATTAMP(csf,g,nat)
   
   return
   
-end subroutine CS_GETSCATTAMP
+  end subroutine CS_GETSCATTAMP
 !**********************************************************************!
 
 
@@ -3910,15 +3910,15 @@ end subroutine CS_GETSCATTAMP
 ! subroutine, calculates the volume of the current super cell in nm^3
 !
 subroutine CS_GETCELL_VOL(vol)
-  implicit none
-  real*4, intent(out) :: vol
-  real*4 :: ca, cb, cc, da
-  vol = 0.0
-  ca = cos(CS_scalpha*CS_rd2r)
-  cb = cos(CS_scbeta *CS_rd2r)
-  cc = cos(CS_scgamma*CS_rd2r)
-  da = sqrt(abs(1.0-ca*ca-cb*cb-cc*cc+2.0*ca*cb*cc))
-  vol = CS_scsx * CS_scsy * CS_scsz * da
+implicit none
+real*4, intent(out) :: vol
+real*4 :: ca, cb, cc, da
+vol = 0.0
+ca = cos(CS_scalpha*CS_rd2r)
+cb = cos(CS_scbeta *CS_rd2r)
+cc = cos(CS_scgamma*CS_rd2r)
+da = sqrt(abs(1.0-ca*ca-cb*cb-cc*cc+2.0*ca*cb*cc))
+vol = CS_scsx * CS_scsy * CS_scsz * da
 end subroutine CS_GETCELL_VOL
 !**********************************************************************!
 
@@ -3964,14 +3964,14 @@ end subroutine CS_GETCELL_VOL
 !
 subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
 
-  implicit none
-  
-  integer*4, intent(in) :: nx, ny, nz, nfl, ndw
-  real*4, intent(in) :: wl
-  integer*4, intent(inout) :: nerr
-  complex*8, intent(out) :: pot(nx,ny,nz)
-  
-  integer*4 :: nft1, nft2, ncalc, ncalcmax
+implicit none
+
+integer*4, intent(in) :: nx, ny, nz, nfl, ndw
+real*4, intent(in) :: wl
+integer*4, intent(inout) :: nerr
+complex*8, intent(out) :: pot(nx,ny,nz)
+
+integer*4 :: nft1, nft2, ncalc, ncalcmax
   integer*4 :: i, j, k, i1, j1, k1, ia, jptr ! iterators
   integer*4 :: npc, lndw
   integer*4 :: na ! atom count
@@ -4032,7 +4032,7 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   ! --- Checks on preferences
   !
   if (.not.(CS_cellmem_allocated.and. &
-     &      CS_scattamp_prepared)) goto 13
+   &      CS_scattamp_prepared)) goto 13
   
   !
   ! --- Check input parameters
@@ -4050,17 +4050,17 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   dwc = 0.0
   lndw = ndw
   if (infl==1) then
-    lndw = 0
-    fldamp = CS_rr8p2
+  lndw = 0
+  fldamp = CS_rr8p2
   end if
   
   !
   ! handle DWF flag (for ionic potential calculations only)
   !
   if (lndw==0) then
-    dwflg = .FALSE.
+  dwflg = .FALSE.
   else
-    dwflg = .TRUE.
+  dwflg = .TRUE.
   end if
   
   !
@@ -4105,20 +4105,20 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   ! clear fourier space working field and prepare helper arrays
   !
 !  cw = cval0
-  gx2 = 0.0
-  g2 = 0.0
-  do j=1, nx
-    j1 = mod((j+nyqx-1),nx)-nyqx
-    agx(j) = itogx*real(j1)
-  end do
-  do i=1, ny
-    i1 = mod((i+nyqy-1),ny)-nyqy
-    agy(i) = itogy*real(i1)
-  end do
-  do k=1, nz
-    k1 = mod((k+nyqz-1),nz)-nyqz
-    agz(k) = itogz*real(k1)
-  end do
+gx2 = 0.0
+g2 = 0.0
+do j=1, nx
+j1 = mod((j+nyqx-1),nx)-nyqx
+agx(j) = itogx*real(j1)
+end do
+do i=1, ny
+i1 = mod((i+nyqy-1),ny)-nyqy
+agy(i) = itogy*real(i1)
+end do
+do k=1, nz
+k1 = mod((k+nyqz-1),nz)-nyqz
+agz(k) = itogz*real(k1)
+end do
   gmax = min(itogx*real(nyqx),itogy*real(nyqy))      ! smallest max. diffraction in x and y
   gmaxz = itogz*real(nyqz)                           ! max. diffraction in z
   apthr = min(itogx*real(nyqx-1),itogy*real(nyqy-1)) ! hard aperture cut-off for saving calculation time
@@ -4132,7 +4132,7 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   ! return in case of empty cell
   !
   if (na<=0) then 
-    return
+  return
   end if
   
   !
@@ -4144,25 +4144,25 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   ild = 0
   uatl = 0
   do ia=1, na ! loop ia over all atoms in cell
-    ild(1,ia) = ia
-    ild(2,ia) = CS_scampptr(ia)
-    uatl(ild(2,ia)) = 1
+  ild(1,ia) = ia
+  ild(2,ia) = CS_scampptr(ia)
+  uatl(ild(2,ia)) = 1
     fld(1,ia) = CS_atpos(1,ia)*CS_scsx              ! get atom x-position
     fld(2,ia) = CS_atpos(2,ia)*CS_scsy              ! get atom y-position
     fld(3,ia) = CS_atpos(3,ia)*CS_scsz              ! get atom z-position
     dwc = sqrt(CS_atdwf(ia))                ! get debye-waller parameter from (nm**2) to (nm)
     if (infl==1) then                       ! dice frozen lattice displacements (x,y) and apply
       if (CS_atlnk(ia)==0) then ! independent site
-        dx = CS_rr8p2*dwc*GaussRand()
+      dx = CS_rr8p2*dwc*GaussRand()
         fld(1,ia) = fld(1,ia) + dx            ! add random x displacement
         dy = CS_rr8p2*dwc*GaussRand()
         fld(2,ia) = fld(2,ia) + dy            ! add random y displacement
         dz = CS_rr8p2*dwc*GaussRand()
         fld(3,ia) = fld(3,ia) + dz            ! add random z displacement
       else ! dependent site (copy position from linked site)
-        fld(1:3,ia) = fld(1:3,CS_atlnk(ia))
+      fld(1:3,ia) = fld(1:3,CS_atlnk(ia))
       end if
-    end if
+      end if
     fld(4,ia) = dwc                         ! Biso
     fld(5,ia) = CS_atocc(ia)                ! Occupancy
     fld(6,ia) = CS_atcrg(ia)                ! ionic charge
@@ -4170,9 +4170,9 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   if (CS_useextsca==0) then
     fld(6,:) = 0.0 ! reset ionic charge to zero for standard potentials, they are not for ions
     !call CS_MESSAGE("- setting atomic charges to zero. Using neutral atom scattering tables.")
-  end if
+    end if
 
-  
+
   !
   ! calculate super-cell potential in fourier space
   ! !!! fourierspace is scrambled and transposed
@@ -4185,11 +4185,11 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   ncalc = 0
   ncalcmax = nx*ny*nz
   if (CS_doconsolemsg>0) then
-    call CS_PROG_START(ncalcmax,1.0)
+  call CS_PROG_START(ncalcmax,1.0)
   end if
   do k=1, nz ! loop planes (wz-axis)
-    gz = agz(k)
-    gz2 = gz*gz
+  gz = agz(k)
+  gz2 = gz*gz
     !
     ! --> Precalculate an aperture that smoothly limits the diffraction angles z
     !     This funcion is sigmoid and drops from 1 to 0 between 0.8*Nyq and 1*Nyq
@@ -4197,14 +4197,14 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
     if (CS_do_bwl_pot) apz = 0.5 - 0.5*tanh( (sqrt(gz2)/gmaxz-0.9)*30.0 )
     !
     do j=1, nx ! loop rows (wx-axis, transposed)
-      gx = agx(j)
-      gx2 = gx*gx
+    gx = agx(j)
+    gx2 = gx*gx
       do i=1, ny ! loop columns (wy-axis, transposed)
-        gy = agy(i)
-        gxy2 = gx2 + gy*gy
-        g2 = gz2 + gxy2
-        g = sqrt(g2)
-        gxy = sqrt(gxy2)
+      gy = agy(i)
+      gxy2 = gx2 + gy*gy
+      g2 = gz2 + gxy2
+      g = sqrt(g2)
+      gxy = sqrt(gxy2)
         !
 !        ! hard cut-off to save calculation time (round in gx-gy, no limit in gz)
 !        ! we have to make this round cut-off in order to obtain the correct
@@ -4234,8 +4234,8 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
             CS_scamptmp(1,jptr) = real(csf)
             CS_scamptmp(2,jptr) = imag(csf)
             CS_scamptmp(3,jptr) = dwf
-          end do
-        end if
+            end do
+            end if
         !
         ! --> Calculate the structure factor for the current diffraction vector (gx,gy,gz)
         !
@@ -4250,42 +4250,42 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
           z = fld(3,ia)                           ! get atom z-position
           pocc = fld(5,ia)                        ! get atom occupancy
           crgio = dble( fld(6,ia) )               ! get ionic charge of the atom
-        
+
           csf = cmplx(CS_scamptmp(1,jptr),CS_scamptmp(2,jptr))*pocc ! rescale scattering amplitude to occupancy
           ! calculation of the phase factor for the current atom and g
           trpha = dble(CS_tpi*(x*gx+y*gy+z*gz))   ! get translation phase = 2*pi*g*r
           ctr = dcmplx(dcos(trpha),-dsin(trpha))  ! get translation phase factor = exp(-2*pi*I*g*r)
           cstrfe = cstrfe + dcmplx(csf)*ctr       ! sum up to the screened potential structure factor
           if (crgio/=0.0) then                    ! sum up to the ionic structure factor
-            dwf = 1.0
+          dwf = 1.0
             if (infl==0) dwf = CS_scamptmp(3,jptr) ! get the DWF for the ionic contribution (only for non-FL calculations)
             cstrfi = cstrfi + pocc * crgio * dble(dwf) * ctr
-          end if
-        
+            end if
+
         end do ! loop ia over all atoms in the cell
-      
+
         cstrfi = cstrfi * rs2io * pfacio          ! multiply the ionic structure factor by 1/s^2 (only for s>0)
                                                   ! ... and with the scattering prefactor which includes
                                                   !     a factor of 4 Pi, a relativistic correction and other
                                                   !     constants of the Coulmob interaction.
-      
+
         cpotft(i,j,k) = apz*apxy*(cstrfe + cstrfi)! store the combined structure factors of the screened
                                                   ! potential and the ionic charge potential
-      
+
         ncalc = ncalc + 1 ! increase calculated pixel count
         
         
-  
+
       end do ! loop columns (wy-axis, transposed)
     end do ! loop rows (wx-axis, transposed)
     if (CS_doconsolemsg>0) then
       ! update progress indicator
       call CS_PROG_UPDATE(ncalc)
-    end if
+      end if
   end do ! loop planes (wz-axis)
   
   if (CS_doconsolemsg>0) then
-    call CS_PROG_STOP(ncalcmax)
+  call CS_PROG_STOP(ncalcmax)
   end if
   deallocate(fld,ild,uatl,stat=nerr)
   if (nerr/=0) goto 16
@@ -4307,7 +4307,7 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
 !    
 !  end do
 !  !
-  
+
   !
   ! transform back to real space
   !
@@ -4320,60 +4320,60 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   ! - transform all gz-lines to z-lines
   ctmp1d = cmplx(0.0,0.0)
   do j=1, nx
-    do i=1, ny
-      do k=1, nz
-        ctmp1d(k) = cpotft(i,j,k)
-      end do
-      select case (nft1)
-      case (128)
-        call ODDCC128 (ctmp1d,nz,'BACK')
-      case (256)
-        call ODDCC256 (ctmp1d,nz,'BACK')
-      case (512)
-        call ODDCC512 (ctmp1d,nz,'BACK')
-      case (1024)
-        call ODDCC1024(ctmp1d,nz,'BACK')
-      case (2048)
-        call ODDCC2048(ctmp1d,nz,'BACK')
-      case (4096)
-        call ODDCC4096(ctmp1d,nz,'BACK')
-      case (8192)
-        call ODDCC8192(ctmp1d,nz,'BACK')
+  do i=1, ny
+  do k=1, nz
+  ctmp1d(k) = cpotft(i,j,k)
+  end do
+  select case (nft1)
+  case (128)
+  call ODDCC128 (ctmp1d,nz,'BACK')
+  case (256)
+  call ODDCC256 (ctmp1d,nz,'BACK')
+  case (512)
+  call ODDCC512 (ctmp1d,nz,'BACK')
+  case (1024)
+  call ODDCC1024(ctmp1d,nz,'BACK')
+  case (2048)
+  call ODDCC2048(ctmp1d,nz,'BACK')
+  case (4096)
+  call ODDCC4096(ctmp1d,nz,'BACK')
+  case (8192)
+  call ODDCC8192(ctmp1d,nz,'BACK')
       end select ! case (nft1)
       do k=1, nz
-        cpotft(i,j,k) = ctmp1d(k)
+      cpotft(i,j,k) = ctmp1d(k)
       end do
-    end do
-  end do
+      end do
+      end do
   !
   ! - transform all gx-gy-planes to x-y-planes
   ctmp2d = cmplx(0.0,0.0)
   do k=1, nz
-    do j=1, nx
-      ctmp2d(1:ny,j) = cpotft(1:ny,j,k)
-    end do
-    select case (nft2)
-    case (128)
-      call ODDCC128S (ctmp2d,nx,ny,'BACK')
-    case (256)
-      call ODDCC256S (ctmp2d,nx,ny,'BACK')
-    case (512)
-      call ODDCC512S (ctmp2d,nx,ny,'BACK')
-    case (1024)
-      call ODDCC1024S(ctmp2d,nx,ny,'BACK')
-    case (2048)
-      call ODDCC2048S(ctmp2d,nx,ny,'BACK')
-    case (4096)
-      call ODDCC4096S(ctmp2d,nx,ny,'BACK')
-    case (8192)
-      call ODDCC8192S(ctmp2d,nx,ny,'BACK')
+  do j=1, nx
+  ctmp2d(1:ny,j) = cpotft(1:ny,j,k)
+  end do
+  select case (nft2)
+  case (128)
+  call ODDCC128S (ctmp2d,nx,ny,'BACK')
+  case (256)
+  call ODDCC256S (ctmp2d,nx,ny,'BACK')
+  case (512)
+  call ODDCC512S (ctmp2d,nx,ny,'BACK')
+  case (1024)
+  call ODDCC1024S(ctmp2d,nx,ny,'BACK')
+  case (2048)
+  call ODDCC2048S(ctmp2d,nx,ny,'BACK')
+  case (4096)
+  call ODDCC4096S(ctmp2d,nx,ny,'BACK')
+  case (8192)
+  call ODDCC8192S(ctmp2d,nx,ny,'BACK')
     end select ! case (nft2)
     do j=1, ny
-      pot(1:nx,j,k) = ctmp2d(1:nx,j)*pscal
+    pot(1:nx,j,k) = ctmp2d(1:nx,j)*pscal
     end do
-  end do
-  
- 
+    end do
+
+
   ! - get rid of the helper arrays
   deallocate(ctmp2d,ctmp1d,stat=nerr)
   deallocate(cpotft,stat=nerr)
@@ -4382,20 +4382,20 @@ subroutine CS_GETCELL_POT(nx, ny, nz, nfl, ndw, wl, pot, nerr)
   !
   ! error handling
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Potential memory not allocated.")
   return
-14 nerr=-1
+  14 nerr=-1
   call CS_ERROR("Invalid parameters for 3D potential calculations.")
   return
-15 nerr=-1
+  15 nerr=-1
   call CS_ERROR("Memory allocation failed.")
   return
-16 nerr=-1
+  16 nerr=-1
   call CS_ERROR("Memory deallocation failed.")
   return
   
-end subroutine CS_GETCELL_POT
+  end subroutine CS_GETCELL_POT
 !**********************************************************************!
 
 
@@ -4449,13 +4449,13 @@ end subroutine CS_GETCELL_POT
 !
 subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
 
-  implicit none
-  
-  integer*4, intent(in) :: nslc, nx, ny, nrx, nry, nfl, ndw
-  real*4, intent(in) :: wl
-  integer*4, intent(inout) :: nerr
-  complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
-  
+implicit none
+
+integer*4, intent(in) :: nslc, nx, ny, nrx, nry, nfl, ndw
+real*4, intent(in) :: wl
+integer*4, intent(inout) :: nerr
+complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
+
   integer*4 :: i, j, i1, j1, ia, ja, jptr ! iterators
   integer*4 :: npc, lndw
   integer*4 :: na ! atom count
@@ -4504,8 +4504,8 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! check mem alloc
   !
   if (.not.(CS_slicemem_allocated.and. &
-     &      CS_cellmem_allocated.and. &
-     &      CS_scattamp_prepared)) goto 13
+   &      CS_cellmem_allocated.and. &
+   &      CS_scattamp_prepared)) goto 13
 
   
   !
@@ -4525,16 +4525,16 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   dwc = 0.0
   lndw = ndw
   if (infl==1) then
-    lndw = 0
-    fldamp = CS_rr8p2
+  lndw = 0
+  fldamp = CS_rr8p2
   end if
   !
   ! handle DWF flag (for ionic potential calculations only)
   !
   if (lndw==0) then
-    dwflg = .FALSE.
+  dwflg = .FALSE.
   else
-    dwflg = .TRUE.
+  dwflg = .TRUE.
   end if
   
   
@@ -4584,22 +4584,22 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! clear fourier space working field and prepare helper arrays
   !
 !  cw = cval0
-  gx2 = 0.0
-  g2 = 0.0
-  gmax = 0.0
+gx2 = 0.0
+g2 = 0.0
+gmax = 0.0
   ! agx and agy will hold reciprocal space coordinates
   allocate(agx(nx),agy(ny),stat=nerr)
   if (nerr/=0) goto 15
   do j=1, nx
-    j1 = mod((j+nyqx-1),dimx)-nyqx
-    agx(j) = itogx*real(j1)
+  j1 = mod((j+nyqx-1),dimx)-nyqx
+  agx(j) = itogx*real(j1)
     ! gx2 = max(gx2,agx(j))
-  end do
-  do i=1, ny
+    end do
+    do i=1, ny
     i1 = mod((i+nyqy-1),dimy)-nyqy
     agy(i) = itogy*real(i1)
     ! gmax = max(gmax,agy(i))
-  end do
+    end do
   gmax = min(itogx*real(nyqx),itogy*real(nyqy)) ! store gmax
   apthr = min(itogx*real(nyqx-1),itogy*real(nyqy-1)) ! set g threshold
   
@@ -4612,7 +4612,7 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! return in case of empty slice
   !
   if (na<=0) then 
-    goto 10
+  goto 10
   end if
   
   !
@@ -4620,7 +4620,7 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! pre-calculate atomic displacements for frozen lattice (infl==1)
   !
   allocate( fld(6,na),ild(2,na),jld(CS_numat),uatl(CS_scampnum+1), &
-          & scamptmp(3,CS_scampnum),stat=nerr)
+    & scamptmp(3,CS_scampnum),stat=nerr)
   if (nerr/=0) goto 15
   fld = 0.0 ! this keeps atom site data (pos + displacement, Biso, occ, ionic charge)
   ild = 0 ! this is a hash table to re-access atomic data and form factors
@@ -4646,9 +4646,9 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
 !        dz = CS_rr8p2*dwc*GaussRand()
 !        fld(3,ia) = dz !+ fld(3,ia)            ! random z displacments ! are ignored -> projected
       else ! dependent site (copy positions from linked site)
-        fld(1:3,ia) = fld(1:3,jld(CS_atlnk(ja)))
+      fld(1:3,ia) = fld(1:3,jld(CS_atlnk(ja)))
       end if
-    end if
+      end if
     fld(4,ia) = dwc                         ! sqrt(Biso)
     fld(5,ia) = CS_atocc(ja)                ! Occupancy
     fld(6,ia) = CS_atcrg(ja)                ! ionic charge
@@ -4656,8 +4656,8 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   if (CS_useextsca==0) then
     fld(6,:) = 0.0 ! reset ionic charge to zero for standard potentials, they are not for ions
     !call CS_MESSAGE("- setting atomic charges to zero. Using neutral atom scattering tables.")
-  end if
-  
+    end if
+
   !
   ! calculate super-cell potential in fourier space
   ! !!! fourierspace is scrambled and transposed
@@ -4698,8 +4698,8 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
           scamptmp(1,jptr) = real(csf)
           scamptmp(2,jptr) = imag(csf)
           scamptmp(3,jptr) = dwf
-        end do
-      end if
+          end do
+          end if
       !
       ! --> Calculate the structure factor for the current diffraction vector (gx,gy)
       !
@@ -4723,10 +4723,10 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
         ctr = dcmplx(dcos(trpha),-dsin(trpha))  ! get translation phase factor = exp(-2*pi*I*g*r)
         cstrfe = cstrfe + dcmplx(csf)*ctr       ! sum up to the screened potential structure factor
         if (crgio/=0.0) then                    ! sum up to the ionic structure factor
-          dwf = 1.0
+        dwf = 1.0
           if (infl==0) dwf = scamptmp(3,jptr)   ! get the DWF for the ionic contribution (only for non-fl calculatins)
           cstrfi = cstrfi + pocc*crgio*dble(dwf)*ctr ! add to the ionic structure factor occ*charge*DWF*(translation term)
-        end if
+          end if
         !
       end do ! loop ia over all atoms in slice
       !
@@ -4761,36 +4761,36 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !
   select case (nft)
   case  (128)
-    call  ODDCC128S(lcw,nx,ny,'BACK')
+  call  ODDCC128S(lcw,nx,ny,'BACK')
   case  (256)
-    call  ODDCC256S(lcw,nx,ny,'BACK')
+  call  ODDCC256S(lcw,nx,ny,'BACK')
   case  (512)
-    call  ODDCC512S(lcw,nx,ny,'BACK')
+  call  ODDCC512S(lcw,nx,ny,'BACK')
   case (1024)
-    call ODDCC1024S(lcw,nx,ny,'BACK')
+  call ODDCC1024S(lcw,nx,ny,'BACK')
   case (2048)
-    call ODDCC2048S(lcw,nx,ny,'BACK')
+  call ODDCC2048S(lcw,nx,ny,'BACK')
   case (4096)
-    call ODDCC4096S(lcw,nx,ny,'BACK')
+  call ODDCC4096S(lcw,nx,ny,'BACK')
   case (8192)
-    call ODDCC8192S(lcw,nx,ny,'BACK')
+  call ODDCC8192S(lcw,nx,ny,'BACK')
   end select
   !
   ! transfer to output array, use periodic repeat by (nrx, nry)
   !
   !CS_lastslice_potmax_im = 0.0
   do j=1, dimy
-    j1 = modulo(j-1,ny)+1
-    do i=1, dimx
-      i1 = modulo(i-1,nx)+1
-      pot(i,j) = lcw(i1,j1)*pscal
+  j1 = modulo(j-1,ny)+1
+  do i=1, dimx
+  i1 = modulo(i-1,nx)+1
+  pot(i,j) = lcw(i1,j1)*pscal
       !CS_lastslice_potmax_im = max(CS_lastslice_potmax_im,imag(pot(i,j)))
-    end do
-  end do
+      end do
+      end do
   !
   ! finish off, deallocate all arrays
   !  
-10 continue
+  10 continue
   if (allocated(agx)) deallocate(agx,stat=nerr)
   if (allocated(agy)) deallocate(agy,stat=nerr)
   if (allocated(fld)) deallocate(fld,stat=nerr)
@@ -4802,22 +4802,22 @@ subroutine CS_GETSLICE_POT(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !
   ! error handling
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Potential memory not allocated.")
   goto 10
-14 nerr=-1
+  14 nerr=-1
   call CS_ERROR("Invalid parameters for potential calculations.")
   goto 10
-15 nerr=-1
+  15 nerr=-1
   call CS_ERROR("Memory allocation failed.")
   goto 10
-16 nerr=-1
+  16 nerr=-1
   call CS_ERROR("Memory deallocation failed.")
   goto 10
   
   return
   
-end subroutine CS_GETSLICE_POT
+  end subroutine CS_GETSLICE_POT
 !**********************************************************************!
 
 
@@ -4873,13 +4873,13 @@ end subroutine CS_GETSLICE_POT
 !
 subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
 
-  implicit none
-  
-  integer*4, intent(in) :: nslc, nx, ny, nrx, nry, nfl, ndw
-  real*4, intent(in) :: wl
-  integer*4, intent(inout) :: nerr
-  complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
-  
+implicit none
+
+integer*4, intent(in) :: nslc, nx, ny, nrx, nry, nfl, ndw
+real*4, intent(in) :: wl
+integer*4, intent(inout) :: nerr
+complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
+
   integer*4 :: i, j, i1, j1, ia, ia2, ja, jptr ! iterators
   integer*4 :: lndw
   integer*4 :: na ! atom count
@@ -4896,7 +4896,14 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   real*4 :: apdmp ! aperture function (damping factor at outer Fourier-space perimeter >2/3 gmax)
   real*4 :: crgio ! ionic charge
   real*4, dimension(:,:), allocatable :: lxy ! list of calculated coordinates
+  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_1 ! calculated CS_scagn_lxy_1
+  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_2 ! calculated CS_scagn_lxy_2
+  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_12 ! calculated CS_scagn_lxy_12
+
   complex*8 :: cval0, cval ! some complex vars
+
+  complex*8, dimension(:,:), allocatable :: form_factor, form_factor_core, form_factor_ionic ! form factor vars
+  complex*8, dimension(:,:,:), allocatable :: translation_phase_factor ! phase factor vars
   complex*8, dimension(:,:), allocatable :: lcw, lcwrs ! local working array for FFTs
   
   logical :: dwflg
@@ -4916,8 +4923,8 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! check mem alloc
   !
   if (.not.(CS_slicemem_allocated.and. &
-     &      CS_cellmem_allocated.and. &
-     &      CS_scattamp_prepared)) goto 13
+   &      CS_cellmem_allocated.and. &
+   &      CS_scattamp_prepared)) goto 13
 
   
   !
@@ -4938,16 +4945,16 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   dwc = 0.0
   lndw = ndw
   if (infl==1) then
-    lndw = 0
-    fldamp = CS_rr8p2
+  lndw = 0
+  fldamp = CS_rr8p2
   end if
   !
   ! handle DWF flag (for ionic potential calculations only)
   !
   if (lndw==0) then
-    dwflg = .FALSE.
+  dwflg = .FALSE.
   else
-    dwflg = .TRUE.
+  dwflg = .TRUE.
   end if
   
   
@@ -4964,8 +4971,12 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   itogy = 1.0 / CS_scsy ! reciprocal space sampling rate (y) for potential generation
   cval0 = cmplx(0.0,0.0)
   cval = cval0
-  allocate(lcw(ny,nx), lcwrs(nx,ny),stat=nerr)
+  allocate(lcw(ny,nx), lcwrs(nx,ny), form_factor(nx,ny), form_factor_ionic(nx,ny), form_factor_core(nx,ny),stat=nerr)
   if (nerr/=0) goto 15
+  form_factor = cmplx(0.0,0.0)
+  form_factor_core = cmplx(0.0,0.0)
+  form_factor_ionic = cmplx(0.0,0.0)
+  !translation_phase_factor = cmplx(0.0,0.0,)
   lcw = cmplx(0.0,0.0) ! this is the working array
   lcwrs = cmplx(0.0,0.0) ! this is the working array (real-space)
   ! CS_scagx and CS_scagy hold reciprocal space coordinates
@@ -4999,13 +5010,13 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! return in case of empty slice
   !
   if (na<=0) then 
-    goto 10
+  goto 10
   end if
   
   !
   ! calculate super-cell potential in fourier space
   ! !!! fourierspace is scrambled and transposed
-  allocate( lxy(2,na), jld(CS_numat) , stat=nerr)
+  allocate( lxy(2,na), CS_scagn_lxy_1(na,nx,ny), CS_scagn_lxy_2(na,nx,ny), CS_scagn_lxy_12(na,nx,ny), translation_phase_factor(na,nx,ny), jld(CS_numat) , stat=nerr)
   if (nerr/=0) goto 15
   lxy = 0.0
   jld = 0
@@ -5013,13 +5024,15 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !
   !call CS_PROG_START(na,1.0)
   !
-  do ia=1, na ! loop ia over all atoms in slice
+
+  do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
     !
+
     ja = CS_slcatacc(ia,nslc)               ! get atom index in super cell
     jld(ja) = ia                            ! store slice ID in list of cell IDs
-    jptr = CS_scampptr(ja)                  ! get atom type ID in scattering data
     lxy(1,ia) = CS_atpos(1,ja)*CS_scsx      ! get atom avg. x-position
     lxy(2,ia) = CS_atpos(2,ja)*CS_scsy      ! get atom avg. y-position
+
     biso = CS_atdwf(ja)                     ! get debye-waller parameter (nm**2) = Biso
     dwc = sqrt(biso)                        ! get debye-waller parameter from (nm**2) to (nm) (sqrt(Biso))
     if (infl==1) then                     ! dice frozen lattice displacements (x,y) and apply
@@ -5029,36 +5042,60 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
         lxy(1,ia) = lxy(1,ia) + dx          ! add random x displacement
         lxy(2,ia) = lxy(2,ia) + dy          ! add random y displacement
       else ! dependent atom site
-        ia2 = jld(CS_atlnk(ja))
-        lxy(1,ia) = lxy(1,ia2)
-        lxy(2,ia) = lxy(2,ia2)
+      ia2 = jld(CS_atlnk(ja))
+      lxy(1,ia) = lxy(1,ia2)
+      lxy(2,ia) = lxy(2,ia2)
       end if
-    end if
+      end if
+  end do ! loop ia over all atoms in slice to calculate translation phase factor
+  
+
+  do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_1
+    CS_scagn_lxy_1(ia,1:ny,1:nx) = lxy(1,ia)*CS_scagn(1:ny,1:nx,1)
+  end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_1
+
+  do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+    CS_scagn_lxy_2(ia,1:ny,1:nx) = lxy(2,ia)*CS_scagn(1:ny,1:nx,2)
+  end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+
+do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+    CS_scagn_lxy_12(ia,1:ny,1:nx) = CS_scagn_lxy_1(ia,1:ny,1:nx) + CS_scagn_lxy_2(ia,1:ny,1:nx)
+  end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+
+
+  do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
+
+    ! translation phase factor
+    translation_phase_factor(ia,1:ny,1:nx) = cexp( CS_scagn_lxy_12(ia,1:ny,1:nx) )     
+
+      !
+  end do ! loop ia over all atoms in slice to calculate translation phase factor
+
+
+  do ia=1, na ! loop ia over all atoms in slice
+    !
+
+    ja = CS_slcatacc(ia,nslc)               ! get atom index in super cell
+    jptr = CS_scampptr(ja)                  ! get atom type ID in scattering data
     pocc = CS_atocc(ja)                     ! Occupancy
     crgio = CS_atcrg(ja)                    ! ionic charge
-    !
+
+    form_factor_core = CS_scaff2d(1:ny,1:nx,jptr)
+    form_factor_ionic = crgio*CS_scagn(1:ny,1:nx,3)
+
     if ( crgio==0.0  .or. CS_useextsca==0 ) then ! neutral atoms (faster)
-      ! accumulate                      occupancy * form-factor (core) (DWF is handled already in CS_scaff2d) 
-      lcw(1:ny,1:nx) = lcw(1:ny,1:nx) + pocc * CS_scaff2d(1:ny,1:nx,jptr) &
-                     & * cexp( lxy(1,ia)*CS_scagn(1:ny,1:nx,1) &
-                     &       + lxy(2,ia)*CS_scagn(1:ny,1:nx,2) ) ! * translation phase factor
-      !
+    form_factor = form_factor_core
     else ! ion (slower, need to multiply ionic potential)
-      !
       if (dwflg) then ! apply DWF to ionic part (slower)
-        ! accumulate                      occupancy * ( form-factor (core)
-        lcw(1:ny,1:nx) = lcw(1:ny,1:nx) + pocc * ( CS_scaff2d(1:ny,1:nx,jptr) &
-                       &   + crgio* CS_scadwf(1:ny,1:nx,jptr) * CS_scagn(1:ny,1:nx,3) ) & ! + form-factor (ionic charge) with DWF )
-                       & * cexp( lxy(1,ia)*CS_scagn(1:ny,1:nx,1) &
-                       &       + lxy(2,ia)*CS_scagn(1:ny,1:nx,2) ) ! * translation phase factor
+      form_factor = form_factor_core &
+      & + CS_scadwf(1:ny,1:nx,jptr) * form_factor_ionic
       else ! no DWF in ionic part (faster)
-        ! accumulate                      occupancy * ( form-factor (core)
-        lcw(1:ny,1:nx) = lcw(1:ny,1:nx) + pocc * ( CS_scaff2d(1:ny,1:nx,jptr) &
-                       &                         + crgio*CS_scagn(1:ny,1:nx,3) ) & ! + form-factor (ionic charge) )
-                       & * cexp( lxy(1,ia)*CS_scagn(1:ny,1:nx,1) &
-                       &       + lxy(2,ia)*CS_scagn(1:ny,1:nx,2) ) ! * translation phase factor
+      form_factor = form_factor_core + form_factor_ionic 
       end if
-    end if
+      end if
+
+    ! accumulate  occupancy * form-factor * translation phase factor
+    lcw(1:ny,1:nx) = lcw(1:ny,1:nx) + pocc * form_factor * translation_phase_factor(ia,1:ny,1:nx)
     !
     ! update progress indicator
     !call CS_PROG_UPDATE(ia)
@@ -5075,44 +5112,48 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !
   !CS_lastslice_potmax_im = 0.0
   do j=1, dimy
-    j1 = modulo(j-1,ny)+1
-    do i=1, dimx
-      i1 = modulo(i-1,nx)+1
-      pot(i,j) = lcwrs(i1,j1)*pscal
+  j1 = modulo(j-1,ny)+1
+  do i=1, dimx
+  i1 = modulo(i-1,nx)+1
+  pot(i,j) = lcwrs(i1,j1)*pscal
       !CS_lastslice_potmax_im = max(CS_lastslice_potmax_im,imag(pot(i,j)))
-    end do
-  end do
+      end do
+      end do
   !
   ! finish off, deallocate all arrays
   !  
-10 continue
+  10 continue
   if (allocated(lcw)) deallocate(lcw,stat=nerr)
   if (allocated(lcwrs)) deallocate(lcwrs,stat=nerr)
   if (allocated(jld)) deallocate(jld,stat=nerr)
   if (allocated(lxy)) deallocate(lxy,stat=nerr)
+  if (allocated(translation_phase_factor)) deallocate(translation_phase_factor,stat=nerr)
+  if (allocated(form_factor)) deallocate(form_factor,stat=nerr)
+  if (allocated(form_factor_core)) deallocate(form_factor_core,stat=nerr)
+  if (allocated(form_factor_ionic)) deallocate(form_factor_ionic,stat=nerr)
   return
   !
   ! error handling
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Potential memory not allocated.")
   goto 10
-14 nerr=-1
+  14 nerr=-1
   call CS_ERROR("Invalid parameters for potential calculations.")
   goto 10
-15 nerr=-1
+  15 nerr=-1
   call CS_ERROR("Memory allocation failed.")
   goto 10
-16 nerr=-1
+  16 nerr=-1
   call CS_ERROR("Memory deallocation failed.")
   goto 10
-17 nerr=-1
+  17 nerr=-1
   call CS_ERROR("2D projected form factors not prepared.")
   goto 10
   
   return
   
-end subroutine CS_GETSLICE_POT2
+  end subroutine CS_GETSLICE_POT2
 !**********************************************************************!
 
 
@@ -5139,14 +5180,14 @@ end subroutine CS_GETSLICE_POT2
 !
 subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr)
 
-  implicit none
-  
-  integer*4, intent(in) :: nslc, nx, ny, nrx, nry, nabs, nfl, ndw
-  real*4, intent(in) :: wl
-  integer*4, intent(inout) :: nerr
-  complex*8, intent(inout) :: pgr(nx*nrx,ny*nry)
-  
-  integer*4 :: nalloc
+implicit none
+
+integer*4, intent(in) :: nslc, nx, ny, nrx, nry, nabs, nfl, ndw
+real*4, intent(in) :: wl
+integer*4, intent(inout) :: nerr
+complex*8, intent(inout) :: pgr(nx*nrx,ny*nry)
+
+integer*4 :: nalloc
   integer*4 :: i, j, i1, j1, i2, j2 ! iterators
   integer*4 :: dimx, dimy ! final dimensions
   integer*4 :: nyqx, nyqy ! nyquist numbers
@@ -5184,16 +5225,16 @@ subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr
   !
   allocate(pot(nx,ny),stat=nalloc)
   if (nalloc/=0) then
-    call CS_ERROR("Failed to allocate memory for projected potential.")
-    goto 13
+  call CS_ERROR("Failed to allocate memory for projected potential.")
+  goto 13
   end if
   pot = cmplx(0.0,0.0)
   !                   (nslc, nx, ny, nrx, nry, nfl, wl, pot, nerr)
   !call CS_GETSLICE_POT(nslc, nx, ny, 1, 1, nfl, ndw, wl, pot, nerr)
   call CS_GETSLICE_POT2(nslc, nx, ny, 1, 1, nfl, ndw, wl, pot, nerr)
   if (nerr/=0) then
-    deallocate(pot,stat=nalloc)
-    goto 13
+  deallocate(pot,stat=nalloc)
+  goto 13
   end if
   
   !
@@ -5201,17 +5242,17 @@ subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr
   !
   if (CS_backup_pot_flg==1) then
     if (allocated(CS_backup_pot)) then ! deallocate previous potential backup memory
-      deallocate(CS_backup_pot,stat=nalloc)
+    deallocate(CS_backup_pot,stat=nalloc)
     end if
     ! allocate new potentail backup memory
     allocate(CS_backup_pot(dimx,dimy),stat=nalloc)
     if (nalloc/=0) then
-      call CS_ERROR("Failed to allocate memory for projected potential backup.")
-      goto 13
+    call CS_ERROR("Failed to allocate memory for projected potential backup.")
+    goto 13
     end if
     CS_backup_pot = cmplx(0.0,0.0)
-  end if
-  
+    end if
+
   !
   ! get parameters
   !
@@ -5219,10 +5260,10 @@ subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr
   CS_useabsorption = 0
   cabsorp = cmplx(0.0,1.0) * pscal
   if (nabs/=0) then 
-    CS_useabsorption = 1
+  CS_useabsorption = 1
     ! cabsorp = cmplx(-CS_absorptionprm,1.0) * pscal, obsolete, 100128 JB
-  end if
-  
+    end if
+
   !
   ! generate the phase grating // apply periodic repeats
   !
@@ -5233,7 +5274,7 @@ subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr
   !               dz = slice thickness [nm]
   !
   do j=1, ny
-    do i=1, nx
+  do i=1, nx
       ! calculate exp( ii*potential )
       cpot = pot(i,j)*cabsorp ! cpot = ii*potential
       cpgr = exp(cpot) ! phase grating = exp( ii*potential )
@@ -5242,20 +5283,20 @@ subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr
       rmaxphase = max(rmaxphase,abs(rV)) ! save max. phase shift
       ! repeater loop
       do j1=0, nry-1
-        j2 = j+ny*j1
-        do i1=0, nrx-1
-          i2 = i + nx*i1
+      j2 = j+ny*j1
+      do i1=0, nrx-1
+      i2 = i + nx*i1
           pgr(i2,j2) = cpgr ! set phase grating value to output array
           if (CS_backup_pot_flg==1) then ! store projected potential
             ! store potential after removing the relativistic correction
             ! relati = 1.0 + ht [keV] / 511 [keV]
             CS_backup_pot(i2,j2) = pot(i,j)/relati
-          end if
-        end do
-      end do
-    end do
-  end do
-  
+            end if
+            end do
+            end do
+            end do
+            end do
+
   ! update the maximum phase accumulator
   CS_maxphase = max(CS_maxphase, rmaxphase)
   ! REMOVED 181128, v0.70, JB -> changed to accumulation of max. phase
@@ -5268,41 +5309,41 @@ subroutine CS_GETSLICE_PGR(nslc, nx, ny, nrx, nry, nabs, nfl, ndw, wl, pgr, nerr
   deallocate(pot,stat=nalloc)
   
   if (CS_do_bwl_pgr) then ! apply bwl to phase-grating
-    allocate(pgrft(dimy,dimx),stat=nalloc)
-    if (nerr/=0) goto 13
-    pgrft = cmplx(0.0,0.0)
+  allocate(pgrft(dimy,dimx),stat=nalloc)
+  if (nerr/=0) goto 13
+  pgrft = cmplx(0.0,0.0)
     call CS_CCFFT2D(pgr, pgrft, dimx, dimy, 1) ! forward FFT from pgr to pgrft
     i2gx = 1. / (real(nrx) * CS_scsx) ! fourier space sampling rate x
     i2gy = 1. / (real(nry) * CS_scsy) ! ... y
     gthr2 = ( min(i2gx*real(nyqx),i2gy*real(nyqy))*CS_PROSIZE_THR)**2 ! g2 aperture threshold
     do j=1, dimx ! x is with rows
-      j1 = mod((j+nyqx-1),dimx)-nyqx
-      gx = i2gx*real(j1)
-      gx2 = gx*gx
+    j1 = mod((j+nyqx-1),dimx)-nyqx
+    gx = i2gx*real(j1)
+    gx2 = gx*gx
       do i=1, dimy ! y is with columns
-        i1 = mod((i+nyqy-1),dimy)-nyqy
-        gy = i2gy*real(i1)
-        g2 = gx2 + gy*gy
+      i1 = mod((i+nyqy-1),dimy)-nyqy
+      gy = i2gy*real(i1)
+      g2 = gx2 + gy*gy
         if (g2>gthr2) then ! apply hard aperture
-          pgrft(i,j) = cmplx(0.0,0.0)
+        pgrft(i,j) = cmplx(0.0,0.0)
         end if
-      end do
-    end do
+        end do
+        end do
     call CS_CCFFT2D(pgr, pgrft, dimx, dimy, -1) ! backward FFT from pgrft to pgr
     deallocate(pgrft, stat=nalloc)
-  end if
-  
-  
-  return
-  
+    end if
+
+
+    return
+
   !
   ! handle errors
   !
-13 nerr=-1
+  13 nerr=-1
   call CS_ERROR("Failed to allocate phase-grating memory.")
   return
   
-end subroutine CS_GETSLICE_PGR
+  end subroutine CS_GETSLICE_PGR
 !**********************************************************************!
 
 
@@ -5331,57 +5372,57 @@ end subroutine CS_GETSLICE_PGR
 !
 subroutine CS_GET_SAMESITE(fpos, l_fpos, scal, ssthr, idxss, rdss, nerr)
 
-  use symops
+use symops
 
-  implicit none
-  
+implicit none
+
 ! interface variables
-  real*4, intent(in) :: fpos(3), l_fpos(:,:), scal(3), ssthr
-  integer*4, intent(out) :: idxss, nerr
-  real*4, intent(out) :: rdss
-  
+real*4, intent(in) :: fpos(3), l_fpos(:,:), scal(3), ssthr
+integer*4, intent(out) :: idxss, nerr
+real*4, intent(out) :: rdss
+
 ! local parameters
-  
+
 ! local vaiables
-  integer*4 :: i, n
-  real*4 :: rdist, v_fdif(3), v_dif(3)
-  
+integer*4 :: i, n
+real*4 :: rdist, v_fdif(3), v_dif(3)
+
 ! initialization
-  nerr = 0
-  idxss = 0
-  rdss = -1.0
-  n = SIZE(l_fpos,2)
-  if (3/=SIZE(l_fpos,1)) goto 802
-  if (scal(1)<=0.0 .or. scal(2)<=0.0 .or. scal(3)<=0.0) goto 803
-  rdist = 0.0
-  v_fdif = 0.0
-  v_dif = 0.0
-  
+nerr = 0
+idxss = 0
+rdss = -1.0
+n = SIZE(l_fpos,2)
+if (3/=SIZE(l_fpos,1)) goto 802
+if (scal(1)<=0.0 .or. scal(2)<=0.0 .or. scal(3)<=0.0) goto 803
+rdist = 0.0
+v_fdif = 0.0
+v_dif = 0.0
+
 ! test
-  do i=1, n
-    v_fdif(1:3) = modulo( l_fpos(1:3,i) - fpos(1:3) + 0.5 , 1.0 ) - 0.5
-    v_dif = v_fdif*scal
-    rdist = sqrt( sum( v_dif*v_dif ) )
-    if (rdist<ssthr) then
-      rdss = rdist
-      idxss = i
-      goto 800
-    end if
-  end do
-  
+do i=1, n
+v_fdif(1:3) = modulo( l_fpos(1:3,i) - fpos(1:3) + 0.5 , 1.0 ) - 0.5
+v_dif = v_fdif*scal
+rdist = sqrt( sum( v_dif*v_dif ) )
+if (rdist<ssthr) then
+rdss = rdist
+idxss = i
+goto 800
+end if
+end do
+
 800 continue
-  return
-  
+return
+
 ! error handling
 802 continue
-  nerr = 2
-  call CS_ERROR("Invalid dimension (1) of input array (l_fpos).")
-  return
+nerr = 2
+call CS_ERROR("Invalid dimension (1) of input array (l_fpos).")
+return
 803 continue
-  nerr = 3
-  call CS_ERROR("Invalid scale of orthorhombic structure (scal).")
-  return
-  
+nerr = 3
+call CS_ERROR("Invalid scale of orthorhombic structure (scal).")
+return
+
 end subroutine CS_GET_SAMESITE
 
 
@@ -5408,65 +5449,65 @@ end subroutine CS_GET_SAMESITE
 !
 subroutine CS_GET_NNAT(fpos, l_fpos, scal, l_use, idxnn, rdnn, nerr)
 
-  use symops
+use symops
 
-  implicit none
-  
+implicit none
+
 ! interface variables
-  real*4, intent(in) :: fpos(3), l_fpos(:,:), scal(3)
-  integer*4, intent(in) :: l_use(:)
-  integer*4, intent(out) :: idxnn, nerr
-  real*4, intent(out) :: rdnn
-  
+real*4, intent(in) :: fpos(3), l_fpos(:,:), scal(3)
+integer*4, intent(in) :: l_use(:)
+integer*4, intent(out) :: idxnn, nerr
+real*4, intent(out) :: rdnn
+
 ! local parameters
-  
+
 ! local vaiables
-  integer*4 :: i, n
-  real*4 :: rdist, v_fdif(3), v_dif(3), rdmin
-  
+integer*4 :: i, n
+real*4 :: rdist, v_fdif(3), v_dif(3), rdmin
+
 ! initialization
-  nerr = 0
-  idxnn = 0
-  rdnn = 0.0
-  n = SIZE(l_fpos,2)
-  if (n/=SIZE(l_use,1)) goto 801
-  if (3/=SIZE(l_fpos,1)) goto 802
-  if (scal(1)<=0.0 .or. scal(2)<=0.0 .or. scal(3)<=0.0) goto 803
-  rdist = 0.0
-  v_fdif = 0.0
-  v_dif = 0.0
-  rdmin = -1.0
-  
+nerr = 0
+idxnn = 0
+rdnn = 0.0
+n = SIZE(l_fpos,2)
+if (n/=SIZE(l_use,1)) goto 801
+if (3/=SIZE(l_fpos,1)) goto 802
+if (scal(1)<=0.0 .or. scal(2)<=0.0 .or. scal(3)<=0.0) goto 803
+rdist = 0.0
+v_fdif = 0.0
+v_dif = 0.0
+rdmin = -1.0
+
 ! test
-  do i=1, n
+do i=1, n
     if (l_use(i)/=1) cycle ! skip not used positions
     v_fdif(1:3) = modulo( l_fpos(1:3,i) - fpos(1:3) + 0.5 , 1.0 ) - 0.5
     v_dif = v_fdif*scal
     rdist = sqrt( sum( v_dif*v_dif ) )
     if (rdmin<0.0 .or. rdmin>rdist) then
-      rdmin = rdist
-      idxnn = i
+    rdmin = rdist
+    idxnn = i
     end if
-  end do
-  rdnn = rdmin
-  
-800 continue
-  return
-  
+    end do
+    rdnn = rdmin
+
+    800 continue
+    return
+
 ! error handling
 801 continue
-  nerr = 1
-  call CS_ERROR("Inconsistent length of input arrays (l_fpos, l_use).")
-  return
+nerr = 1
+call CS_ERROR("Inconsistent length of input arrays (l_fpos, l_use).")
+return
 802 continue
-  nerr = 2
-  call CS_ERROR("Invalid dimension (1) of input array (l_fpos).")
-  return
+nerr = 2
+call CS_ERROR("Invalid dimension (1) of input array (l_fpos).")
+return
 803 continue
-  nerr = 3
-  call CS_ERROR("Invalid scale of orthorhombic structure (scal).")
-  return
-  
+nerr = 3
+call CS_ERROR("Invalid scale of orthorhombic structure (scal).")
+return
+
 end subroutine CS_GET_NNAT
 
 
@@ -5490,16 +5531,16 @@ end subroutine CS_GET_NNAT
 !
 subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
 
-  use symops
+use symops
 
-  implicit none
-  
+implicit none
+
 ! interface variables
-  real*4, intent(in) :: oh,ok,ol
-  real*4, intent(in) :: yu,yv,yw
-  real*4, intent(in) :: sa,sb,sc
-  integer*4, intent(inout) :: nerr
-  
+real*4, intent(in) :: oh,ok,ol
+real*4, intent(in) :: yu,yv,yw
+real*4, intent(in) :: sa,sb,sc
+integer*4, intent(inout) :: nerr
+
 ! local parameters
   real*8, parameter :: pos_prec = 1.D-5 ! position precision (rounding)
   real*8, parameter :: min_blen_nm = 1.D-4 ! minimum length of basis vectors in nm
@@ -5522,65 +5563,65 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
 !
 ! temporaray atomic data 
 !     atomic type
-  character(len=CS_atsl), allocatable, dimension(:) :: l_attype
-  integer*4, allocatable, dimension(:) :: l_atnum
-  integer*4, allocatable, dimension(:) :: l_atuse
-  real*4, allocatable, dimension(:) :: l_atcrg
-  real*4, allocatable, dimension(:,:) :: l_atpos
-  real*4, allocatable, dimension(:) :: l_atocc
-  real*4, allocatable, dimension(:) :: l_atdwf
+character(len=CS_atsl), allocatable, dimension(:) :: l_attype
+integer*4, allocatable, dimension(:) :: l_atnum
+integer*4, allocatable, dimension(:) :: l_atuse
+real*4, allocatable, dimension(:) :: l_atcrg
+real*4, allocatable, dimension(:,:) :: l_atpos
+real*4, allocatable, dimension(:) :: l_atocc
+real*4, allocatable, dimension(:) :: l_atdwf
   real*4 :: rtmp(3), rtmp1 ! some temporary values
 !
-  
+
 ! initialization
-  ierr = 0
-  nerr = 0
-  nalloc = 0
-  
+ierr = 0
+nerr = 0
+nalloc = 0
+
 !  open ( unit=25, file="E:\Simulationen\bin\drprobe-orient-debug.log", &
 !       & action='WRITE', status='REPLACE', form='FORMATTED' )
 !  write(unit=25,fmt='(A)') "Log of routine CS_ORIENT_CELL"
-  
+
 !  write(unit=25,fmt='(A)') "- init matrix"
-  base_0 = 0.D+0
-  base_0_inv = 0.D+0
-  call CONVMAT(dble(CS_scsx), dble(CS_scsy), dble(CS_scsz), &
-     & dble(CS_scalpha), dble(CS_scbeta), dble(CS_scgamma), base_0)
+base_0 = 0.D+0
+base_0_inv = 0.D+0
+call CONVMAT(dble(CS_scsx), dble(CS_scsy), dble(CS_scsz), &
+ & dble(CS_scalpha), dble(CS_scbeta), dble(CS_scgamma), base_0)
   base_0 = TRANSPOSE(base_0) ! need to transpose because CONVMAT is column oriented
   call CHOP_MAT(base_0, 1.D-6)
 !  write(unit=25,fmt='(A)') "- matrix inversion"
-  call INVMAT(base_0, base_0_inv)
-  
-  
+call INVMAT(base_0, base_0_inv)
+
+
 
 ! check input
-  if (sa<min_blen_nm .or. sb<min_blen_nm .or. sc<min_blen_nm) goto 801
-  
+if (sa<min_blen_nm .or. sb<min_blen_nm .or. sc<min_blen_nm) goto 801
+
 ! get the new projection vector in cartesian coordinates
 !  write(unit=25,fmt='(A)') "- init projection vector"
 ! this will be our new z axis of the super-cell
-  v_tmp1 = 0.D+0
-  v_tmp1(1:3,1) = (/ oh,ok,ol /)
-  v_tmp3 = 0.D+0
-  v_tmp3 = MATMUL(base_0, v_tmp1)
-  dtmp3 = VECLENGTH(v_tmp3(1:3,1))
+v_tmp1 = 0.D+0
+v_tmp1(1:3,1) = (/ oh,ok,ol /)
+v_tmp3 = 0.D+0
+v_tmp3 = MATMUL(base_0, v_tmp1)
+dtmp3 = VECLENGTH(v_tmp3(1:3,1))
   if (dtmp3<min_blen_nm) goto 802 ! error
   v_tmp3 = v_tmp3 / dtmp3 ! normalize V3 to N3
 ! get the new projected y axis in cartesian coordinates
 !  write(unit=25,fmt='(A)') "- init projection y-orientation vector"
-  v_tmp1 = 0.D+0
-  v_tmp1(1:3,1) = (/ yu,yv,yw /)
-  v_tmp2 = 0.D+0
-  v_tmp2 = MATMUL(base_0, v_tmp1)
-  dtmp2 = VECLENGTH(v_tmp2(1:3,1))
+v_tmp1 = 0.D+0
+v_tmp1(1:3,1) = (/ yu,yv,yw /)
+v_tmp2 = 0.D+0
+v_tmp2 = MATMUL(base_0, v_tmp1)
+dtmp2 = VECLENGTH(v_tmp2(1:3,1))
 ! determine the in-plane component of the chosen y axis
-  dtmp1 = DOT_PRODUCT(v_tmp3(1:3,1), v_tmp2(1:3,1))
+dtmp1 = DOT_PRODUCT(v_tmp3(1:3,1), v_tmp2(1:3,1))
   v_tmp2 = v_tmp2 - v_tmp3*dtmp1 ! V2 = V2_0 - N3*(V2_0.N3)
   dtmp2 = VECLENGTH(v_tmp2(1:3,1))
 ! check the length of the new y-axis
-  if (dtmp2<min_blen_nm) then
-    call CS_MESSAGE("Warning: The chosen new projected y-axis is invalid.")
-    call CS_MESSAGE("         choosing a new y-axis ...")
+if (dtmp2<min_blen_nm) then
+call CS_MESSAGE("Warning: The chosen new projected y-axis is invalid.")
+call CS_MESSAGE("         choosing a new y-axis ...")
     ! - try the cartesian y-axis
     v_tmp2(1:3,1) = (/ 0.D+0, 1.D+0, 0.D+0 /)
     dtmp1 = DOT_PRODUCT(v_tmp3(1:3,1), v_tmp2(1:3,1))
@@ -5593,73 +5634,73 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
       dtmp1 = DOT_PRODUCT(v_tmp3(1:3,1), v_tmp2(1:3,1))
       v_tmp2 = v_tmp2 - v_tmp3*dtmp1 ! V2 = V2_0 - N3*(V2_0.N3)
       dtmp2 = VECLENGTH(v_tmp2(1:3,1))
-    end if
+      end if
     ! one of the two should always produce some non-zero component in the projection plane
-  end if
+    end if
 ! normalize the new Y vector
-  v_tmp2 = v_tmp2 / dtmp2
+v_tmp2 = v_tmp2 / dtmp2
 ! calculate the new X axis from the cross product N2 x N3 = N1
 !  write(unit=25,fmt='(A)') "- init projection x-orientation vector"
-  v_tmp1 = 0.D+0
-  call INN_PRODUCT( v_tmp2, v_tmp3, v_tmp1 )
+v_tmp1 = 0.D+0
+call INN_PRODUCT( v_tmp2, v_tmp3, v_tmp1 )
 ! set the new basis matrix (row oriented)
 !  write(unit=25,fmt='(A)') "- set new basis vectors"
-  base_1 = 0.D+0
-  base_1(1:3,1) = v_tmp1(1:3,1)*dble(sa)
-  base_1(1:3,2) = v_tmp2(1:3,1)*dble(sb)
-  base_1(1:3,3) = v_tmp3(1:3,1)*dble(sc)
-  call CHOP_MAT(base_1, 1.D-6)
+base_1 = 0.D+0
+base_1(1:3,1) = v_tmp1(1:3,1)*dble(sa)
+base_1(1:3,2) = v_tmp2(1:3,1)*dble(sb)
+base_1(1:3,3) = v_tmp3(1:3,1)*dble(sc)
+call CHOP_MAT(base_1, 1.D-6)
 ! get its inverse
 !  write(unit=25,fmt='(A)') "- determine inverse of the new basis"
-  base_1_inv = 0.D+0
-  call INVMAT(base_1, base_1_inv)
+base_1_inv = 0.D+0
+call INVMAT(base_1, base_1_inv)
 
 ! get the coordinates of the new super-cell corners in the old basis
 ! these coordinates determine the repeats of the original cell in the
 ! new cell.
 !  write(unit=25,fmt='(A)') "- determine projection range by cell corner locations"
-  sc1_crn = 0.D+0
-  sc1_crn(1:3,2:2) = MATMUL(base_0_inv, base_1(1:3,1:1))
-  sc1_crn(1:3,3:3) = MATMUL(base_0_inv, base_1(1:3,2:2))
-  sc1_crn(1:3,4:4) = MATMUL(base_0_inv, base_1(1:3,3:3))
-  sc1_crn(1:3,5:5) = MATMUL(base_0_inv, base_1(1:3,1:1)+base_1(1:3,2:2))
-  sc1_crn(1:3,6:6) = MATMUL(base_0_inv, base_1(1:3,1:1)+base_1(1:3,3:3))
-  sc1_crn(1:3,7:7) = MATMUL(base_0_inv, base_1(1:3,2:2)+base_1(1:3,3:3))
-  sc1_crn(1:3,8:8) = MATMUL(base_0_inv, base_1(1:3,1:1)+base_1(1:3,2:2)+base_1(1:3,3:3))
+sc1_crn = 0.D+0
+sc1_crn(1:3,2:2) = MATMUL(base_0_inv, base_1(1:3,1:1))
+sc1_crn(1:3,3:3) = MATMUL(base_0_inv, base_1(1:3,2:2))
+sc1_crn(1:3,4:4) = MATMUL(base_0_inv, base_1(1:3,3:3))
+sc1_crn(1:3,5:5) = MATMUL(base_0_inv, base_1(1:3,1:1)+base_1(1:3,2:2))
+sc1_crn(1:3,6:6) = MATMUL(base_0_inv, base_1(1:3,1:1)+base_1(1:3,3:3))
+sc1_crn(1:3,7:7) = MATMUL(base_0_inv, base_1(1:3,2:2)+base_1(1:3,3:3))
+sc1_crn(1:3,8:8) = MATMUL(base_0_inv, base_1(1:3,1:1)+base_1(1:3,2:2)+base_1(1:3,3:3))
 ! get the deviation from the old lattice
-  sc1_crn_dev = 0.D+0
-  sc1_crn_dev = sc1_crn - dble((NINT(sc1_crn)))
+sc1_crn_dev = 0.D+0
+sc1_crn_dev = sc1_crn - dble((NINT(sc1_crn)))
 ! check the total deviation and calculate space filling iterators (itf)
 ! due to round-off errors, the iterator may be by one cell larger or
 ! smaller than actually required.
-  dtmp1 = 0.D+0
+dtmp1 = 0.D+0
   itf = 0 ! puh, we can start from zero, since we keep the same origin
   do i=1, 8
-    dtmp1 = dtmp1 + VECLENGTH(sc1_crn_dev(1:3,i))
+  dtmp1 = dtmp1 + VECLENGTH(sc1_crn_dev(1:3,i))
 !    write(unit=25,fmt='(A,I1)') "  - corner #",i
-    do j=1, 3
-      itf(1,j) = MIN(itf(1,j),FLOOR(sc1_crn(j,i)))
-      itf(2,j) = MAX(itf(2,j),CEILING(sc1_crn(j,i)))
-    end do
+do j=1, 3
+itf(1,j) = MIN(itf(1,j),FLOOR(sc1_crn(j,i)))
+itf(2,j) = MAX(itf(2,j),CEILING(sc1_crn(j,i)))
+end do
 !    write(unit=25,fmt='(A,3G15.5)') "    - projection: ", sc1_crn(1:3,i)
 !    write(unit=25,fmt='(A,3I3)')    "    - min. range: ", itf(1,1:3)
 !    write(unit=25,fmt='(A,3I3)')    "    - max. range: ", itf(2,1:3)
-  end do
-  if (dtmp1>min_latdev_tol) then
-    call CS_MESSAGE("Warning: The new super-cell lattice deviates from the old lattice.")
-    call CS_MESSAGE("         The resulting super-cell may not define a periodic structure.")
-  end if
+end do
+if (dtmp1>min_latdev_tol) then
+call CS_MESSAGE("Warning: The new super-cell lattice deviates from the old lattice.")
+call CS_MESSAGE("         The resulting super-cell may not define a periodic structure.")
+end if
 ! get the number of repeats of the old cell in the new cell
-  nitf(1) = itf(2,1) - itf(1,1)
-  nitf(2) = itf(2,2) - itf(1,2)
-  nitf(3) = itf(2,3) - itf(1,3)
-  n3 = nitf(1)*nitf(2)*nitf(3)
+nitf(1) = itf(2,1) - itf(1,1)
+nitf(2) = itf(2,2) - itf(1,2)
+nitf(3) = itf(2,3) - itf(1,3)
+n3 = nitf(1)*nitf(2)*nitf(3)
   if (n3<=0) goto 803 ! each dimension should be represented
 !
 ! When this point is reached, the new cell is valid.
 !  write(unit=25,fmt='(A)') "+ found valid cell"
 !
-  if (CS_cellmem_allocated .and. CS_numat>0) then
+if (CS_cellmem_allocated .and. CS_numat>0) then
     ! There are atoms in the current (old) super-cell.
     ! Fill the new super cell with atoms from the old cell.
     !
@@ -5671,28 +5712,28 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
     m = 0 ! init the used number of atoms (what really is in the new cell)
     ! - allocate the temporary memory for the creation of the new structure
 !    write(unit=25,fmt='(A,I6)') "- allocating local helper arrays, n = ", n
-    allocate(l_attype(n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_attype = ""
-    allocate(l_atnum(n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_atnum = 0
-    allocate(l_atcrg(n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_atcrg = 0.0
-    allocate(l_atpos(1:3,n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_atpos = 0.0
-    allocate(l_atocc(n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_atocc = 0.0
-    allocate(l_atdwf(n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_atdwf = 0.0
-    allocate(l_atuse(n), stat=nalloc)
-    if (nalloc/=0) goto 804
-    l_atuse = 0
-    
+allocate(l_attype(n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_attype = ""
+allocate(l_atnum(n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_atnum = 0
+allocate(l_atcrg(n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_atcrg = 0.0
+allocate(l_atpos(1:3,n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_atpos = 0.0
+allocate(l_atocc(n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_atocc = 0.0
+allocate(l_atdwf(n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_atdwf = 0.0
+allocate(l_atuse(n), stat=nalloc)
+if (nalloc/=0) goto 804
+l_atuse = 0
+
     !
     ! Create the new atomic positions by periodic repeat of the old
     ! structure in the basis of the new structure.
@@ -5700,25 +5741,25 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
     !
     ! get the transformation matrix
 !    write(unit=25,fmt='(A)') "- calculating transformation matrix"
-    m_tmp = MATMUL(base_1_inv, base_0)
+m_tmp = MATMUL(base_1_inv, base_0)
     !
 !    write(unit=25,fmt='(A)') "- projecting all atoms"
     do i=1, CS_numat ! loop over all atoms of the old cell
       !
       ! repeater loops (dimensions of the old cell)
       do l=itf(1,3), itf(2,3)-1
-        v_tmp1(3,1) = dble(l)
-        do k=itf(1,2), itf(2,2)-1
-          v_tmp1(2,1) = dble(k)
-          do j=itf(1,1), itf(2,1)-1
-            v_tmp1(1,1) = dble(j)
+      v_tmp1(3,1) = dble(l)
+      do k=itf(1,2), itf(2,2)-1
+      v_tmp1(2,1) = dble(k)
+      do j=itf(1,1), itf(2,1)-1
+      v_tmp1(1,1) = dble(j)
             v_tmp2(1:3,1) = dble(CS_atpos(1:3,i)) + v_tmp1(1:3,1) ! periodic repeat of atom (i) position in old basis
             v_tmp3 = MATMUL(m_tmp, v_tmp2) ! ... in the new basis
             call ROUND_ARR(v_tmp3(1:3,1), pos_prec) ! take care of round-off errors
             ! check whether the position is in the target cell
             if ( v_tmp3(1,1)>=0.D+0 .and. v_tmp3(1,1)<=1.D+0 .and. &
-               & v_tmp3(2,1)>=0.D+0 .and. v_tmp3(2,1)<=1.D+0 .and. &
-               & v_tmp3(3,1)>=0.D+0 .and. v_tmp3(3,1)<=1.D+0 ) then
+             & v_tmp3(2,1)>=0.D+0 .and. v_tmp3(2,1)<=1.D+0 .and. &
+             & v_tmp3(3,1)>=0.D+0 .and. v_tmp3(3,1)<=1.D+0 ) then
               !
               ! yes, this is in the cell
               !
@@ -5731,26 +5772,26 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
               l_atdwf(m) = CS_atdwf(i)
               l_atuse(m) = 1
 !              write(unit=25,fmt='(A,I4,A,I4,A,3F8.4,A)') "  - atom #",m," Z = ",l_atnum(m)," at (",l_atpos(1:3,m),")"
-            end if
-          end do
-        end do
-      end do
+end if
+end do
+end do
+end do
       !
-    end do
+      end do
     !
     m = SUM(l_atuse)
 !    write(unit=25,fmt='(A,I6,A)') "+ added ",m," atoms to the new cell"
-    
+
     rtmp(1:3) = (/sa,sb,sc/) ! temp. store cell dimensions
 !    write(unit=25,fmt='(A)') "- removing close atoms"
     if (m>1) then ! check for close atoms
       do i=1, m-1 ! check all atoms ( i = 1 .. m-1 ) agains all other atoms ( j = i+1 .. m ) ! ALWAYS !
         if (l_atuse(i)==0) then ! this atom is not used, skip it
           cycle ! skip inactive items
-        end if
+          end if
         do j=i+1, m ! loop over the "other" atoms (no self test)
           if (l_atuse(j)==0) then ! this atom is not used, skip it
-            cycle
+          cycle
           end if
           !
           ! get the distance between atom position i and j
@@ -5763,15 +5804,15 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
           if (rtmp1<min_posdif .and. l_atnum(i)==l_atnum(j)) then ! two atoms of same type on same position
 !          write(unit=25,fmt='(A,I5)') "  - removing atom #",j
             l_atuse(j) = 0 ! switch off atom j, keep atom i
-          end if
+            end if
           !
         end do ! loop over j
       end do ! loop over i
-    end if
-    
-    m = SUM(l_atuse)
+      end if
+
+      m = SUM(l_atuse)
 !    write(unit=25,fmt='(A,I6,A)') "+ ",m," atoms remaining in the new cell"
-    
+
     !
     ! copy the content of the new cell to the module arrays
     ! - prepare the module arrays
@@ -5780,82 +5821,82 @@ subroutine CS_ORIENT_CELL(oh,ok,ol, yu,yv,yw, sa,sb,sc, nerr)
     
     call CS_ALLOC_CELLMEM(m, ierr) ! sets CS_numat=m
 !    write(unit=25,fmt='(A,I6,A,I6)') "- CS_ALLOC_CELLMEM, m = ", m, ", err = ", ierr
-    if (ierr/=0) goto 804
+if (ierr/=0) goto 804
     !
     if (m>0) then
       ! - copy
 !      write(unit=25,fmt='(A)') "- storing final atomic structure data"
-      j = 0
-      do i=1, n
-        if (l_atuse(i)==1) then
-          j = j + 1
-          CS_attype(j) = l_attype(i)
-          CS_atnum(j)  = l_atnum(i)
-          CS_atcrg(j)  = l_atcrg(i)
-          CS_atpos(1:3,j) = l_atpos(1:3,i)
-          CS_atocc(j)  = l_atocc(i)
-          CS_atdwf(j)  = l_atdwf(i)
-        end if
-      end do
+j = 0
+do i=1, n
+if (l_atuse(i)==1) then
+j = j + 1
+CS_attype(j) = l_attype(i)
+CS_atnum(j)  = l_atnum(i)
+CS_atcrg(j)  = l_atcrg(i)
+CS_atpos(1:3,j) = l_atpos(1:3,i)
+CS_atocc(j)  = l_atocc(i)
+CS_atdwf(j)  = l_atdwf(i)
+end if
+end do
       !
-    end if
+      end if
     !
     ! clean up the mess
 !    write(unit=25,fmt='(A)') "- deallocating local helper arrays"
-    deallocate(l_attype, stat=nalloc)
-    if (nalloc/=0) goto 805
-    deallocate(l_atnum, stat=nalloc)
-    if (nalloc/=0) goto 805
-    deallocate(l_atcrg, stat=nalloc)
-    if (nalloc/=0) goto 805
-    deallocate(l_atpos, stat=nalloc)
-    if (nalloc/=0) goto 805
-    deallocate(l_atocc, stat=nalloc)
-    if (nalloc/=0) goto 805
-    deallocate(l_atdwf, stat=nalloc)
-    if (nalloc/=0) goto 805
+deallocate(l_attype, stat=nalloc)
+if (nalloc/=0) goto 805
+deallocate(l_atnum, stat=nalloc)
+if (nalloc/=0) goto 805
+deallocate(l_atcrg, stat=nalloc)
+if (nalloc/=0) goto 805
+deallocate(l_atpos, stat=nalloc)
+if (nalloc/=0) goto 805
+deallocate(l_atocc, stat=nalloc)
+if (nalloc/=0) goto 805
+deallocate(l_atdwf, stat=nalloc)
+if (nalloc/=0) goto 805
     !
-  end if
+    end if
   !
   ! Set the new super-cell parameters
 !  write(unit=25,fmt='(A)') "- storing new cell parameters"
-  CS_scsx = VECLENGTH(base_1(1:3,1))
-  CS_scsy = VECLENGTH(base_1(1:3,2))
-  CS_scsz = VECLENGTH(base_1(1:3,3))
-  CS_scalpha = 9.D+1
-  CS_scbeta  = 9.D+1
-  CS_scgamma = 9.D+1
+CS_scsx = VECLENGTH(base_1(1:3,1))
+CS_scsy = VECLENGTH(base_1(1:3,2))
+CS_scsz = VECLENGTH(base_1(1:3,3))
+CS_scalpha = 9.D+1
+CS_scbeta  = 9.D+1
+CS_scgamma = 9.D+1
 !
 ! exit
 800 continue
 !  write(unit=25,fmt='(A,I4.4,A)') "End of CS_ORIENT_CELL (", nerr,")"
 !  close ( unit=25 )
-  n3 = 0
-  return
-  
+n3 = 0
+return
+
 ! error handlings
 801 continue
-  nerr = 1
-  call CS_ERROR("Invalid size of new super-cell (zero length).")
-  goto 800
+nerr = 1
+call CS_ERROR("Invalid size of new super-cell (zero length).")
+goto 800
 802 continue
-  nerr = 2
-  call CS_ERROR("Invalid projection vector (zero length).")
-  goto 800
+nerr = 2
+call CS_ERROR("Invalid projection vector (zero length).")
+goto 800
 803 continue
-  nerr = 3
-  call CS_ERROR("Invalid size of the new super-cell (dimension).")
-  goto 800
+nerr = 3
+call CS_ERROR("Invalid size of the new super-cell (dimension).")
+goto 800
 804 continue
-  nerr = 4
-  call CS_ERROR("Memory allocation failed.")
-  goto 800
+nerr = 4
+call CS_ERROR("Memory allocation failed.")
+goto 800
 805 continue
-  nerr = 5
-  call CS_ERROR("Memory de-allocation failed.")
-  goto 800
-  
-  return
+nerr = 5
+call CS_ERROR("Memory de-allocation failed.")
+goto 800
+
+return
 
 end subroutine CS_ORIENT_CELL
 
@@ -5877,12 +5918,12 @@ end subroutine CS_ORIENT_CELL
 !
 subroutine CS_SHIFT_ATOMS(tx,ty,tz, nerr)
 
-  implicit none
-  
+implicit none
+
 ! interface variables
-  real*4, intent(in) :: tx,ty,tz
-  integer*4, intent(inout) :: nerr
-  
+real*4, intent(in) :: tx,ty,tz
+integer*4, intent(inout) :: nerr
+
 ! local vaiables
   integer*4 :: ierr ! local error code
   integer*4 :: nalloc ! allocation status
@@ -5890,16 +5931,16 @@ subroutine CS_SHIFT_ATOMS(tx,ty,tz, nerr)
   real*4 :: rtmp(3) ! some temporary values
   real*4 :: rshf(3)
 !
-  
+
 ! initialization
-  ierr = 0
-  nerr = 0
-  nalloc = 0
-  rshf(1) = tx
-  rshf(2) = ty
-  rshf(3) = tz
+ierr = 0
+nerr = 0
+nalloc = 0
+rshf(1) = tx
+rshf(2) = ty
+rshf(3) = tz
 !
-  if (CS_cellmem_allocated .and. CS_numat>0) then
+if (CS_cellmem_allocated .and. CS_numat>0) then
     ! There are atoms in the current super-cell.
     !
     ! Create the new atomic positions by shifting
@@ -5912,13 +5953,13 @@ subroutine CS_SHIFT_ATOMS(tx,ty,tz, nerr)
       !
       CS_atpos(1:3,i) = modulo( rtmp(1:3) , 1.0 )
       !
-    end do
+      end do
     !
-  end if
+    end if
 !
 ! exit
 800 continue
-  return
+return
 !  
 ! error handlings
 !
@@ -5941,15 +5982,15 @@ end subroutine CS_SHIFT_ATOMS
 !
 subroutine CS_DICE_PARTIALOCC(dmax, nerr)
 
-  implicit none
-  
+implicit none
+
 ! parameters
-  integer*4, parameter :: npairmax = 10
-  
+integer*4, parameter :: npairmax = 10
+
 ! interface variables
-  real*4, intent(in) :: dmax
-  integer*4, intent(inout) :: nerr
-  
+real*4, intent(in) :: dmax
+integer*4, intent(inout) :: nerr
+
 ! local vaiables
   integer*4 :: ierr ! local error code
   integer*4 :: nalloc ! allocation status
@@ -5959,25 +6000,25 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
   real*4 :: pmax, pran, pcum ! random number things
 ! temporaray atomic data 
 !     atomic type
-  character(len=CS_atsl), allocatable, dimension(:) :: l_attype
-  integer*4, allocatable, dimension(:) :: l_atnum
-  integer*4, allocatable, dimension(:) :: l_atuse
-  real*4, allocatable, dimension(:) :: l_atcrg
-  real*4, allocatable, dimension(:,:) :: l_atpos
-  real*4, allocatable, dimension(:) :: l_atocc
-  real*4, allocatable, dimension(:) :: l_atdwf
+character(len=CS_atsl), allocatable, dimension(:) :: l_attype
+integer*4, allocatable, dimension(:) :: l_atnum
+integer*4, allocatable, dimension(:) :: l_atuse
+real*4, allocatable, dimension(:) :: l_atcrg
+real*4, allocatable, dimension(:,:) :: l_atpos
+real*4, allocatable, dimension(:) :: l_atocc
+real*4, allocatable, dimension(:) :: l_atdwf
 ! external references
-  external :: InitRand
-  real*4, external :: UniRand
-  
+external :: InitRand
+real*4, external :: UniRand
+
 ! initialization
-  call InitRand()
-  ierr = 0
-  nerr = 0
-  nalloc = 0
-  scell(1) = CS_scsx
-  scell(2) = CS_scsy
-  scell(3) = CS_scsz
+call InitRand()
+ierr = 0
+nerr = 0
+nalloc = 0
+scell(1) = CS_scsx
+scell(2) = CS_scsy
+scell(3) = CS_scsz
   !
   if (.not.CS_cellmem_allocated .or. CS_numat<=0) goto 800 ! nothing to do
   !
@@ -6008,12 +6049,12 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
   !
   ! Copy the current data
   do i=1, n
-    l_attype(i) = CS_attype(i)
-    l_atnum(i) = CS_atnum(i)
-    l_atcrg(i) = CS_atcrg(i)
-    l_atpos(1:3,i) = CS_atpos(1:3,i)
-    l_atocc(i) = CS_atocc(i)
-    l_atdwf(i) = CS_atdwf(i)
+  l_attype(i) = CS_attype(i)
+  l_atnum(i) = CS_atnum(i)
+  l_atcrg(i) = CS_atcrg(i)
+  l_atpos(1:3,i) = CS_atpos(1:3,i)
+  l_atocc(i) = CS_atocc(i)
+  l_atdwf(i) = CS_atdwf(i)
   end do
   !
   ! Allocate an index field for the partial occupation calculation
@@ -6031,15 +6072,15 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
   ! pick up candidates
   do i=1, n
     if (l_atocc(i)<1.0) then ! candidate for dicing
-      pairs(0,i) = 1
+    pairs(0,i) = 1
     end if
-  end do
+    end do
   !
   ! pick up candidate pairs
   do i=1, n
     if (pairs(0,i) == 1) then ! candidate for dicing
     rloc(1:3) = l_atpos(1:3,i)
-      do j=1, n
+    do j=1, n
         if (j==i) cycle ! no self-pairing snail
         if (pairs(0,j) == 1) then ! candidate for dicing
           ! check distance
@@ -6060,25 +6101,25 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
               ! add new pair candidate
               pairs(1,i) = k+1
               pairs(k+2,i) = j
-            else
+              else
               ! replace the current pair candidate with lower and lowest occupancy number
               m = 0
               mocc = 1.0
               do l=1, k
-                if (l_atocc(pairs(l+1,i))<mocc) then
-                  mocc = l_atocc(pairs(l+1,i))
-                  m = l
-                end if
+              if (l_atocc(pairs(l+1,i))<mocc) then
+              mocc = l_atocc(pairs(l+1,i))
+              m = l
+              end if
               end do
               if (m>0) then ! found smaller and smallest pair candidate to be replaced
-                pairs(m+1,i) = j
+              pairs(m+1,i) = j
               end if ! m>0
             end if ! k<npairmax
           end if ! dist<dmax
         end if ! pairs(0,j)==1
-      end do
-    end if
-  end do
+        end do
+        end if
+        end do
   !
   ! randomize the partial occupancies
   do i=1,n
@@ -6089,10 +6130,10 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
     if (k==0) then ! randomize against vacancy
       if (pran<=l_atocc(i)) then ! occupy
         l_atocc(i) = 1.0 ! full atom
-      else
+        else
         l_atocc(i) = 0.0 ! no atom
         l_atuse(i) = 0   ! clear from list later
-      end if
+        end if
       pairs(0,i) = 0 ! no longer indicate as partial
     else ! randomize against other candidates
       m = 0 ! final candidate chosen ! preset as vacancy
@@ -6103,38 +6144,38 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
         if (pran<=pcum) then ! found the candidate which will occupy the site
           m = j ! remember it in m
           exit ! stop the search loop
-        end if
+          end if
         ! proceed to next candidate
         l = l + 1 ! increase list index
         if (l>k) exit ! last candidate checked, get out of here
         j = pairs(l+1,i) ! this is the next candidate index
         pcum = pcum + l_atocc(j) ! update cumulated probability
-      end do
+        end do
       ! occupy now with m, clear all alternative lists then
       if (m==i) then ! occupy with this atom (i)
-        l_atocc(i) = 1.0
-        l_atuse(i) = 1
+      l_atocc(i) = 1.0
+      l_atuse(i) = 1
       else
-        l_atocc(i) = 0.0
-        l_atuse(i) = 0
+      l_atocc(i) = 0.0
+      l_atuse(i) = 0
       end if
       do l=1,k ! loop through the alternative list and set the occupancie according to the made choice
         j = pairs(l+1,i) ! get the candidate index
         if (m==j) then ! occupy with this atom
-          l_atocc(j) = 1.0
-          l_atuse(j) = 1
+        l_atocc(j) = 1.0
+        l_atuse(j) = 1
         else ! de-occupy this atom
-          l_atocc(j) = 0.0
-          l_atuse(j) = 0
+        l_atocc(j) = 0.0
+        l_atuse(j) = 0
         end if
         pairs(:,j) = 0 ! clear atom j's pair list, ensures that there is no other check done with atom j
-      end do
+        end do
       pairs(:,i) = 0 ! clear atom i's pair list in any case
       ! if neither P#1 nor P#2 applied, a vacancy is generated (atoms are removed from this site)
       ! more than npairsmax partial occupations per site will cause errors here
-    end if
+      end if
     !
-  end do
+    end do
   !
   ! re-set atom list in the module arrays
   ! copy the content of the new cell to the module arrays
@@ -6149,18 +6190,18 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
     ! - copy
     j = 0
     do i=1, n
-      if (l_atuse(i)==1) then
-        j = j + 1
-        CS_attype(j) = l_attype(i)
-        CS_atnum(j)  = l_atnum(i)
-        CS_atcrg(j)  = l_atcrg(i)
-        CS_atpos(1:3,j) = l_atpos(1:3,i)
-        CS_atocc(j)  = l_atocc(i)
-        CS_atdwf(j)  = l_atdwf(i)
-      end if
+    if (l_atuse(i)==1) then
+    j = j + 1
+    CS_attype(j) = l_attype(i)
+    CS_atnum(j)  = l_atnum(i)
+    CS_atcrg(j)  = l_atcrg(i)
+    CS_atpos(1:3,j) = l_atpos(1:3,i)
+    CS_atocc(j)  = l_atocc(i)
+    CS_atdwf(j)  = l_atdwf(i)
+    end if
     end do
     !
-  end if
+    end if
   !
   !
   ! clean up the mess
@@ -6175,17 +6216,17 @@ subroutine CS_DICE_PARTIALOCC(dmax, nerr)
 !
 ! exit
 800 continue
-  return
+return
 !  
 ! error handlings
 804 continue
-  nerr = 4
-  call CS_ERROR("Memory allocation failed.")
-  return
+nerr = 4
+call CS_ERROR("Memory allocation failed.")
+return
 805 continue
-  nerr = 5
-  call CS_ERROR("Memory de-allocation failed.")
-  return
+nerr = 5
+call CS_ERROR("Memory de-allocation failed.")
+return
 end subroutine CS_DICE_PARTIALOCC
 
 
@@ -6208,16 +6249,16 @@ end subroutine CS_DICE_PARTIALOCC
 !
 subroutine CS_SUGGEST_NSLCEQUI(dmin, nslc, nerr)
 
-  implicit none
+implicit none
 
 ! routine parameters
   integer*4, parameter :: nft_max = 8192 ! max. fft size
   real*4, parameter :: dmin_default = 0.02 ! 0.2 A (very thin slices)
   
 ! interface variables
-  real*4, intent(in) :: dmin
-  integer*4, intent(inout) :: nslc, nerr
-  
+real*4, intent(in) :: dmin
+integer*4, intent(inout) :: nslc, nerr
+
 ! local vaiables
   integer*4 :: ierr ! local error code
   integer*4 :: nalloc ! allocation status
@@ -6231,11 +6272,11 @@ subroutine CS_SUGGEST_NSLCEQUI(dmin, nslc, nerr)
   
   
 ! initialization
-  ierr = 0
-  nerr = 0
-  nalloc = 0
-  nslc = 1
-  dmini = dmin
+ierr = 0
+nerr = 0
+nalloc = 0
+nslc = 1
+dmini = dmin
   !
   if (CS_scsz<=0.0) goto 801 ! error cell not defined
   if (.not.CS_cellmem_allocated .or. CS_numat<=0) goto 800 ! nothing to do
@@ -6259,14 +6300,14 @@ subroutine CS_SUGGEST_NSLCEQUI(dmin, nslc, nerr)
   rfac = -1.0/(dmini*dmini)
   ! Setup the histogram data by adding a Gaussian for each atom
   do j=1, n ! loop over all atoms
-    zpos = CS_atpos(3,j)*CS_scsz
+  zpos = CS_atpos(3,j)*CS_scsz
     do i=1, nhis ! loop through each of the histogram pixels
-      pcur = real(i-1)*shis
-      rpos = pcur-zpos
-      vcur = exp( rfac*rpos*rpos )
+    pcur = real(i-1)*shis
+    rpos = pcur-zpos
+    vcur = exp( rfac*rpos*rpos )
       ahis(i) = ahis(i) + cmplx( vcur, 0.0 ) ! add to the histogram
-    end do
-  end do
+      end do
+      end do
   ! Fourier transform the histogram
   call ODDCC8192(ahis,nhis,'for')
   ! Analyse the Fourier-Transform, find the component of highest periodicity
@@ -6274,37 +6315,37 @@ subroutine CS_SUGGEST_NSLCEQUI(dmin, nslc, nerr)
   pcur = cabs(ahis(1))
   pcur = cabs(ahis(2)) ! ... also
   do i=3, m ! start searching from k=2 (i=3), k=1 is preset as default solution
-    rpos = cabs(ahis(i))
+  rpos = cabs(ahis(i))
     if (rpos>pcur) then ! found better periodicity
-      nslc = i - 1
-      pcur = rpos
+    nslc = i - 1
+    pcur = rpos
     end if
-  end do
+    end do
 ! done.
 ! exit
 800 continue
-  if (allocated(ahis)) deallocate(ahis,stat=nalloc)
-  return
+if (allocated(ahis)) deallocate(ahis,stat=nalloc)
+return
 !  
 ! error handlings
 801 continue
-  nerr = 1
-  call CS_ERROR("Invalid size of super-cell (zero length).")
-  goto 800
+nerr = 1
+call CS_ERROR("Invalid size of super-cell (zero length).")
+goto 800
 802 continue
-  nerr = 2
-  call CS_ERROR("Too few number of samples (<2). Aborting.")
-  goto 800
+nerr = 2
+call CS_ERROR("Too few number of samples (<2). Aborting.")
+goto 800
 803 continue
-  nerr = 3
-  call CS_ERROR("Too many samples (>8192). Aborting.")
-  goto 800
+nerr = 3
+call CS_ERROR("Too many samples (>8192). Aborting.")
+goto 800
 804 continue
-  nerr = 4
-  call CS_ERROR("Memory allocation failed.")
-  goto 800
+nerr = 4
+call CS_ERROR("Memory allocation failed.")
+goto 800
 !
-  return
+return
 end subroutine CS_SUGGEST_NSLCEQUI
 
 
