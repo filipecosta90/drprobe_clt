@@ -4896,6 +4896,10 @@ complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
   real*4 :: apdmp ! aperture function (damping factor at outer Fourier-space perimeter >2/3 gmax)
   real*4 :: crgio ! ionic charge
   real*4, dimension(:,:), allocatable :: lxy ! list of calculated coordinates
+  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_1 ! calculated CS_scagn_lxy_1
+  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_2 ! calculated CS_scagn_lxy_2
+  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_12 ! calculated CS_scagn_lxy_12
+
   complex*8 :: cval0, cval ! some complex vars
 
   complex*8, dimension(:,:), allocatable :: form_factor, form_factor_core, form_factor_ionic ! form factor vars
@@ -5012,7 +5016,7 @@ complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
   !
   ! calculate super-cell potential in fourier space
   ! !!! fourierspace is scrambled and transposed
-  allocate( lxy(2,na), translation_phase_factor(na,nx,ny), jld(CS_numat) , stat=nerr)
+  allocate( lxy(2,na), CS_scagn_lxy_1(na,nx,ny), CS_scagn_lxy_2(na,nx,ny), CS_scagn_lxy_12(na,nx,ny), translation_phase_factor(na,nx,ny), jld(CS_numat) , stat=nerr)
   if (nerr/=0) goto 15
   lxy = 0.0
   jld = 0
@@ -5045,11 +5049,24 @@ complex*8, intent(inout) :: pot(nx*nrx,ny*nry)
       end if
   end do ! loop ia over all atoms in slice to calculate translation phase factor
   
+
+  do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_1
+    CS_scagn_lxy_1(ia,1:ny,1:nx) = lxy(1,ia)*CS_scagn(1:ny,1:nx,1)
+  end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_1
+
+  do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+    CS_scagn_lxy_2(ia,1:ny,1:nx) = lxy(2,ia)*CS_scagn(1:ny,1:nx,2)
+  end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+
+do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+    CS_scagn_lxy_12(ia,1:ny,1:nx) = CS_scagn_lxy_1(ia,1:ny,1:nx) + CS_scagn_lxy_2(ia,1:ny,1:nx)
+  end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_2
+
+
   do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
 
     ! translation phase factor
-    translation_phase_factor(ia,1:ny,1:nx) = cexp( lxy(1,ia)*CS_scagn(1:ny,1:nx,1) &
-     & + lxy(2,ia)*CS_scagn(1:ny,1:nx,2) )     
+    translation_phase_factor(ia,1:ny,1:nx) = cexp( CS_scagn_lxy_12(ia,1:ny,1:nx) )     
 
       !
   end do ! loop ia over all atoms in slice to calculate translation phase factor

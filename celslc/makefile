@@ -1,16 +1,16 @@
 # MAKEFILE for compiling and linking celslc
 # Defining variables
 f90comp = ifort
-switch3_parallel = -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -parallel -qopt-report-phase=par,vec -qopt-report5
-switch3 = -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
-switch2 = -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
-switch1 = -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
-switch0 = -nologo -O0 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch3_parallel = -g -march=core-avx2 -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -parallel -qopt-report-phase=par,vec -qopt-report5
+switch3 = -g -march=core-avx2 -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch2 = -g -march=core-avx2 -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch1 = -g -march=core-avx2 -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+switch0 = -g -march=core-avx2 -nologo -O0 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
 # removed switches
 #	 -libs:static ???
 # Start of the makefile
 celslc: binio2.o spacegroups.o symops.o cifio.o emsdata.o 3dpot.o AberrationFunctions.o CellSlicer.o fitfeprm.o fscatab.o FFTs_x.o wekoscatt.o wakiscatt.o integration.o random.o celslcsubs.o celslcprm.o celslc.o
-	$(f90comp) -o celslc -nologo binio2.o spacegroups.o symops.o cifio.o emsdata.o 3dpot.o AberrationFunctions.o CellSlicer.o fitfeprm.o fscatab.o FFTs_x.o wekoscatt.o wakiscatt.o integration.o random.o celslcsubs.o celslcprm.o celslc.o
+	$(f90comp) -g -march=core-avx2  -o celslc -nologo binio2.o spacegroups.o symops.o cifio.o emsdata.o 3dpot.o AberrationFunctions.o CellSlicer.o fitfeprm.o fscatab.o FFTs_x.o wekoscatt.o wakiscatt.o integration.o random.o celslcsubs.o celslcprm.o celslc.o
 # Modules
 celslcprm.mod: celslcprm.o celslcprm.f90
 	$(f90comp) -c $(switch3) celslcprm.f90
