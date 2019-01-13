@@ -6,7 +6,7 @@ switch = -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel
 #	 -libs:static ???
 # Start of the makefile
 msa: emsdata.o MultiSlice.o STEMfunctions.o msaparams.o FFTs_x.o msasub.o random.o msa.o
-	$(f90comp) -o msa -nologo emsdata.o MultiSlice.o STEMfunctions.o msaparams.o FFTs_x.o msasub.o random.o msa.o
+	$(f90comp) -g -o msa -nologo emsdata.o MultiSlice.o STEMfunctions.o msaparams.o FFTs_x.o msasub.o random.o msa.o
 emsdata.mod: emsdata.o ../common/emsdata.f90
 	$(f90comp) -c $(switch) ../common/emsdata.f90
 emsdata.o: ../common/emsdata.f90
