@@ -4900,8 +4900,6 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   real*4, dimension(:), allocatable :: dwc ! displacement calculation helpers
   real*4, dimension(:), allocatable :: lx ! list of calculated coordinates
   real*4, dimension(:), allocatable :: ly ! list of calculated coordinates
-  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_1 ! calculated CS_scagn_lxy_1
-  complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_2 ! calculated CS_scagn_lxy_2
   complex*8, dimension(:,:,:), allocatable :: CS_scagn_lxy_12 ! calculated CS_scagn_lxy_12
   complex*8, dimension(:,:), allocatable :: CS_scagn_x ! calculated CS_scagn_x
   complex*8, dimension(:,:), allocatable :: CS_scagn_y ! calculated CS_scagn_x
@@ -4949,7 +4947,7 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   if (infl<0) infl = 0
   if (infl>1) infl = 1
   fldamp = 0.0
-  dwc = 0.0
+
   lndw = ndw
   if (infl==1) then
     lndw = 0
@@ -4983,6 +4981,7 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   allocate( CS_scagn_x(ny,nx),CS_scagn_y(ny,nx),CS_scagn_z(ny,nx),stat=nerr)
   if (nerr/=0) goto 15
 
+  dwc = 0.0
   lcw = cmplx(0.0,0.0) ! this is the working array
   lcwrs = cmplx(0.0,0.0) ! this is the working array (real-space)
   ! CS_scagx and CS_scagy hold reciprocal space coordinates
@@ -5027,7 +5026,7 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !
   ! calculate super-cell potential in fourier space
   ! !!! fourierspace is scrambled and transposed
-  allocate( lx(na),ly(na), ja(na), CS_scagn_lxy_1(na,nx,ny), CS_scagn_lxy_2(na,nx,ny), CS_scagn_lxy_12(na,nx,ny), translation_phase_factor(na,nx,ny), jld(CS_numat) , stat=nerr)
+  allocate( lx(na),ly(na), ja(na),CS_scagn_lxy_12(na,nx,ny), translation_phase_factor(na,nx,ny), jld(CS_numat) , stat=nerr)
   if (nerr/=0) goto 15
   lx = 0.0
   ly = 0.0
@@ -5055,7 +5054,7 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
 
 
   do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
-  jld(ja) = ia                            ! store slice ID in list of cell IDs
+  jld(ja(ia)) = ia                            ! store slice ID in list of cell IDs
   end do 
 
 
@@ -5151,11 +5150,18 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   ! finish off, deallocate all arrays
   !  
   10 continue
+  if (allocated(dwc)) deallocate(dwc,stat=nerr)
   if (allocated(lcw)) deallocate(lcw,stat=nerr)
   if (allocated(lcwrs)) deallocate(lcwrs,stat=nerr)
   if (allocated(jld)) deallocate(jld,stat=nerr)
   if (allocated(lx)) deallocate(lx,stat=nerr)
   if (allocated(ly)) deallocate(ly,stat=nerr)
+  if (allocated(ja)) deallocate(ja,stat=nerr)
+  if (allocated(CS_scagn_lxy_12)) deallocate(CS_scagn_lxy_12,stat=nerr)
+  if (allocated(CS_scagn_x)) deallocate(CS_scagn_x,stat=nerr)
+  if (allocated(CS_scagn_y)) deallocate(CS_scagn_y,stat=nerr)
+  if (allocated(CS_scagn_z)) deallocate(CS_scagn_z,stat=nerr)
+  if (allocated(ja)) deallocate(ja,stat=nerr)
   if (allocated(ja)) deallocate(ja,stat=nerr)
   if (allocated(translation_phase_factor)) deallocate(translation_phase_factor,stat=nerr)
   if (allocated(form_factor)) deallocate(form_factor,stat=nerr)
