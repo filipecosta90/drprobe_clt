@@ -4976,6 +4976,8 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   itogy = 1.0 / CS_scsy ! reciprocal space sampling rate (y) for potential generation
   cval0 = cmplx(0.0,0.0)
   cval = cval0
+
+
   allocate( pocc(na), dwc(na), lcw(ny,nx), lcwrs(nx,ny), form_factor(na,nx,ny), form_factor_ionic(na,nx,ny),stat=nerr)
   if (nerr/=0) goto 15
   allocate( CS_scagn_x(ny,nx),CS_scagn_y(ny,nx),CS_scagn_z(ny,nx),stat=nerr)
@@ -5037,31 +5039,40 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !call CS_PROG_START(na,1.0)
   !
 
+  call CS_MESSAGE("Calculating ja.")
+
+
   ! get atom index in super cell
   do ia=1, na
   ja(ia) = CS_slcatacc(ia,nslc)               
   end do
+
+   call CS_MESSAGE("Calculating lx(ia).")
 
   ! get atom avg. x-position  
   do ia=1, na
   lx(ia) = CS_atpos(1,ja(ia))*CS_scsx      ! get atom avg. x-position           
   end do
 
+   call CS_MESSAGE("Calculating ly(ia).")
+
   ! get atom avg. y-position    
   do ia=1, na
   ly(ia) = CS_atpos(2,ja(ia))*CS_scsy      ! get atom avg. y-position           
   end do
 
+   call CS_MESSAGE("Calculating jld(ia).")
 
   do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
   jld(ja(ia)) = ia                            ! store slice ID in list of cell IDs
   end do 
 
-
+   call CS_MESSAGE("Calculating dwc(ia).")
   do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor    
   dwc(ia) = sqrt( CS_atdwf(ja(ia)) )                        ! get debye-waller parameter from (nm**2) to (nm) (sqrt(Biso)
   end do 
 
+   call CS_MESSAGE("Calculating frozen lattice displacements (x,y).")
   if (infl==1) then                     ! dice frozen lattice displacements (x,y) and apply
 
     do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
@@ -5081,11 +5092,13 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   end if
 
 
+   call CS_MESSAGE("Calculating CS_scagn_lxy_12.")
 
   do ia=1, na ! loop ia over all atoms in slice to calculate CS_scagn_lxy_1
   CS_scagn_lxy_12(ia,1:ny,1:nx) = lx(ia)*CS_scagn_x(1:ny,1:nx) + ly(ia)*CS_scagn_y(1:ny,1:nx)
   end do ! loop ia over all atoms in slice to calculate CS_scagn_lxy_1
 
+   call CS_MESSAGE("Calculating translation phase factor.")
   do ia=1, na ! loop ia over all atoms in slice to calculate translation phase factor
 
   ! translation phase factor
@@ -5094,6 +5107,7 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   !
   end do ! loop ia over all atoms in slice to calculate translation phase factor
 
+   call CS_MESSAGE("Calculating form factor.")
 
   do ia=1, na ! loop ia over all atoms in slice
   !
@@ -5118,6 +5132,9 @@ subroutine CS_GETSLICE_POT2(nslc, nx, ny, nrx, nry, nfl, ndw, wl, pot, nerr)
   end if
 
   end do ! loop ia over all atoms in slice
+
+
+   call CS_MESSAGE("Calculating accumulate  occupancy * form-factor * translation phase factor.")
 
   do ia=1, na ! loop ia over all atoms in slice
 
@@ -6345,7 +6362,7 @@ subroutine CS_SUGGEST_NSLCEQUI(dmin, nslc, nerr)
   end do
   end do
   ! Fourier transform the histogram
-  call ODDCC8192(ahis,nhis,'for')
+  call ODDCC8192(ahis,nhis,'FOR')
   ! Analyse the Fourier-Transform, find the component of highest periodicity
   nslc = 1 ! init the max. finder (this is the frequency number = i-1 )
   pcur = cabs(ahis(1))
