@@ -1,0 +1,1285 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -check arg_temp_created -check bounds -g -traceback -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: FSCATAB::FST_LOADFX
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(329,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(329,3)
+      remark #15389: vectorization support: reference fst_sym(Impl_lp+1,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 16
+      remark #15309: vectorization support: normalized vectorization overhead 0.500
+      remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.370 
+      remark #15478: estimated potential speedup: 2.530 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(329,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(330,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(330,3)
+      remark #15389: vectorization support: reference fst_crg(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15427: loop was completely unrolled
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 1.500 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(331,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_fel(:,:,:)>, stride is 512
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.750 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(331,3)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_fel(:,:,:)>, stride is 2
+      remark #15305: vectorization support: vector length 2
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.500 
+      remark #15478: estimated potential speedup: 0.850 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at fscatab.f90(331,3)
+         remark #15388: vectorization support: reference fst_fel(:,:,:) has aligned access
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.600
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 0.750 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(332,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(332,3)
+      remark #15389: vectorization support: reference fst_fep(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 3
+      remark #15309: vectorization support: normalized vectorization overhead 0.200
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(333,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_per(:,:)>, stride is 3
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 0.850 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(333,3)
+      remark #15389: vectorization support: reference fst_per(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 0.810 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(415,3)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP END
+
+LOOP BEGIN at fscatab.f90(415,3)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at fscatab.f90(446,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(447,18) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(447,18) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ fscatab.f90(447,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(447,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(447,7) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt_xmit cannot be vectorized   [ fscatab.f90(447,7) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(449,24) ]
+   remark #15382: vectorization support: call to function FSCATAB::FST_MESSAGE cannot be vectorized   [ fscatab.f90(449,12) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (447:18) and call:FSCATAB::FST_MESSAGE (449:12)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:FSCATAB::FST_MESSAGE (449:12) and call:_for_emit_diagnostic (447:18)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(454,3)
+   remark #15389: vectorization support: reference fst_feptmp(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.200
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 1.250 
+   remark #15478: estimated potential speedup: 2.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+
+   LOOP BEGIN at fscatab.f90(457,8)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:8) and call:_for_emit_diagnostic (457:8)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15389: vectorization support: reference at (457:39) has unaligned access   [ fscatab.f90(457,39) ]
+   remark #15389: vectorization support: reference fst_fel(:,:,fst_nat) has unaligned access   [ fscatab.f90(457,39) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <at (457:39)>, stride is 2   [ fscatab.f90(457,39) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <fst_fel(:,:,fst_nat)>, stride is 2   [ fscatab.f90(457,39) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <at (457:39)>, stride is 2   [ fscatab.f90(457,39) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <fst_fel(:,:,fst_nat)>, stride is 2   [ fscatab.f90(457,39) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.214
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15452: unmasked strided loads: 2 
+   remark #15453: unmasked strided stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 1.970 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,8)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at fscatab.f90(971,3) inlined into fscatab.f90(457,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(971,3) inlined into fscatab.f90(457,8)
+      remark #15389: vectorization support: reference at (971:3) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.180 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(971,3) inlined into fscatab.f90(457,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(975,3) inlined into fscatab.f90(457,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(976,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(976,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(979,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(979,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,36) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,36) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (976:10) and call:_for_emit_diagnostic (980:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (980:7) and call:_for_emit_diagnostic (976:10)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1020,5) inlined into fscatab.f90(457,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,58) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,58) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ fscatab.f90(1021,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,67) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,67) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt_xmit cannot be vectorized   [ fscatab.f90(1021,7) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(1022,24) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(224,14) ]
+   remark #15382: vectorization support: call to function _for_cpystr cannot be vectorized   [ fscatab.f90(224,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(225,28) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(225,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1021:58) and call:_for_write_seq_fmt (225:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_write_seq_fmt (225:3) and call:_for_emit_diagnostic (1021:58)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,39)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:39) and call:_for_emit_diagnostic (457:39)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:39) and call:_for_emit_diagnostic (457:39)
+
+   LOOP BEGIN at fscatab.f90(457,39)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(457,39)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:39) and call:_for_emit_diagnostic (457:39)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (457:39) and call:_for_emit_diagnostic (457:39)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(469,8)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (469:8) and call:_for_emit_diagnostic (469:8)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (469:8) and call:_for_emit_diagnostic (469:8)
+
+   LOOP BEGIN at fscatab.f90(469,8)
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at fscatab.f90(437,36)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FITFE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1083,3)
+   remark #15389: vectorization support: reference fep(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.200
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 1.250 
+   remark #15478: estimated potential speedup: 2.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1084,3)
+   remark #15389: vectorization support: reference per(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.600
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 0.810 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1088,3)
+   remark #15388: vectorization support: reference uprm(:) has aligned access
+   remark #15388: vectorization support: reference prm(:) has aligned access   [ fscatab.f90(1089,3) ]
+   remark #15388: vectorization support: reference tfep(:) has aligned access   [ fscatab.f90(1090,3) ]
+   remark #15389: vectorization support: reference lprm(:,:) has unaligned access   [ fscatab.f90(1091,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <lprm(:,:)>, stride is 2   [ fscatab.f90(1091,3) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <lprm(:,:)>, stride is 2   [ fscatab.f90(1091,3) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15301: FUSED LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 3 
+   remark #15453: unmasked strided stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 15 
+   remark #15477: vector cost: 4.250 
+   remark #15478: estimated potential speedup: 3.520 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(1091,3)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1089,3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1090,3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1091,3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1092,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <covprm(:,:)>, stride is 12
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 0.850 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+      remark #15388: vectorization support: reference covprm(:,:) has aligned access
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 6
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1092,3)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1099,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1100,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1100,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1101,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1101,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1104,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1104,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1105,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1105,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1106,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1106,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1100:10) and call:_for_emit_diagnostic (1106:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1106:7) and call:_for_emit_diagnostic (1100:10)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1119,12)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1123,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1149,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1169,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at fscatab.f90(1190,9)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1190,9)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1190,9)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1190:9) and call:_for_emit_diagnostic (1190:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1190:9) and call:_for_emit_diagnostic (1190:9)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1196,9)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1196,9)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1196,9)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1196:9) and call:_for_emit_diagnostic (1196:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1196:9) and call:_for_emit_diagnostic (1196:9)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1200,7)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1200,7)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1200,7)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1200:7) and call:_for_emit_diagnostic (1200:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1200:7) and call:_for_emit_diagnostic (1200:7)
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(1209,5)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1220,3)
+   remark #15389: vectorization support: reference fep(:) has unaligned access
+   remark #15388: vectorization support: reference tfep(:) has aligned access   [ fscatab.f90(1220,13) ]
+   remark #15388: vectorization support: reference tfep(:) has aligned access   [ fscatab.f90(1220,13) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.125
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 2.000 
+   remark #15478: estimated potential speedup: 2.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1224,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETFREELUN
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(281,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(287,9) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_LOADFEP
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(603,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(603,3)
+      remark #15389: vectorization support: reference fst_sym(Impl_lp+1,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 16
+      remark #15309: vectorization support: normalized vectorization overhead 0.500
+      remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.370 
+      remark #15478: estimated potential speedup: 2.530 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(603,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(604,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(604,3)
+      remark #15389: vectorization support: reference fst_crg(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15427: loop was completely unrolled
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 1.500 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(605,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_fel(:,:,:)>, stride is 512
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.750 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(605,3)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_fel(:,:,:)>, stride is 2
+      remark #15305: vectorization support: vector length 2
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.500 
+      remark #15478: estimated potential speedup: 0.850 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at fscatab.f90(605,3)
+         remark #15388: vectorization support: reference fst_fel(:,:,:) has aligned access
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.600
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 0.750 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(606,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(606,3)
+      remark #15389: vectorization support: reference fst_fep(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 3
+      remark #15309: vectorization support: normalized vectorization overhead 0.200
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(607,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_per(:,:)>, stride is 3
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 0.850 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(607,3)
+      remark #15389: vectorization support: reference fst_per(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 0.810 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(687,3)
+   remark #15388: vectorization support: reference fep(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 4.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at fscatab.f90(687,3)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at fscatab.f90(703,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (703:3) and call:_for_emit_diagnostic (703:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (703:3) and call:_for_emit_diagnostic (703:3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(704,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (704:3) and call:_for_emit_diagnostic (704:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (704:3) and call:_for_emit_diagnostic (704:3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(705,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (705:3) and call:_for_emit_diagnostic (705:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (705:3) and call:_for_emit_diagnostic (705:3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(706,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (706:3) and call:_for_emit_diagnostic (706:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (706:3) and call:_for_emit_diagnostic (706:3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(707,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (707:3) and call:_for_emit_diagnostic (707:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (707:3) and call:_for_emit_diagnostic (707:3)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(708,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (708:3) and call:_for_emit_diagnostic (708:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (708:3) and call:_for_emit_diagnostic (708:3)
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at fscatab.f90(750,34)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_SAVEFEP
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(281,3) inlined into fscatab.f90(822,9)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(287,9) ]
+LOOP END
+
+LOOP BEGIN at fscatab.f90(861,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(862,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(862,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(864,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(864,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(864,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ fscatab.f90(864,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(867,34) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(867,34) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(867,34) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(867,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(869,35) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(869,35) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(869,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(871,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(871,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(871,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(873,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(873,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(873,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(873,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(873,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ fscatab.f90(873,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(875,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(875,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(875,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(875,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(875,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ fscatab.f90(875,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(877,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(877,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(877,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(877,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(877,7) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ fscatab.f90(877,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (862:7) and call:_for_write_seq_fmt_xmit (877:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_write_seq_fmt_xmit (877:7) and call:_for_emit_diagnostic (862:7)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FX2FE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(971,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(971,3)
+      remark #15389: vectorization support: reference fe(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.180 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(971,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(975,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(976,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(976,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(979,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(979,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,36) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,36) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(980,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (976:10) and call:_for_emit_diagnostic (980:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (980:7) and call:_for_emit_diagnostic (976:10)
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1020,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,58) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,58) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ fscatab.f90(1021,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,67) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1021,67) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt_xmit cannot be vectorized   [ fscatab.f90(1021,7) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(1022,24) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(224,14) ]
+   remark #15382: vectorization support: call to function _for_cpystr cannot be vectorized   [ fscatab.f90(224,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ fscatab.f90(225,28) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ fscatab.f90(225,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1021:58) and call:_for_write_seq_fmt (225:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_write_seq_fmt (225:3) and call:_for_emit_diagnostic (1021:58)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETIDX
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETFE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1302,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETSCAABS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1550,8)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETSCAF2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1617,8)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETSCAC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1688,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1713,12)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETSCAR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1759,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_GETCRG
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1265,5) inlined into fscatab.f90(1814,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ fscatab.f90(1266,27) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FFG3
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1922,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1920,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1920,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1921,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1921,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1927,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1927,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1928,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1928,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1920:11) and call:_for_emit_diagnostic (1928:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1928:5) and call:_for_emit_diagnostic (1920:11)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FFL3G3
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(1988,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1983,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1983,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1984,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1984,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1985,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1985,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1986,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1986,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1998,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1998,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1999,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(1999,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2000,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2000,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2001,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2001,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1983:10) and call:_for_emit_diagnostic (2001:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2001:5) and call:_for_emit_diagnostic (1983:10)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FFLL3G3
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(2062,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2057,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2057,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2058,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2058,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2059,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2059,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2060,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2060,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2072,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2072,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2073,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2073,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2074,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2074,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2075,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2075,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2057:10) and call:_for_emit_diagnostic (2075:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2075:5) and call:_for_emit_diagnostic (2057:10)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FFLLGN
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(2120,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(2120,3)
+      remark #15389: vectorization support: reference dyda(:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.180 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(2120,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(2124,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2132,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2132,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2133,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2133,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2134,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2134,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2135,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2135,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2147,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2147,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2148,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2148,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2149,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2149,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2150,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2150,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2132:10) and call:_for_emit_diagnostic (2150:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2150:5) and call:_for_emit_diagnostic (2132:10)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_FFQLGN
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(2198,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(2198,3)
+      remark #15389: vectorization support: reference dyda(:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.180 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(2198,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(2202,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2210,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2210,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2211,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2211,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2212,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2212,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2213,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2213,10) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2225,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2225,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2226,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2226,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2227,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2227,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2228,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ fscatab.f90(2228,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2210:10) and call:_for_emit_diagnostic (2228:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2228:5) and call:_for_emit_diagnostic (2210:10)
+LOOP END
+===========================================================================
+
+Begin optimization report for: FSCATAB::FST_INIT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at fscatab.f90(250,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(250,3)
+      remark #15389: vectorization support: reference fst_sym(Impl_lp+1,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 16
+      remark #15309: vectorization support: normalized vectorization overhead 0.500
+      remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.370 
+      remark #15478: estimated potential speedup: 2.530 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at fscatab.f90(250,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(251,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(251,3)
+      remark #15389: vectorization support: reference fst_crg(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15427: loop was completely unrolled
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 1.500 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(252,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_fel(:,:,:)>, stride is 512
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.750 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(252,3)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_fel(:,:,:)>, stride is 2
+      remark #15305: vectorization support: vector length 2
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.500 
+      remark #15478: estimated potential speedup: 0.850 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at fscatab.f90(252,3)
+         remark #15388: vectorization support: reference fst_fel(:,:,:) has aligned access
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15427: loop was completely unrolled
+         remark #15309: vectorization support: normalized vectorization overhead 0.600
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 0.750 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(253,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at fscatab.f90(253,3)
+      remark #15389: vectorization support: reference fst_fep(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15427: loop was completely unrolled
+      remark #15399: vectorization support: unroll factor set to 3
+      remark #15309: vectorization support: normalized vectorization overhead 0.200
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at fscatab.f90(254,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <fst_per(:,:)>, stride is 3
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 0.850 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at fscatab.f90(254,3)
+      remark #15389: vectorization support: reference fst_per(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 0.810 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================

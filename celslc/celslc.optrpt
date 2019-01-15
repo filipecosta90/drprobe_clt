@@ -1,0 +1,73 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -check arg_temp_created -check bounds -g -traceback -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: CELSLC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslc.f90(208,7)
+   remark #15388: vectorization support: reference cs_atdwf_(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.500
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 3.790 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at celslc.f90(208,7)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at celslc.f90(324,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at celslc.f90(324,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at celslc.f90(324,5)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at celslc.f90(324,5)
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.600
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 71 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 20.550 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at celslc.f90(324,5)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 1.333
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at celslc.f90(324,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

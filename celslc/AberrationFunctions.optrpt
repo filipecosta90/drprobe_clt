@@ -1,0 +1,1588 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ROTATEFIELD
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3619,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3619,3)
+      remark #15389: vectorization support: reference acout(:,:) has unaligned access
+      remark #15389: vectorization support: reference acin(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.000
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.280 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3619,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3624,3)
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(2,i)>, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(3625,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <acin(1,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(3628,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <acin(2,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(3629,5) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <acout(1,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(3633,5) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <acout(2,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(3634,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.027
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15452: unmasked strided loads: 1 
+   remark #15460: masked strided loads: 2 
+   remark #15462: unmasked indexed (or gather) loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 171 
+   remark #15477: vector cost: 128.750 
+   remark #15478: estimated potential speedup: 1.320 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3624,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ABERRATIONFUNCTIONRMSRINGERROR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3500,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between wfield(k) (3501:5) and wfield(k-1) (3501:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3508,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(3519,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3519,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(1,l)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(3524,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(2,l)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(3525,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wacov_((k-1)*2+1,(l-1)*2+1)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(3537,9) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wacov_((k-1)*2+1,(l-1)*2+1)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(3541,9) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wacov_((k-1)*2+2,(l-1)*2+2)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(3542,9) ]
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <wfield(ml)>, masked, part of index is read from memory   [ ../common/AberrationFunctions.f90(3546,7) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.072
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15458: masked indexed (or gather) loads: 1 
+      remark #15460: masked strided loads: 5 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 70 
+      remark #15477: vector cost: 198.500 
+      remark #15478: estimated potential speedup: 0.350 
+      remark #15486: divides: 1 
+      remark #15487: type converts: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ABERRATIONFUNCTIONRMSERROR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3413,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2765,3) inlined into ../common/AberrationFunctions.f90(3418,10)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm_(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2769,5) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(N,L)>, stride is 17   [ ../common/AberrationFunctions.f90(2773,30) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(2,L)>, stride is 2   [ ../common/AberrationFunctions.f90(2773,50) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(1,J)>, stride is -2   [ ../common/AberrationFunctions.f90(2773,28) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(N,L)>, stride is 17   [ ../common/AberrationFunctions.f90(2772,30) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(2,L)>, stride is 2   [ ../common/AberrationFunctions.f90(2772,50) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(1,J)>, stride is -2   [ ../common/AberrationFunctions.f90(2772,28) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.202
+      remark #15452: unmasked strided loads: 6 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 36 
+      remark #15477: vector cost: 85.250 
+      remark #15478: estimated potential speedup: 0.410 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 2 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3420,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between WABS(J) (2749:5) and WABS(J) (2779:3)
+      remark #15346: vector dependence: assumed ANTI dependence between WABS(J) (2779:3) and WABS(J) (2749:5)
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2765,3) inlined into ../common/AberrationFunctions.f90(3437,12)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm_(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2769,5) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(N,L)>, stride is 17   [ ../common/AberrationFunctions.f90(2773,30) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(2,L)>, stride is 2   [ ../common/AberrationFunctions.f90(2773,50) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(1,J)>, stride is -2   [ ../common/AberrationFunctions.f90(2773,28) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(N,L)>, stride is 17   [ ../common/AberrationFunctions.f90(2772,30) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(2,L)>, stride is 2   [ ../common/AberrationFunctions.f90(2772,50) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <WFIELD(1,J)>, stride is -2   [ ../common/AberrationFunctions.f90(2772,28) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.202
+         remark #15452: unmasked strided loads: 6 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 36 
+         remark #15477: vector cost: 85.250 
+         remark #15478: estimated potential speedup: 0.410 
+         remark #15482: vectorized math library calls: 1 
+         remark #15487: type converts: 2 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2743,3) inlined into ../common/AberrationFunctions.f90(3437,12)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed ANTI dependence between PWX (2746:7) and PWX (2746:7)
+         remark #15346: vector dependence: assumed FLOW dependence between PWX (2746:7) and PWX (2746:7)
+         remark #15346: vector dependence: assumed FLOW dependence between PWX (2746:7) and PWX (2746:7)
+         remark #15346: vector dependence: assumed ANTI dependence between PWX (2746:7) and PWX (2746:7)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2743,3) inlined into ../common/AberrationFunctions.f90(3418,10)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between PWX (2746:7) and PWX (2746:7)
+      remark #15346: vector dependence: assumed FLOW dependence between PWX (2746:7) and PWX (2746:7)
+      remark #15346: vector dependence: assumed FLOW dependence between PWX (2746:7) and PWX (2746:7)
+      remark #15346: vector dependence: assumed ANTI dependence between PWX (2746:7) and PWX (2746:7)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETEFFECTIVEABERRATION
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3350,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3258,5) inlined into ../common/AberrationFunctions.f90(3358,10)
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.525
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 11 
+      remark #15477: vector cost: 5.000 
+      remark #15478: estimated potential speedup: 2.130 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3258,5) inlined into ../common/AberrationFunctions.f90(3358,10)
+   <Remainder loop for vectorization>
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 3.100
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3258,5) inlined into ../common/AberrationFunctions.f90(3358,10)
+   <Remainder loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3273,5) inlined into ../common/AberrationFunctions.f90(3358,10)
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.525
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 11 
+      remark #15477: vector cost: 5.000 
+      remark #15478: estimated potential speedup: 2.130 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3273,5) inlined into ../common/AberrationFunctions.f90(3358,10)
+   <Remainder loop for vectorization>
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 3.100
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3273,5) inlined into ../common/AberrationFunctions.f90(3358,10)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETTILTINDUCTIONBASIS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3258,5)
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.525
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 11 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 2.130 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3258,5)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 3.100
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3258,5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3263,5)
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.525
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 11 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 2.130 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3263,5)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 3.100
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3263,5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3268,5)
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.525
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 11 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 2.130 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3268,5)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 3.100
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3268,5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3273,5)
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.525
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 11 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 2.130 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3273,5)
+<Remainder loop for vectorization>
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 3.100
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3273,5)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETIDDBASIS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3112,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (3111:5) and pwy (3111:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (3111:5) and pwy (3111:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (3111:5) and pwy (3111:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (3111:5) and pwy (3111:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3137,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(3144,32) ]
+   remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(3146,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(3146,34) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(3151,37) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i+1)>, stride is 2   [ ../common/AberrationFunctions.f90(3151,47) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(3152,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(3152,47) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i+1)>, stride is -2   [ ../common/AberrationFunctions.f90(3153,37) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(3153,47) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.330
+   remark #15452: unmasked strided loads: 8 
+   remark #15462: unmasked indexed (or gather) loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 161 
+   remark #15477: vector cost: 172.750 
+   remark #15478: estimated potential speedup: 0.860 
+   remark #15482: vectorized math library calls: 1 
+   remark #15486: divides: 2 
+   remark #15487: type converts: 6 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3149,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(3150,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(3151,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i+1)>, stride is 4   [ ../common/AberrationFunctions.f90(3151,47) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(3152,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(3152,47) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i+1)>, stride is -4   [ ../common/AberrationFunctions.f90(3153,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(3153,47) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.288
+      remark #15452: unmasked strided loads: 7 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 101 
+      remark #15477: vector cost: 86.750 
+      remark #15478: estimated potential speedup: 0.920 
+      remark #15486: divides: 2 
+      remark #15487: type converts: 5 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETDDBASIS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2975,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2974:5) and pwy (2974:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2974:5) and pwy (2974:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2974:5) and pwy (2974:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2974:5) and pwy (2974:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(3000,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(3007,32) ]
+   remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(3009,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(3009,34) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-2)>, stride is -2   [ ../common/AberrationFunctions.f90(3014,37) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(3014,47) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(3015,37) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(3015,47) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(3016,37) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-2)>, stride is 2   [ ../common/AberrationFunctions.f90(3016,47) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.361
+   remark #15452: unmasked strided loads: 8 
+   remark #15462: unmasked indexed (or gather) loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 122 
+   remark #15477: vector cost: 162.250 
+   remark #15478: estimated potential speedup: 0.700 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 8 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(3012,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(3013,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-2)>, stride is -4   [ ../common/AberrationFunctions.f90(3014,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(3014,47) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(3015,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(3015,47) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(3016,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-2)>, stride is 4   [ ../common/AberrationFunctions.f90(3016,47) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.343
+      remark #15452: unmasked strided loads: 7 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 62 
+      remark #15477: vector cost: 74.250 
+      remark #15478: estimated potential speedup: 0.670 
+      remark #15487: type converts: 7 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETDBASIS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2849,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2848:5) and pwy (2848:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2848:5) and pwy (2848:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2848:5) and pwy (2848:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2848:5) and pwy (2848:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2872,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2878,32) ]
+   remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2880,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2880,34) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(2885,27) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(2885,35) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(2886,27) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(2886,35) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.368
+   remark #15452: unmasked strided loads: 6 
+   remark #15462: unmasked indexed (or gather) loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 78 
+   remark #15477: vector cost: 104.000 
+   remark #15478: estimated potential speedup: 0.690 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 4 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2883,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 34   [ ../common/AberrationFunctions.f90(2884,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(2885,27) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(2885,35) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(2886,27) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(2886,35) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.340
+      remark #15452: unmasked strided loads: 5 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 32 
+      remark #15477: vector cost: 48.500 
+      remark #15478: estimated potential speedup: 0.540 
+      remark #15487: type converts: 3 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETBASIS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2743,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2745:7) and pwy (2745:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2745:7) and pwy (2745:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2745:7) and pwy (2745:7)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2745:7) and pwy (2745:7)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2765,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2769,5) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2773,30) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l)>, stride is 2   [ ../common/AberrationFunctions.f90(2773,50) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,j)>, stride is -2   [ ../common/AberrationFunctions.f90(2773,28) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2772,30) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l)>, stride is 2   [ ../common/AberrationFunctions.f90(2772,50) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,j)>, stride is -2   [ ../common/AberrationFunctions.f90(2772,28) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.202
+   remark #15452: unmasked strided loads: 6 
+   remark #15462: unmasked indexed (or gather) loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 36 
+   remark #15477: vector cost: 85.250 
+   remark #15478: estimated potential speedup: 0.410 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 2 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_INTEGRATEDSECDERIV
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2612,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2611:5) and pwy (2611:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2611:5) and pwy (2611:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2611:5) and pwy (2611:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2611:5) and pwy (2611:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2623,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(2650,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2650,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2657,34) ]
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2659,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2659,36) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(2664,39) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i+1)>, stride is 2   [ ../common/AberrationFunctions.f90(2664,49) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(2665,9) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(2665,49) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i+1)>, stride is -2   [ ../common/AberrationFunctions.f90(2666,39) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(2666,49) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.323
+      remark #15452: unmasked strided loads: 8 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 163 
+      remark #15477: vector cost: 176.250 
+      remark #15478: estimated potential speedup: 0.860 
+      remark #15482: vectorized math library calls: 1 
+      remark #15486: divides: 2 
+      remark #15487: type converts: 6 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2662,7)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(2663,9) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(2664,39) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i+1)>, stride is 4   [ ../common/AberrationFunctions.f90(2664,49) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(2665,9) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(2665,49) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i+1)>, stride is -4   [ ../common/AberrationFunctions.f90(2666,39) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(2666,49) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.288
+         remark #15452: unmasked strided loads: 7 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 101 
+         remark #15477: vector cost: 86.750 
+         remark #15478: estimated potential speedup: 0.920 
+         remark #15486: divides: 2 
+         remark #15487: type converts: 5 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ABERRATIONFUNCTIONSECDERIV
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2467,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2466:5) and pwy (2466:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2466:5) and pwy (2466:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2466:5) and pwy (2466:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2466:5) and pwy (2466:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2478,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(2505,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2505,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2512,34) ]
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2514,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2514,36) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-2)>, stride is -2   [ ../common/AberrationFunctions.f90(2519,39) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(2519,49) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(2520,39) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(2520,49) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(2521,39) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-2)>, stride is 2   [ ../common/AberrationFunctions.f90(2521,49) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.353
+      remark #15452: unmasked strided loads: 8 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 124 
+      remark #15477: vector cost: 165.750 
+      remark #15478: estimated potential speedup: 0.700 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 8 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2517,7)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(2518,9) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-2)>, stride is -4   [ ../common/AberrationFunctions.f90(2519,39) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(2519,49) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(2520,39) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(2520,49) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(2521,39) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-2)>, stride is 4   [ ../common/AberrationFunctions.f90(2521,49) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.343
+         remark #15452: unmasked strided loads: 7 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 62 
+         remark #15477: vector cost: 74.250 
+         remark #15478: estimated potential speedup: 0.670 
+         remark #15487: type converts: 7 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ODDABERRATIONFUNCTIONGRADIENT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2331,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2330:5) and pwy (2330:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2330:5) and pwy (2330:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2330:5) and pwy (2330:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2330:5) and pwy (2330:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2341,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(2367,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2367,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2373,34) ]
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2375,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2375,36) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(2380,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(2380,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(2381,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(2381,37) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.356
+      remark #15452: unmasked strided loads: 6 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 80 
+      remark #15477: vector cost: 107.500 
+      remark #15478: estimated potential speedup: 0.690 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 4 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2378,7)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(2379,9) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(2380,29) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(2380,37) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(2381,29) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(2381,37) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.340
+         remark #15452: unmasked strided loads: 5 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 32 
+         remark #15477: vector cost: 48.500 
+         remark #15478: estimated potential speedup: 0.540 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_EVENABERRATIONFUNCTIONGRADIENT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2198,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2197:5) and pwy (2197:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2197:5) and pwy (2197:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2197:5) and pwy (2197:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2197:5) and pwy (2197:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2208,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(2234,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2234,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2240,34) ]
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2242,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2242,36) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(2247,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(2247,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(2248,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(2248,37) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.356
+      remark #15452: unmasked strided loads: 6 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 80 
+      remark #15477: vector cost: 107.500 
+      remark #15478: estimated potential speedup: 0.690 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 4 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2245,7)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(2246,9) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(2247,29) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(2247,37) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(2248,29) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(2248,37) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.340
+         remark #15452: unmasked strided loads: 5 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 32 
+         remark #15477: vector cost: 48.500 
+         remark #15478: estimated potential speedup: 0.540 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ABERRATIONFUNCTIONGRADIENT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2065,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2064:5) and pwy (2064:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2064:5) and pwy (2064:5)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (2064:5) and pwy (2064:5)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (2064:5) and pwy (2064:5)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(2075,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(2100,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(2100,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2106,34) ]
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(2108,7) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(2108,36) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -2   [ ../common/AberrationFunctions.f90(2113,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 2   [ ../common/AberrationFunctions.f90(2113,37) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -2   [ ../common/AberrationFunctions.f90(2114,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 2   [ ../common/AberrationFunctions.f90(2114,37) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.356
+      remark #15452: unmasked strided loads: 6 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 80 
+      remark #15477: vector cost: 107.500 
+      remark #15478: estimated potential speedup: 0.690 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 4 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(2111,7)
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab>, stride is 17   [ ../common/AberrationFunctions.f90(2112,9) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i-1)>, stride is -4   [ ../common/AberrationFunctions.f90(2113,29) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i)>, stride is 4   [ ../common/AberrationFunctions.f90(2113,37) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,m-l-i)>, stride is -4   [ ../common/AberrationFunctions.f90(2114,29) ]
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l+i-1)>, stride is 4   [ ../common/AberrationFunctions.f90(2114,37) ]
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.340
+         remark #15452: unmasked strided loads: 5 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 32 
+         remark #15477: vector cost: 48.500 
+         remark #15478: estimated potential speedup: 0.540 
+         remark #15487: type converts: 3 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ODDABERRATIONFUNCTION
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1944,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (1946:7) and pwy (1946:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (1946:7) and pwy (1946:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (1946:7) and pwy (1946:7)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (1946:7) and pwy (1946:7)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1959,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(1975,7) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(1975,7)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(1982,9) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(1988,31) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,n-l)>, stride is -2   [ ../common/AberrationFunctions.f90(1988,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l)>, stride is 2   [ ../common/AberrationFunctions.f90(1988,51) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.181
+      remark #15452: unmasked strided loads: 3 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 24 
+      remark #15477: vector cost: 58.000 
+      remark #15478: estimated potential speedup: 0.400 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_EVENABERRATIONFUNCTION
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1829,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (1831:7) and pwy (1831:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (1831:7) and pwy (1831:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (1831:7) and pwy (1831:7)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (1831:7) and pwy (1831:7)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1844,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(1860,7) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(1860,7)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(1867,9) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(1873,31) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,n-l)>, stride is -2   [ ../common/AberrationFunctions.f90(1873,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l)>, stride is 2   [ ../common/AberrationFunctions.f90(1873,51) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.181
+      remark #15452: unmasked strided loads: 3 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 24 
+      remark #15477: vector cost: 58.000 
+      remark #15478: estimated potential speedup: 0.400 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_ABERRATIONFUNCTION
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1717,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (1719:7) and pwy (1719:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (1719:7) and pwy (1719:7)
+   remark #15346: vector dependence: assumed FLOW dependence between pwy (1719:7) and pwy (1719:7)
+   remark #15346: vector dependence: assumed ANTI dependence between pwy (1719:7) and pwy (1719:7)
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1732,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(1746,7) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(1746,7)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15328: vectorization support: irregularly indexed load was emulated for the variable <sgnprm(:)>, part of index is nonlinearly computed   [ ../common/AberrationFunctions.f90(1753,9) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_binomial_tab(n,l)>, stride is 17   [ ../common/AberrationFunctions.f90(1759,31) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(1,n-l)>, stride is -2   [ ../common/AberrationFunctions.f90(1759,29) ]
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <wfield(2,l)>, stride is 2   [ ../common/AberrationFunctions.f90(1759,51) ]
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.181
+      remark #15452: unmasked strided loads: 3 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 24 
+      remark #15477: vector cost: 58.000 
+      remark #15478: estimated potential speedup: 0.400 
+      remark #15482: vectorized math library calls: 1 
+      remark #15487: type converts: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_WRITEABERRATIONLIST
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1469,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(1469,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(1469,3)
+         remark #15389: vectorization support: reference WAVAL(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(1469,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1470,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(1470,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(1470,3)
+         remark #15389: vectorization support: reference WAERR(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(1470,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1345,5) inlined into ../common/AberrationFunctions.f90(1473,8)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1350,40) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1350,40) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1350,40) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1351,9) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1352,9) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1359,24) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1359,24) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1363,26) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(1,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1368,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(2,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1369,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(1,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1370,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(2,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1371,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAVAL(1,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1372,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAVAL(2,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1373,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAERR(1,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1374,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAERR(2,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1375,7) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.026
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15460: masked strided loads: 12 
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 104 
+   remark #15477: vector cost: 421.000 
+   remark #15478: estimated potential speedup: 0.240 
+   remark #15486: divides: 2 
+   remark #15487: type converts: 2 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1378,5) inlined into ../common/AberrationFunctions.f90(1473,8)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAVAL(1,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1380,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(1,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1380,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAVAL(2,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1381,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(2,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1381,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAERR(1,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1382,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(1,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1382,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <WAERR(2,I)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1383,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(2,I)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1383,7) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.004
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15460: masked strided loads: 4 
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 28 
+   remark #15477: vector cost: 189.250 
+   remark #15478: estimated potential speedup: 0.140 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1481,3)
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1076,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1077,36) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1077,3) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1500,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1501,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1501,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,43) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,41) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,57) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1502,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1504,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1505,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1505,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1506,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1507,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1507,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,43) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,41) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,57) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1509,35) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1509,49) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1508,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1513,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1514,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1514,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1515,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1516,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1516,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,43) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,41) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,61) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1517,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1519,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1520,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1520,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1521,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1522,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1522,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1523,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1524,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1524,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1525,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1526,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1526,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,43) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,41) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,61) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1528,35) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1528,53) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1527,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1534,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1535,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1535,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,41) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,39) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,55) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1536,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1538,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1539,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1539,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1540,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1541,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1541,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,41) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,39) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,55) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1543,33) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1543,47) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1542,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1547,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1548,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1548,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1549,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1550,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1550,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,41) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,39) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,59) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1551,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1553,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1554,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1554,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1555,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1556,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1556,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1557,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1558,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1558,11) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1559,11) ]
+   remark #15382: vectorization support: call to function _for_adjustr cannot be vectorized   [ ../common/AberrationFunctions.f90(1560,17) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/AberrationFunctions.f90(1560,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,41) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,39) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,59) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1562,33) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/AberrationFunctions.f90(1562,51) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ ../common/AberrationFunctions.f90(1561,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between CURRENTNAMES (1076:3) and CURRENTNAMES(?-1) (1077:36)
+   remark #15346: vector dependence: assumed OUTPUT dependence between CURRENTNAMES(?-1) (1077:36) and CURRENTNAMES (1076:3)
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_TRANSLATEABERRATIONS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1345,5)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1350,11) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1350,26) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1350,46) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1351,23) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1352,23) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1359,11) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1359,26) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waidx_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1363,13) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1368,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1369,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1370,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1371,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <tval(1,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1372,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <tval(2,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1373,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <terr(1,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1374,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <terr(2,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1375,7) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.016
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15460: masked strided loads: 12 
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 100 
+   remark #15477: vector cost: 411.000 
+   remark #15478: estimated potential speedup: 0.240 
+   remark #15486: divides: 2 
+   remark #15487: type converts: 2 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1378,5)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <tval(1,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1380,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1380,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <tval(2,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1381,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_wa_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1381,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <terr(1,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1382,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(1,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1382,7) ]
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <terr(2,i)>, masked, stride is 2   [ ../common/AberrationFunctions.f90(1383,7) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <af_waerr_(2,i)>, masked, stride is unknown to compiler   [ ../common/AberrationFunctions.f90(1383,7) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.004
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15460: masked strided loads: 4 
+   remark #15462: unmasked indexed (or gather) loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 28 
+   remark #15477: vector cost: 189.250 
+   remark #15478: estimated potential speedup: 0.140 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETABERRATIONINDEXBYNAME
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(1203,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/AberrationFunctions.f90(1206,10) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_BACKUPALLABERRATIONS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(819,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(819,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(819,3)
+         remark #15389: vectorization support: reference af_wabk_(:,:) has unaligned access
+         remark #15389: vectorization support: reference af_wa_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 1.000
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 2.280 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(819,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_GETABERRATIONBYNAME
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(696,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/AberrationFunctions.f90(699,10) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_SETABERRATIONBYNAME
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(637,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/AberrationFunctions.f90(640,10) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_INITBINOC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(496,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(497,5)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: ABERRATIONFUNCTIONS::AF_INIT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(268,11)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(496,3) inlined into ../common/AberrationFunctions.f90(273,8)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(497,5) inlined into ../common/AberrationFunctions.f90(273,8)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(283,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ ../common/AberrationFunctions.f90(284,5) ]
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.012
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 19 
+      remark #15477: vector cost: 20.750 
+      remark #15478: estimated potential speedup: 0.900 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(284,5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(339,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between af_waidx_(1,l) (339:7) and af_waidx_(1,l) (339:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between af_waidx_(1,l) (339:7) and af_waidx_(1,l) (339:7)
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between l (339:7) and l (341:7)
+      remark #15346: vector dependence: assumed FLOW dependence between l (341:7) and l (339:7)
+      remark #15346: vector dependence: assumed ANTI dependence between l (339:7) and l (341:7)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(337,5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(346,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(346,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(346,3)
+         remark #15389: vectorization support: reference af_wa_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(346,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(347,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(347,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(347,3)
+         remark #15389: vectorization support: reference af_wabk_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(347,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(348,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(348,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(348,3)
+         remark #15389: vectorization support: reference af_waerr_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(348,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(349,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(349,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(349,3)
+         remark #15389: vectorization support: reference af_wacov_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/AberrationFunctions.f90(349,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(350,3)
+   remark #15388: vectorization support: reference af_waact_(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 2.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(350,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(351,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(351,3)
+      remark #15389: vectorization support: reference af_asn_(Impl_lp+1,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 16
+      remark #15309: vectorization support: normalized vectorization overhead 0.500
+      remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.370 
+      remark #15478: estimated potential speedup: 3.090 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/AberrationFunctions.f90(351,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/AberrationFunctions.f90(352,3)
+   remark #15527: loop was not vectorized: function call to _for_cpystr cannot be vectorized
+LOOP END
+===========================================================================

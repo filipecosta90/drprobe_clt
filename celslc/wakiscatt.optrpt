@@ -1,0 +1,563 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: WAKISCA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3) inlined into ../common/wakiscatt.f90(138,8)
+   remark #15388: vectorization support: reference a2(I) has aligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15389: vectorization support: reference BB(I,z) has unaligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 2.430 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3) inlined into ../common/wakiscatt.f90(138,8)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5) inlined into ../common/wakiscatt.f90(141,16)
+   remark #15389: vectorization support: reference a2(N) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5) inlined into ../common/wakiscatt.f90(141,16)
+   remark #15389: vectorization support: reference a2(N) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference a2(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference a2(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.889
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7) inlined into ../common/wakiscatt.f90(141,16)
+   remark #15389: vectorization support: reference a2(N+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference a2(N) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.398
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.380 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(278,3) inlined into ../common/wakiscatt.f90(152,18)
+   remark #15388: vectorization support: reference blk(:) has aligned access
+   remark #15388: vectorization support: reference a2(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 3.290 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(278,3) inlined into ../common/wakiscatt.f90(152,18)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: GETWAKI
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3)
+   remark #15389: vectorization support: reference a(i) has unaligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15389: vectorization support: reference bb(i,z) has unaligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.333
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.750 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKIABS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(278,3)
+   remark #15388: vectorization support: reference wakia(:) has aligned access
+   remark #15389: vectorization support: reference a(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 2.430 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(278,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKI
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5)
+   remark #15389: vectorization support: reference a(n) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.667
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.550 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5)
+   remark #15389: vectorization support: reference a(n) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference a(n+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference a(n+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 2.222
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.080 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7)
+   remark #15389: vectorization support: reference a(n+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference a(n) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.466
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.320 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKISCAR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3) inlined into ../common/wakiscatt.f90(215,8)
+   remark #15388: vectorization support: reference a2(I) has aligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15389: vectorization support: reference BB(I,z) has unaligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 2.430 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3) inlined into ../common/wakiscatt.f90(215,8)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5) inlined into ../common/wakiscatt.f90(218,16)
+   remark #15389: vectorization support: reference a2(N) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5) inlined into ../common/wakiscatt.f90(218,16)
+   remark #15389: vectorization support: reference a2(N) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference a2(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference a2(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.889
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7) inlined into ../common/wakiscatt.f90(218,16)
+   remark #15389: vectorization support: reference a2(N+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference a2(N) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.398
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.380 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKIMUG
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(502,32) inlined into ../common/wakiscatt.f90(411,8)
+   remark #15389: vectorization support: reference blk(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5) inlined into ../common/wakiscatt.f90(411,8)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5) inlined into ../common/wakiscatt.f90(411,8)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.889
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7) inlined into ../common/wakiscatt.f90(411,8)
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.398
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.380 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(502,32) inlined into ../common/wakiscatt.f90(412,9)
+   remark #15389: vectorization support: reference blk(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5) inlined into ../common/wakiscatt.f90(412,9)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5) inlined into ../common/wakiscatt.f90(412,9)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.889
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7) inlined into ../common/wakiscatt.f90(412,9)
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.398
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.380 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKIF2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3) inlined into ../common/wakiscatt.f90(343,8)
+   remark #15388: vectorization support: reference blk(I) has aligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15389: vectorization support: reference BB(I,z) has unaligned access   [ ../common/wakiscatt.f90(736,2) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 2.430 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(735,3) inlined into ../common/wakiscatt.f90(343,8)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKIF2G
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(502,32) inlined into ../common/wakiscatt.f90(466,8)
+   remark #15389: vectorization support: reference blk(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5) inlined into ../common/wakiscatt.f90(466,8)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5) inlined into ../common/wakiscatt.f90(466,8)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.889
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7) inlined into ../common/wakiscatt.f90(466,8)
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.398
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.380 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: WAKISCAR1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wakiscatt.f90(502,32)
+   remark #15389: vectorization support: reference blk(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(796,5) inlined into ../common/wakiscatt.f90(507,14)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(797,23) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 5.167
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 0.590 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(808,5) inlined into ../common/wakiscatt.f90(507,14)
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(812,20) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,25) ]
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(812,41) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.889
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 16 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.170 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wakiscatt.f90(830,7) inlined into ../common/wakiscatt.f90(507,14)
+   remark #15389: vectorization support: reference blk(N+5) has unaligned access   [ ../common/wakiscatt.f90(832,13) ]
+   remark #15389: vectorization support: reference blk(N) has unaligned access   [ ../common/wakiscatt.f90(834,22) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.398
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 112 
+   remark #15477: vector cost: 22.000 
+   remark #15478: estimated potential speedup: 2.380 
+   remark #15482: vectorized math library calls: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================

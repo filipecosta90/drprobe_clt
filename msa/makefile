@@ -6,6 +6,7 @@ lpar = /usr/local/lib/libfftw3f.a
 # removed switches
 #	 -libs:static ???
 # Start of the makefile
+
 msa: emsdata.o MultiSlice.o STEMfunctions.o msaparams.o msasub.o random.o msa.o
 	$(f90c) -o msa -nologo emsdata.o MultiSlice.o STEMfunctions.o msaparams.o msasub.o random.o msa.o $(lpar)
 emsdata.mod: emsdata.o ../common/emsdata.f90

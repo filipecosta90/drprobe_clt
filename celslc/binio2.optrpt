@@ -1,0 +1,279 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: GETFREELUN
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVER4DATATABLE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(181,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(204,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/binio2.f90(210,13) ]
+
+   LOOP BEGIN at ../common/binio2.f90(205,5)
+      remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/binio2.f90(206,7) ]
+      remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/binio2.f90(207,19) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (206:7) and at (207:19)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (207:19) and at (206:7)
+   LOOP END
+
+   LOOP BEGIN at ../common/binio2.f90(205,5)
+      remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ ../common/binio2.f90(206,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (206:7) and at (206:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (206:7) and at (206:7)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: LOADDATA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(298,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(374,21)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(374,21)
+   remark #15388: vectorization support: reference a(i) has aligned access   [ ../common/binio2.f90(374,9) ]
+   remark #15388: vectorization support: reference ODI4(i) has aligned access   [ ../common/binio2.f90(374,16) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.750
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 5.380 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(374,21)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(374,21)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(370,21)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(370,21)
+   remark #15388: vectorization support: reference a(i) has aligned access   [ ../common/binio2.f90(370,9) ]
+   remark #15388: vectorization support: reference ODI2(i) has aligned access   [ ../common/binio2.f90(370,16) ]
+   remark #15305: vectorization support: vector length 8
+   remark #15309: vectorization support: normalized vectorization overhead 1.750
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 5.380 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(370,21)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(370,21)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(366,21)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(366,21)
+   remark #15388: vectorization support: reference a(i) has aligned access   [ ../common/binio2.f90(366,9) ]
+   remark #15388: vectorization support: reference ODI1(i) has aligned access   [ ../common/binio2.f90(366,16) ]
+   remark #15305: vectorization support: vector length 16
+   remark #15309: vectorization support: normalized vectorization overhead 0.875
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 1.000 
+   remark #15478: estimated potential speedup: 4.810 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(366,21)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(366,21)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference a(i) has aligned access   [ ../common/binio2.f90(366,9) ]
+   remark #15389: vectorization support: reference ODI1(i) has unaligned access   [ ../common/binio2.f90(366,16) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.300
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(366,21)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(362,21)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(362,21)
+   remark #15388: vectorization support: reference a(i) has aligned access   [ ../common/binio2.f90(362,9) ]
+   remark #15388: vectorization support: reference ODR8(i) has aligned access   [ ../common/binio2.f90(362,16) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.167
+   remark #15418: vectorization support: number of FP down converts: double precision to single precision 1   [ ../common/binio2.f90(362,9) ]
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15442: entire loop may be executed in remainder
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 5 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 3.130 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(362,21)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(362,21)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/binio2.f90(357,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/binio2.f90(357,7)
+      remark #15389: vectorization support: reference a(i) has unaligned access   [ ../common/binio2.f90(358,9) ]
+      remark #15389: vectorization support: reference ODR4(i) has unaligned access   [ ../common/binio2.f90(358,9) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.000
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.280 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/binio2.f90(357,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(433,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATA1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(498,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATAR8
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(563,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATAC8
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(627,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATAI4
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(692,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATAI2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(757,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SAVEDATAI1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/binio2.f90(51,3) inlined into ../common/binio2.f90(822,9)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================

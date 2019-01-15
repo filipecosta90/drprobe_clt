@@ -1,0 +1,542 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: WEKOSCA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(1001,3) inlined into ../common/wekoscatt.f90(163,8)
+   remark #15388: vectorization support: reference b(I) has aligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15388: vectorization support: reference BB(I,z) has aligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.000 
+   remark #15478: estimated potential speedup: 1.600 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3) inlined into ../common/wekoscatt.f90(165,14)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (286:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (288:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(315,3) inlined into ../common/wekoscatt.f90(171,17)
+   remark #15388: vectorization support: reference A1(I) has aligned access   [ ../common/wekoscatt.f90(316,5) ]
+   remark #15388: vectorization support: reference a(I) has aligned access   [ ../common/wekoscatt.f90(316,13) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 3.000 
+   remark #15478: estimated potential speedup: 2.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(318,3) inlined into ../common/wekoscatt.f90(171,17)
+   remark #15388: vectorization support: reference B1(I) has aligned access   [ ../common/wekoscatt.f90(319,5) ]
+   remark #15388: vectorization support: reference b(I) has aligned access   [ ../common/wekoscatt.f90(319,13) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 8.750 
+   remark #15478: estimated potential speedup: 1.890 
+   remark #15486: divides: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(318,3) inlined into ../common/wekoscatt.f90(171,17)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(324,3) inlined into ../common/wekoscatt.f90(171,17)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/wekoscatt.f90(648,3) inlined into ../common/wekoscatt.f90(171,17)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(171,17)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: GETWEKO
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(1001,3)
+   remark #15389: vectorization support: reference b(i) has unaligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15389: vectorization support: reference bb(i,z) has unaligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.000
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.200 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(1001,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOIMAG
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(315,3)
+   remark #15388: vectorization support: reference a1(i) has aligned access   [ ../common/wekoscatt.f90(316,5) ]
+   remark #15389: vectorization support: reference a(i) has unaligned access   [ ../common/wekoscatt.f90(316,13) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15309: vectorization support: normalized vectorization overhead 0.429
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 1.200 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(318,3)
+   remark #15388: vectorization support: reference b1(i) has aligned access   [ ../common/wekoscatt.f90(319,5) ]
+   remark #15389: vectorization support: reference b(i) has unaligned access   [ ../common/wekoscatt.f90(319,13) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.083
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 9.000 
+   remark #15478: estimated potential speedup: 1.810 
+   remark #15486: divides: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(318,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(324,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/wekoscatt.f90(648,3) inlined into ../common/wekoscatt.f90(328,38)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+
+      LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(328,38)
+         remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: RI2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(695,11)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(695,38)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(696,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(696,51)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(711,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(711,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(716,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(716,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(716,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(716,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: EI
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKO
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between weko (284:4) and weko (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between weko (284:4) and weko (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between weko (284:4) and weko (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between weko (286:4) and weko (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between weko (284:4) and weko (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between weko (284:4) and weko (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between weko (288:4) and weko (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between weko (284:4) and weko (288:4)
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOSCAR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(1001,3) inlined into ../common/wekoscatt.f90(228,8)
+   remark #15388: vectorization support: reference b(I) has aligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15388: vectorization support: reference BB(I,z) has aligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.000 
+   remark #15478: estimated potential speedup: 1.600 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3) inlined into ../common/wekoscatt.f90(230,14)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (286:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (288:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+LOOP END
+===========================================================================
+
+Begin optimization report for: RI1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(651,49)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(655,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(655,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(655,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(655,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(659,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(659,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(659,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(659,17)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOABS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(378,3)
+   remark #15388: vectorization support: reference wekoa(:) has aligned access
+   remark #15389: vectorization support: reference a(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15309: vectorization support: normalized vectorization overhead 0.750
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.000 
+   remark #15478: estimated potential speedup: 1.140 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(379,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(379,3)
+   remark #15388: vectorization support: reference wekob(:) has aligned access
+   remark #15389: vectorization support: reference b(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.500
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.410 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOMUG
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3) inlined into ../common/wekoscatt.f90(451,8)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (286:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (288:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3) inlined into ../common/wekoscatt.f90(452,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (286:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (288:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOSCAR1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3) inlined into ../common/wekoscatt.f90(615,8)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (286:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (288:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOF2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(1001,3) inlined into ../common/wekoscatt.f90(507,8)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(1001,3) inlined into ../common/wekoscatt.f90(507,8)
+   remark #15388: vectorization support: reference blk(I) has aligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15389: vectorization support: reference BB(I,z) has unaligned access   [ ../common/wekoscatt.f90(1002,2) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.500
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.410 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: WEKOF2G
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(280,3) inlined into ../common/wekoscatt.f90(568,8)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (284:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (286:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (286:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+   remark #15346: vector dependence: assumed FLOW dependence between WEKO (288:4) and WEKO (284:4)
+   remark #15346: vector dependence: assumed ANTI dependence between WEKO (284:4) and WEKO (288:4)
+LOOP END
+===========================================================================
+
+Begin optimization report for: RIH1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(738,22)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(738,29)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(745,21)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/wekoscatt.f90(829,16) inlined into ../common/wekoscatt.f90(751,28)
+   remark #15523: loop was not vectorized: loop control variable I was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================

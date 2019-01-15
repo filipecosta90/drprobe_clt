@@ -1,0 +1,1971 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -check arg_temp_created -check bounds -g -traceback -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: SYMOPS::CONVMAT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(445,1)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <h(:,:)>, stride is 3
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 1.090 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/symops.f90(445,1)
+      remark #15389: vectorization support: reference h(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(445,1)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(445,1)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::MATCONV
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(472,6)
+   remark #15388: vectorization support: reference at (472:16) has aligned access   [ ../common/symops.f90(472,16) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(1,:)>, stride is 3   [ ../common/symops.f90(472,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.800
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 0.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(473,6)
+   remark #15388: vectorization support: reference at (473:16) has aligned access   [ ../common/symops.f90(473,16) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(2,:)>, stride is 3   [ ../common/symops.f90(473,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.800
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 0.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(474,6)
+   remark #15388: vectorization support: reference at (474:16) has aligned access   [ ../common/symops.f90(474,16) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(3,:)>, stride is 3   [ ../common/symops.f90(474,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.800
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 0.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(475,10)
+   remark #15388: vectorization support: reference at (475:18) has aligned access   [ ../common/symops.f90(475,18) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(2,:)>, stride is 3   [ ../common/symops.f90(475,18) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(475,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(475,10)
+   remark #15388: vectorization support: reference at (475:25) has aligned access   [ ../common/symops.f90(475,25) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(3,:)>, stride is 3   [ ../common/symops.f90(475,25) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(720,9) inlined into ../common/symops.f90(475,10)
+   remark #15388: vectorization support: reference at (720:9) has aligned access
+   remark #15388: vectorization support: reference at (720:9) has aligned access
+   remark #15388: vectorization support: reference at (721:17) has aligned access   [ ../common/symops.f90(721,17) ]
+   remark #15388: vectorization support: reference at (721:17) has aligned access   [ ../common/symops.f90(721,17) ]
+   remark #15388: vectorization support: reference at (721:43) has aligned access   [ ../common/symops.f90(721,43) ]
+   remark #15388: vectorization support: reference at (721:43) has aligned access   [ ../common/symops.f90(721,43) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.375
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 25 
+   remark #15477: vector cost: 12.000 
+   remark #15478: estimated potential speedup: 0.700 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,17) inlined into ../common/symops.f90(475,10)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,43) inlined into ../common/symops.f90(475,10)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(475,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(476,10)
+   remark #15388: vectorization support: reference at (476:18) has aligned access   [ ../common/symops.f90(476,18) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(3,:)>, stride is 3   [ ../common/symops.f90(476,18) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(476,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(476,10)
+   remark #15388: vectorization support: reference at (476:25) has aligned access   [ ../common/symops.f90(476,25) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(1,:)>, stride is 3   [ ../common/symops.f90(476,25) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(720,9) inlined into ../common/symops.f90(476,10)
+   remark #15388: vectorization support: reference at (720:9) has aligned access
+   remark #15388: vectorization support: reference at (720:9) has aligned access
+   remark #15388: vectorization support: reference at (721:17) has aligned access   [ ../common/symops.f90(721,17) ]
+   remark #15388: vectorization support: reference at (721:17) has aligned access   [ ../common/symops.f90(721,17) ]
+   remark #15388: vectorization support: reference at (721:43) has aligned access   [ ../common/symops.f90(721,43) ]
+   remark #15388: vectorization support: reference at (721:43) has aligned access   [ ../common/symops.f90(721,43) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.375
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 25 
+   remark #15477: vector cost: 12.000 
+   remark #15478: estimated potential speedup: 0.700 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,17) inlined into ../common/symops.f90(476,10)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,43) inlined into ../common/symops.f90(476,10)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(476,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(477,10)
+   remark #15388: vectorization support: reference at (477:18) has aligned access   [ ../common/symops.f90(477,18) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(1,:)>, stride is 3   [ ../common/symops.f90(477,18) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(477,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(477,10)
+   remark #15388: vectorization support: reference at (477:25) has aligned access   [ ../common/symops.f90(477,25) ]
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <h(2,:)>, stride is 3   [ ../common/symops.f90(477,25) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(720,9) inlined into ../common/symops.f90(477,10)
+   remark #15388: vectorization support: reference at (720:9) has aligned access
+   remark #15388: vectorization support: reference at (720:9) has aligned access
+   remark #15388: vectorization support: reference at (721:17) has aligned access   [ ../common/symops.f90(721,17) ]
+   remark #15388: vectorization support: reference at (721:17) has aligned access   [ ../common/symops.f90(721,17) ]
+   remark #15388: vectorization support: reference at (721:43) has aligned access   [ ../common/symops.f90(721,43) ]
+   remark #15388: vectorization support: reference at (721:43) has aligned access   [ ../common/symops.f90(721,43) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.375
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 25 
+   remark #15477: vector cost: 12.000 
+   remark #15478: estimated potential speedup: 0.700 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,17) inlined into ../common/symops.f90(477,10)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,43) inlined into ../common/symops.f90(477,10)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(477,10)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::CART2FRAC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(503,12)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(504,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(504,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(504,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(505,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(505,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(505,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(506,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(506,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(507,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(507,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(507,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(508,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(508,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(508,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (503:12) and call:_for_emit_diagnostic (508:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (508:7) and call:_for_emit_diagnostic (503:12)
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::INVMAT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(299,7)
+<Multiversioned v1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(299,7)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(299,7)
+      remark #15388: vectorization support: reference b(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.833
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.550 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(299,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(299,7)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(299,7)
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <b(:,:)>, stride is unknown to compiler
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.320 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(299,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(312,7)
+<Multiversioned v1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(312,7)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(312,7)
+      remark #15388: vectorization support: reference b(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.833
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.550 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(312,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(312,7)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(312,7)
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <b(:,:)>, stride is unknown to compiler
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.320 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(312,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(332,7)
+<Multiversioned v1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(332,7)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(332,7)
+      remark #15388: vectorization support: reference b(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.833
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.550 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(332,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(332,7)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(332,7)
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <b(:,:)>, stride is unknown to compiler
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.320 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(332,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(337,5)
+<Multiversioned v1>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(337,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(337,5)
+      remark #15388: vectorization support: reference b(:,:) has aligned access
+      remark #15388: vectorization support: reference a(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.550 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(337,5)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(337,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(337,5)
+<Multiversioned v2>
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <b(:,:)>, stride is unknown to compiler
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <a(:,:)>, stride is unknown to compiler
+   remark #15305: vectorization support: vector length 2
+   remark #15452: unmasked strided loads: 1 
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 0.880 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/symops.f90(337,5)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <b(:,:)>, stride is unknown to compiler
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <a(:,:)>, stride is unknown to compiler
+      remark #15305: vectorization support: vector length 2
+      remark #15452: unmasked strided loads: 1 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 4.000 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(337,5)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(340,7)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (340:7) and call:_for_emit_diagnostic (340:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (340:7) and call:_for_emit_diagnostic (340:7)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(340,7)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(340,7)
+   remark #15388: vectorization support: reference IPIV(j) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 3.333
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 2.500 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(340,7)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(346,11)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/symops.f90(415,1) ]
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(369,9)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(370,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(370,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(370,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(370,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,21) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,21) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,21) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,21) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(371,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(372,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(372,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(372,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(372,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (370:15) and call:_for_emit_diagnostic (372:11)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (372:11) and call:_for_emit_diagnostic (370:15)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(384,7)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(385,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (385:19) and call:_for_emit_diagnostic (385:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (385:9) and call:_for_emit_diagnostic (385:19)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(387,7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/symops.f90(391,11)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,21) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,21) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,21) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,21) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,13) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,13) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,13) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(392,13) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (392:21) and call:_for_emit_diagnostic (392:13)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (392:13) and call:_for_emit_diagnostic (392:21)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(401,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/symops.f90(403,9)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(404,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(404,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(404,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(404,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(404,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(404,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,25) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,25) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,25) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,25) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,25) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,25) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(405,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(406,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(406,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(406,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(406,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(406,11) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(406,11) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (404:15) and call:_for_emit_diagnostic (406:11)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (406:11) and call:_for_emit_diagnostic (404:15)
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at ../common/symops.f90(396,5)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+
+   LOOP BEGIN at ../common/symops.f90(360,7)
+      remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::FRAC2CART
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(533,12)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(534,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(534,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(534,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(535,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(535,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(535,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(536,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(536,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(537,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(537,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(537,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(538,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(538,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(538,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (533:12) and call:_for_emit_diagnostic (538:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (538:7) and call:_for_emit_diagnostic (533:12)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(183,3) inlined into ../common/symops.f90(541,10)
+   remark #15389: vectorization support: reference SCODE(Impl_lp+1) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(183,3) inlined into ../common/symops.f90(541,10)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::CHOP_ARR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(599,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(600,13) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(600,13) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(600,26) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(600,26) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (600:13) and call:_for_emit_diagnostic (600:26)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (600:26) and call:_for_emit_diagnostic (600:13)
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::CHOP_MAT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(624,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (626:15) and call:_for_emit_diagnostic (626:30)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (626:30) and call:_for_emit_diagnostic (626:15)
+
+   LOOP BEGIN at ../common/symops.f90(625,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,15) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(626,30) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (626:15) and call:_for_emit_diagnostic (626:30)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (626:30) and call:_for_emit_diagnostic (626:15)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::ROUND_ARR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(670,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(671,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(671,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(672,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(672,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(672,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(672,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (671:19) and call:_for_emit_diagnostic (672:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (672:5) and call:_for_emit_diagnostic (671:19)
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::ROUND_MAT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(697,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (699:23) and call:_for_emit_diagnostic (699:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (699:7) and call:_for_emit_diagnostic (699:23)
+
+   LOOP BEGIN at ../common/symops.f90(698,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(699,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (699:23) and call:_for_emit_diagnostic (699:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (699:7) and call:_for_emit_diagnostic (699:23)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::ANGVEC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(720,9)
+   remark #15389: vectorization support: reference v1(:) has unaligned access
+   remark #15389: vectorization support: reference v2(:) has unaligned access
+   remark #15389: vectorization support: reference v2(:) has unaligned access   [ ../common/symops.f90(721,43) ]
+   remark #15389: vectorization support: reference v1(:) has unaligned access   [ ../common/symops.f90(721,17) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.094
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 31 
+   remark #15477: vector cost: 16.000 
+   remark #15478: estimated potential speedup: 0.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,17)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(721,43)
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_TRF_UANI
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(754,1)
+   remark #15389: vectorization support: reference uani1(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 3
+   remark #15309: vectorization support: normalized vectorization overhead 0.200
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(755,1)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <li(:,:)>, stride is 3
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <at (755:1)>, stride is 3
+   remark #15305: vectorization support: vector length 2
+   remark #15452: unmasked strided loads: 1 
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 5.500 
+   remark #15478: estimated potential speedup: 0.800 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/symops.f90(755,1)
+      remark #15389: vectorization support: reference li(:,:) has unaligned access
+      remark #15389: vectorization support: reference at (755:1) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.750
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 4.000 
+      remark #15478: estimated potential speedup: 0.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(755,1)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(755,1)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(757,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(758,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(758,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(758,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(758,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(758,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (758:11) and call:_for_emit_diagnostic (758:11)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (758:11) and call:_for_emit_diagnostic (758:11)
+
+   LOOP BEGIN at ../common/symops.f90(758,11)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (758:11) and call:_for_emit_diagnostic (758:11)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (758:11) and call:_for_emit_diagnostic (758:11)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(758,11)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(758,11)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(761,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (763:5) and call:_for_emit_diagnostic (763:28)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (763:28) and call:_for_emit_diagnostic (763:5)
+
+   LOOP BEGIN at ../common/symops.f90(762,3)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,19) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,19) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(763,28) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (763:5) and call:_for_emit_diagnostic (763:28)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (763:28) and call:_for_emit_diagnostic (763:5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(767,1)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/symops.f90(768,3)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(769,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(770,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(771,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(772,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(773,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,16) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,42) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(774,42) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (769:16) and call:_for_emit_diagnostic (774:42)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (774:42) and call:_for_emit_diagnostic (769:16)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_APPLY
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(831,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(831,1)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(831,1)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(831,1)
+         remark #15388: vectorization support: reference S1(:,:) has aligned access
+         remark #15388: vectorization support: reference p(:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 1.290 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(831,1)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(831,1)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(833,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (833:1) and call:_for_emit_diagnostic (833:1)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (833:1) and call:_for_emit_diagnostic (833:1)
+
+   LOOP BEGIN at ../common/symops.f90(833,1)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (833:1) and call:_for_emit_diagnostic (833:1)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (833:1) and call:_for_emit_diagnostic (833:1)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(834,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(834,1)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(834,1)
+         remark #15389: vectorization support: reference S2(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(834,1)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(835,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (835:1) and call:_for_emit_diagnostic (835:1)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+      remark #15388: vectorization support: reference S2(:,:) has aligned access
+      remark #15388: vectorization support: reference S1(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 4.667
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.550 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(835,1)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(837,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(837,1)
+      remark #15388: vectorization support: reference SUSE(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(837,1)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(838,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (838:1) and call:_for_emit_diagnostic (838:1)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (838:1) and call:_for_emit_diagnostic (838:1)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(838,1)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(838,1)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(838,1)
+   remark #15388: vectorization support: reference SUSE(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 3.333
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 2.500 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(838,1)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(840,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(844,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(850,36)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(850,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(850,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(850,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(850,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(850,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(850,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(852,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(852,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(852,7) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(852,7) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (850:7) and call:_for_emit_diagnostic (852:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (852:7) and call:_for_emit_diagnostic (850:7)
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(856,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (856:7) and call:_for_emit_diagnostic (856:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (856:7) and call:_for_emit_diagnostic (856:7)
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(884,5)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (884:5) and call:_for_emit_diagnostic (884:5)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (884:5) and call:_for_emit_diagnostic (884:5)
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(885,5)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at ../common/symops.f90(888,7)
+            remark #15388: vectorization support: reference p2(:) has aligned access
+            remark #15388: vectorization support: reference p1(:) has aligned access
+            remark #15388: vectorization support: reference rfdif(:) has aligned access
+            remark #15388: vectorization support: reference p2(:) has aligned access
+            remark #15388: vectorization support: reference p1(:) has aligned access
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.120
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 3 
+            remark #15449: unmasked aligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 114 
+            remark #15477: vector cost: 41.500 
+            remark #15478: estimated potential speedup: 1.650 
+            remark #15482: vectorized math library calls: 1 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/symops.f90(896,17)
+            remark #15389: vectorization support: reference h(:,1) has unaligned access
+            remark #15388: vectorization support: reference rfdif(:) has aligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 2.444
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 8 
+            remark #15477: vector cost: 4.500 
+            remark #15478: estimated potential speedup: 0.610 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/symops.f90(897,17)
+            remark #15389: vectorization support: reference h(:,2) has unaligned access
+            remark #15388: vectorization support: reference rfdif(:) has aligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 2.444
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 8 
+            remark #15477: vector cost: 4.500 
+            remark #15478: estimated potential speedup: 0.610 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/symops.f90(898,17)
+            remark #15389: vectorization support: reference h(:,3) has unaligned access
+            remark #15388: vectorization support: reference rfdif(:) has aligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 2.444
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 8 
+            remark #15477: vector cost: 4.500 
+            remark #15478: estimated potential speedup: 0.610 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/symops.f90(887,7)
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (887:7) and call:_for_emit_diagnostic (887:7)
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (887:7) and call:_for_emit_diagnostic (887:7)
+         LOOP END
+
+         LOOP BEGIN at ../common/symops.f90(888,7)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(846,5)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (846:5) and call:_for_emit_diagnostic (846:5)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (846:5) and call:_for_emit_diagnostic (846:5)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(915,8)
+      remark #15388: vectorization support: reference SUSE(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 3.100
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 1.250 
+      remark #15478: estimated potential speedup: 2.170 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(915,8)
+   <Remainder loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(920,3)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(921,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(921,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(923,5) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (921:9) and call:_for_emit_diagnostic (923:5)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (923:5) and call:_for_emit_diagnostic (921:9)
+
+      LOOP BEGIN at ../common/symops.f90(923,5)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (923:5) and call:_for_emit_diagnostic (923:5)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (923:5) and call:_for_emit_diagnostic (923:5)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(930,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(930,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at ../common/symops.f90(930,3)
+            remark #15389: vectorization support: reference S2(:,:) has unaligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15399: vectorization support: unroll factor set to 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.300
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 4 
+            remark #15477: vector cost: 2.500 
+            remark #15478: estimated potential speedup: 1.450 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/symops.f90(930,3)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(931,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(931,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(931,3)
+         remark #15388: vectorization support: reference SUSE(:) has aligned access
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 3.333
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 2 
+         remark #15477: vector cost: 0.750 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(931,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(932,3)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (932:3) and call:_for_emit_diagnostic (932:3)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (932:3) and call:_for_emit_diagnostic (932:3)
+
+      LOOP BEGIN at ../common/symops.f90(932,3)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (932:3) and call:_for_emit_diagnostic (932:3)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (932:3) and call:_for_emit_diagnostic (932:3)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(933,3)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (933:3) and call:_for_emit_diagnostic (933:3)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (933:3) and call:_for_emit_diagnostic (933:3)
+   LOOP END
+
+   LOOP BEGIN at ../common/symops.f90(842,3)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (842:3) and call:_for_emit_diagnostic (842:3)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (842:3) and call:_for_emit_diagnostic (842:3)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(941,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(941,1)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(941,1)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(941,1)
+         remark #15388: vectorization support: reference p(:,:) has aligned access
+         remark #15388: vectorization support: reference S1(:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 4.667
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 1.290 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(941,1)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(941,1)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_CHECK_STR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(999,1)
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/symops.f90(1000,12) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(1000,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(1000,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(1001,13) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(1001,13) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (1000:12) and at (1000:6)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (1000:6) and at (1000:12)
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_SET_SGNAME
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1294,6)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1294,6)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1294,6)
+         remark #15389: vectorization support: reference symops_trf_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1294,6)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(117,1) inlined into ../common/symops.f90(1294,6)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (118:3) and call:_for_emit_diagnostic (120:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (120:3) and call:_for_emit_diagnostic (118:3)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1351,1) inlined into ../common/symops.f90(1294,6)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_SET_SGNUM
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1348,6)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1348,6)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1348,6)
+         remark #15389: vectorization support: reference symops_trf_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(116,1) inlined into ../common/symops.f90(1348,6)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(117,1) inlined into ../common/symops.f90(1348,6)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (118:3) and call:_for_emit_diagnostic (120:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (120:3) and call:_for_emit_diagnostic (118:3)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1351,1)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_SET_STR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(1048,1)
+   remark #15388: vectorization support: reference trf(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 6
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 2.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1052,1)
+   remark #15527: loop was not vectorized: function call to _for_cpystr cannot be vectorized
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1096:1) and call:_for_emit_diagnostic (1096:1)
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15389: vectorization support: reference symops_trf_(:,irow) has unaligned access
+   remark #15388: vectorization support: reference trf(:) has aligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 6
+   remark #15309: vectorization support: normalized vectorization overhead 0.100
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.450 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1096,1)
+   remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_PARSE_STR_LINTRF
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(1142,1)
+   remark #15389: vectorization support: reference slope(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.600
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1199,1)
+   remark #15389: vectorization support: reference slope(:) has unaligned access
+   remark #15388: vectorization support: reference sl1(:) has aligned access
+   remark #15388: vectorization support: reference sl2(:) has aligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.429
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 1.120 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1199,1)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1209,1)
+   remark #15389: vectorization support: reference slope(:) has unaligned access
+   remark #15388: vectorization support: reference sl1(:) has aligned access
+   remark #15388: vectorization support: reference sl2(:) has aligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.429
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 1.120 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1209,1)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1224,1)
+   remark #15389: vectorization support: reference slope(:) has unaligned access
+   remark #15388: vectorization support: reference sl2(:) has aligned access   [ ../common/symops.f90(1224,9) ]
+   remark #15388: vectorization support: reference sl1(:) has aligned access   [ ../common/symops.f90(1224,17) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.538
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 11 
+   remark #15477: vector cost: 6.500 
+   remark #15478: estimated potential speedup: 1.060 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1224,1)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1240,1)
+   remark #15389: vectorization support: reference slope(:) has unaligned access
+   remark #15388: vectorization support: reference sl1(:) has aligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.135
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 18.500 
+   remark #15478: estimated potential speedup: 1.250 
+   remark #15486: divides: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1240,1)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(1173,11)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_ERR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(183,3)
+   remark #15389: vectorization support: reference scode(Impl_lp+1) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(183,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: SYMOPS::SYMOPS_INIT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/symops.f90(116,1)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/symops.f90(116,1)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/symops.f90(116,1)
+         remark #15389: vectorization support: reference symops_trf_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/symops.f90(116,1)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/symops.f90(117,1)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(118,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(119,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/symops.f90(120,3) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (118:3) and call:_for_emit_diagnostic (120:3)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (120:3) and call:_for_emit_diagnostic (118:3)
+LOOP END
+===========================================================================

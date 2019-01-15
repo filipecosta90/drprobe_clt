@@ -1,0 +1,672 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -check arg_temp_created -check bounds -g -traceback -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: CHECKCELL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(305,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(306,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(306,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (306:11) and call:_for_emit_diagnostic (306:11)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (306:11) and call:_for_emit_diagnostic (306:11)
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(305,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between j (306:30) and j (306:30)
+   remark #15346: vector dependence: assumed FLOW dependence between j (306:30) and j (306:30)
+   remark #15346: vector dependence: assumed FLOW dependence between j (306:30) and j (306:30)
+   remark #15346: vector dependence: assumed ANTI dependence between j (306:30) and j (306:30)
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(305,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(319,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(320,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(320,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (320:11) and call:_for_emit_diagnostic (320:11)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (320:11) and call:_for_emit_diagnostic (320:11)
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(319,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between j (320:32) and j (320:32)
+   remark #15346: vector dependence: assumed FLOW dependence between j (320:32) and j (320:32)
+   remark #15346: vector dependence: assumed FLOW dependence between j (320:32) and j (320:32)
+   remark #15346: vector dependence: assumed ANTI dependence between j (320:32) and j (320:32)
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(319,5)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: FACTORIAL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(367,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 4.571
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 1.750 
+   remark #15478: estimated potential speedup: 0.530 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(367,3)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: BINOMIAL
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(367,3) inlined into celslcsubs.f90(406,14)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 4.571
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 1.750 
+   remark #15478: estimated potential speedup: 0.530 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(367,3) inlined into celslcsubs.f90(406,14)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(367,3) inlined into celslcsubs.f90(406,29)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 4.571
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 1.750 
+   remark #15478: estimated potential speedup: 0.530 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(367,3) inlined into celslcsubs.f90(406,29)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(367,3) inlined into celslcsubs.f90(406,46)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 4.571
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 1 
+   remark #15477: vector cost: 1.750 
+   remark #15478: estimated potential speedup: 0.530 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(367,3) inlined into celslcsubs.f90(406,46)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: UPPERCASE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(470,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(471,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(471,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(472,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(472,14) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ celslcsubs.f90(472,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(472,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(472,28) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (471:19) and call:_for_emit_diagnostic (472:28)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (472:28) and call:_for_emit_diagnostic (471:19)
+LOOP END
+===========================================================================
+
+Begin optimization report for: LOWERCASE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(497,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(498,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(498,19) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(499,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(499,14) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ celslcsubs.f90(499,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(499,28) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(499,28) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (498:19) and call:_for_emit_diagnostic (499:28)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (499:28) and call:_for_emit_diagnostic (498:19)
+LOOP END
+===========================================================================
+
+Begin optimization report for: PARSECOMMANDLINE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(627,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: CEL2SLC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(1429,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at celslcsubs.f90(1455,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at celslcsubs.f90(1474,9)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1474:9) and call:_for_emit_diagnostic (1474:9)
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+         <Peeled loop for vectorization>
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+            remark #15388: vectorization support: reference SLCDAT(:,:,j) has aligned access
+            remark #15388: vectorization support: reference cs_backup_pot_(:,:) has aligned access
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 4.667
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15442: entire loop may be executed in remainder
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15449: unmasked aligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 7 
+            remark #15477: vector cost: 1.500 
+            remark #15478: estimated potential speedup: 4.420 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+         <Alternate Alignment Vectorized Loop>
+         LOOP END
+
+         LOOP BEGIN at celslcsubs.f90(1474,9)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1507,10)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1507,10)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1507,10)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1507,10)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1507:10) and call:_for_emit_diagnostic (1507:10)
+
+      LOOP BEGIN at celslcsubs.f90(1507,10)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: WRITESLCPRM
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(1299,3)
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1302,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1305,5) ]
+   remark #15382: vectorization support: call to function _getfreelun_ cannot be vectorized   [ celslcsubs.f90(1308,14) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(101,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ celslcsubs.f90(102,33) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(102,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(103,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(104,3) ]
+   remark #15382: vectorization support: call to function _for_stop_core cannot be vectorized   [ celslcsubs.f90(105,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ celslcsubs.f90(1310,62) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt cannot be vectorized   [ celslcsubs.f90(1310,5) ]
+   remark #15382: vectorization support: call to function _for_write_int_fmt_xmit cannot be vectorized   [ celslcsubs.f90(1310,5) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ celslcsubs.f90(1311,16) ]
+   remark #15382: vectorization support: call to function _for_open cannot be vectorized   [ celslcsubs.f90(1311,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(101,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ celslcsubs.f90(102,33) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(102,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(103,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(104,3) ]
+   remark #15382: vectorization support: call to function _for_stop_core cannot be vectorized   [ celslcsubs.f90(105,3) ]
+   remark #15382: vectorization support: call to function _for_inquire cannot be vectorized   [ celslcsubs.f90(1313,13) ]
+   remark #15382: vectorization support: call to function _for_close cannot be vectorized   [ celslcsubs.f90(1314,12) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(101,3) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ celslcsubs.f90(102,33) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(102,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(103,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(104,3) ]
+   remark #15382: vectorization support: call to function _for_stop_core cannot be vectorized   [ celslcsubs.f90(105,3) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1317,5) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ celslcsubs.f90(1317,39) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ celslcsubs.f90(1317,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt_xmit cannot be vectorized   [ celslcsubs.f90(1317,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1320,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1321,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1324,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1327,5) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1328,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ celslcsubs.f90(1331,29) ]
+   remark #15382: vectorization support: call to function _for_write_seq_fmt cannot be vectorized   [ celslcsubs.f90(1332,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (1302:5) and at (1332:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (1332:5) and at (1302:5)
+LOOP END
+===========================================================================
+
+Begin optimization report for: CEL2POT3D2SLC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(1626,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at celslcsubs.f90(1626,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at celslcsubs.f90(1626,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1626,3)
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.833
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.350 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1626,3)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1626,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(1631,3)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15388: vectorization support: reference at (1631:3) has aligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ celslcsubs.f90(1632,3) ]
+   remark #15388: vectorization support: reference at (1632:3) has aligned access   [ celslcsubs.f90(1632,3) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ celslcsubs.f90(1633,3) ]
+   remark #15388: vectorization support: reference at (1633:3) has aligned access   [ celslcsubs.f90(1633,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.500
+   remark #15417: vectorization support: number of FP up converts: single precision to double precision 1
+   remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ celslcsubs.f90(1632,3) ]
+   remark #15417: vectorization support: number of FP up converts: single precision to double precision 1   [ celslcsubs.f90(1633,3) ]
+   remark #15301: FUSED LOOP WAS VECTORIZED
+   remark #15450: unmasked unaligned unit stride loads: 3 
+   remark #15451: unmasked unaligned unit stride stores: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 14 
+   remark #15477: vector cost: 9.000 
+   remark #15478: estimated potential speedup: 1.020 
+   remark #15487: type converts: 3 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(1632,3)
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(1633,3)
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(1631,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at celslcsubs.f90(1642,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at celslcsubs.f90(1642,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at celslcsubs.f90(1642,5)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1642,5)
+         remark #15388: vectorization support: reference SLCDAT(:,:,:) has aligned access
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.800
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 15 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 5.510 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1642,5)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1642,5)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference SLCDAT(:,:,:) has aligned access
+         remark #15389: vectorization support: reference m3d_pot_(:,:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 1.500
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1642,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: POT3D2SLC
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at celslcsubs.f90(1698,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at celslcsubs.f90(1731,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1731:7) and call:_for_emit_diagnostic (1731:7)
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15527: loop was not vectorized: function call to _for_emit_diagnostic cannot be vectorized
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+         remark #15388: vectorization support: reference SLCDAT(:,:,1) has aligned access
+         remark #15388: vectorization support: reference m3d_slcpot_(:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.800
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 15 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 5.510 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference SLCDAT(:,:,1) has aligned access
+         remark #15389: vectorization support: reference m3d_slcpot_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 1.500
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1731,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1737,53)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at celslcsubs.f90(1737,53)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1737,53)
+         remark #15388: vectorization support: reference at (1737:53) has aligned access
+         remark #15388: vectorization support: reference m3d_slcpot_(:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.800
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 15 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 5.510 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1737,53)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1737,53)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference at (1737:53) has aligned access
+         remark #15389: vectorization support: reference m3d_slcpot_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 1.500
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at celslcsubs.f90(1737,53)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1759,12)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1759,12)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1759,12)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+   LOOP END
+
+   LOOP BEGIN at celslcsubs.f90(1759,12)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:12) and call:_for_emit_diagnostic (1759:12)
+
+      LOOP BEGIN at celslcsubs.f90(1759,12)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================

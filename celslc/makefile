@@ -1,15 +1,15 @@
 # MAKEFILE for compiling and linking celslc
 # Defining variables
 f90comp = ifort
-switch3 = -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel
-switch2 = -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel
-switch1 = -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel
-switch0 = -nologo -O0 -recursive -132 -assume byterecl -threads -static-intel
+switch3 = -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel
+switch2 = -g -nologo -O2 -recursive -132 -assume byterecl -threads -static-intel
+switch1 = -g -nologo -O1 -recursive -132 -assume byterecl -threads -static-intel
+switch0 = -g -nologo -O0 -recursive -132 -assume byterecl -threads -static-intel
 # removed switches
 #	 -libs:static ???
 # Start of the makefile
 celslc: binio2.o spacegroups.o symops.o cifio.o emsdata.o 3dpot.o AberrationFunctions.o CellSlicer.o fitfeprm.o fscatab.o FFTs_x.o wekoscatt.o wakiscatt.o integration.o random.o celslcsubs.o celslcprm.o celslc.o
-	$(f90comp) -o celslc -nologo binio2.o spacegroups.o symops.o cifio.o emsdata.o 3dpot.o AberrationFunctions.o CellSlicer.o fitfeprm.o fscatab.o FFTs_x.o wekoscatt.o wakiscatt.o integration.o random.o celslcsubs.o celslcprm.o celslc.o
+	$(f90comp) -g -o celslc -nologo binio2.o spacegroups.o symops.o cifio.o emsdata.o 3dpot.o AberrationFunctions.o CellSlicer.o fitfeprm.o fscatab.o FFTs_x.o wekoscatt.o wakiscatt.o integration.o random.o celslcsubs.o celslcprm.o celslc.o
 # Modules
 celslcprm.mod: celslcprm.o celslcprm.f90
 	$(f90comp) -c $(switch3) celslcprm.f90

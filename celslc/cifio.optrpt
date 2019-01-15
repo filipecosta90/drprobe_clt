@@ -1,0 +1,884 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -check arg_temp_created -check bounds -g -traceback -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: CIFIO::CIF_READ
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(1688,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <h(:,:)>, stride is 3
+   remark #15305: vectorization support: vector length 2
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 1.090 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/cifio.f90(1688,3)
+      remark #15389: vectorization support: reference h(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(1688,3)
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(1688,3)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1704,3)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1721,3)
+   remark #15527: loop was not vectorized: function call to _for_cpystr cannot be vectorized
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1726,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/cifio.f90(1735,6) ]
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1749,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1750,15) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1750,15) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1750:15) and call:_for_f90_index (1750:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_f90_index (1750:9) and call:_for_emit_diagnostic (1750:15)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1749,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between nloops (1751:14) and nloops (1751:14)
+   remark #15346: vector dependence: assumed FLOW dependence between nloops (1751:14) and nloops (1751:14)
+   remark #15346: vector dependence: assumed FLOW dependence between nloops (1751:14) and nloops (1751:14)
+   remark #15346: vector dependence: assumed ANTI dependence between nloops (1751:14) and nloops (1751:14)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1760,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1760,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/cifio.f90(1760,5)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1760,5)
+         remark #15388: vectorization support: reference cif_lstats_(:,:) has aligned access
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 3.333
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 2 
+         remark #15477: vector cost: 0.750 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1760,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1768,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1797,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/cifio.f90(1826,9)
+      remark #15523: loop was not vectorized: loop control variable iloop was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1856,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1857,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1857,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1857,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1857,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1858,17) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1858,17) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1858,17) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1858,17) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1857:14) and call:_for_emit_diagnostic (1858:17)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1858:17) and call:_for_emit_diagnostic (1857:14)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1869,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1869,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/cifio.f90(1869,5)
+         remark #15389: vectorization support: reference cif_atom_site_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1869,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1873,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1874,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1874,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1874,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1874,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1875,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1875,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1875,29) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_READ_LOOP1 cannot be vectorized   [ ../common/cifio.f90(1875,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1877,34) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1877,34) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1877,34) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1877,34) ]
+   remark #15382: vectorization support: call to function _for_write_int_lis cannot be vectorized   [ ../common/cifio.f90(1877,11) ]
+   remark #15382: vectorization support: call to function _for_adjustl cannot be vectorized   [ ../common/cifio.f90(1879,21) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/cifio.f90(1879,16) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/cifio.f90(1879,35) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_ERR cannot be vectorized   [ ../common/cifio.f90(1878,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1874:14) and call:CIFIO::CIF_ERR (1878:16)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:CIFIO::CIF_ERR (1878:16) and call:_for_emit_diagnostic (1874:14)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1893,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1894,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1894,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1894,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1894,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1895,32) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1895,32) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1895,32) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1895,32) ]
+   remark #15382: vectorization support: call to function _for_write_int_lis cannot be vectorized   [ ../common/cifio.f90(1895,9) ]
+   remark #15382: vectorization support: call to function _for_adjustl cannot be vectorized   [ ../common/cifio.f90(1897,19) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/cifio.f90(1897,14) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/cifio.f90(1897,33) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_MSG cannot be vectorized   [ ../common/cifio.f90(1896,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1898,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1898,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1898,29) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_READ_LOOP2 cannot be vectorized   [ ../common/cifio.f90(1898,14) ]
+   remark #15382: vectorization support: call to function _for_adjustl cannot be vectorized   [ ../common/cifio.f90(1901,21) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/cifio.f90(1901,16) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/cifio.f90(1901,35) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_ERR cannot be vectorized   [ ../common/cifio.f90(1900,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1894:14) and call:CIFIO::CIF_ERR (1900:16)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:CIFIO::CIF_ERR (1900:16) and call:_for_emit_diagnostic (1894:14)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1913,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1914,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1914,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1914,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1914,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1915,32) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1915,32) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1915,32) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1915,32) ]
+   remark #15382: vectorization support: call to function _for_write_int_lis cannot be vectorized   [ ../common/cifio.f90(1915,9) ]
+   remark #15382: vectorization support: call to function _for_adjustl cannot be vectorized   [ ../common/cifio.f90(1917,19) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/cifio.f90(1917,14) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/cifio.f90(1917,33) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_MSG cannot be vectorized   [ ../common/cifio.f90(1916,14) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1918,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1918,29) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1918,29) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_READ_LOOP3 cannot be vectorized   [ ../common/cifio.f90(1918,14) ]
+   remark #15382: vectorization support: call to function _for_adjustl cannot be vectorized   [ ../common/cifio.f90(1921,21) ]
+   remark #15382: vectorization support: call to function _for_trim cannot be vectorized   [ ../common/cifio.f90(1921,16) ]
+   remark #15382: vectorization support: call to function _for_concat cannot be vectorized   [ ../common/cifio.f90(1921,35) ]
+   remark #15382: vectorization support: call to function CIFIO::CIF_ERR cannot be vectorized   [ ../common/cifio.f90(1920,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1914:14) and call:CIFIO::CIF_ERR (1920:16)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:CIFIO::CIF_ERR (1920:16) and call:_for_emit_diagnostic (1914:14)
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_GET_LOOP_STATS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(844,3)
+   remark #15389: vectorization support: reference lstats(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.250
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.050 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(848,3)
+   remark #15388: vectorization support: reference cidvotes(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.200 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(844,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(855,11)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(896,10)
+   remark #15388: vectorization support: reference cidvotes(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.294
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 8.500 
+   remark #15478: estimated potential speedup: 0.400 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(899,10)
+   remark #15388: vectorization support: reference cidvotes(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.812
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 19 
+   remark #15477: vector cost: 16.000 
+   remark #15478: estimated potential speedup: 0.520 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(907,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_STR_REMSUB
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(291,16)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(291,16)
+      remark #15388: vectorization support: reference at (291:16) has aligned access
+      remark #15305: vectorization support: vector length 16
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.180 
+      remark #15478: estimated potential speedup: 10.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(291,16)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at ../common/cifio.f90(271,10)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_READ_ITEM
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(780,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(782,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(782,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(783,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(783,11) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(785,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(785,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(785,47) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(785,47) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (782:11) and call:_for_emit_diagnostic (785:47)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (785:47) and call:_for_emit_diagnostic (782:11)
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_READ_LOOP1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(1002,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1002,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/cifio.f90(1002,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1002,3)
+         remark #15388: vectorization support: reference IDXHDR(:,:) has aligned access
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 3.333
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 2 
+         remark #15477: vector cost: 0.750 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1002,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1010,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1063,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_FIND_ATOM_SITE_NAME
+
+    Report from: Vector optimizations [vec]
+
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at ../common/cifio.f90(713,5)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+
+   LOOP BEGIN at ../common/cifio.f90(712,7)
+      remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_GET_ATNUM
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(382,3)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(207,3) inlined into ../common/cifio.f90(399,8)
+   remark #15389: vectorization support: reference SCODE(Impl_lp+1) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(207,3) inlined into ../common/cifio.f90(399,8)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_READ_LOOP2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(1220,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1220,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/cifio.f90(1220,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1220,3)
+         remark #15388: vectorization support: reference IDXHDR(:,:) has aligned access
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 3.333
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 2 
+         remark #15477: vector cost: 0.750 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1220,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1223,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1223,3)
+      remark #15388: vectorization support: reference L_ATOM_SITE(:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(1223,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1231,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1294,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1362,34)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at ../common/cifio.f90(1366,13)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1367,21) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1367,21) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1367,21) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1367,21) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1369,40) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1369,40) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1369,17) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1369,17) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1369,17) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1369,17) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1373,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1373,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1373,18) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1373,18) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1373,18) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(1373,18) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1367:21) and call:_for_emit_diagnostic (1373:18)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1373:18) and call:_for_emit_diagnostic (1367:21)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(1379,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/cifio.f90(1379,7)
+         remark #15389: vectorization support: reference L_ATOM_SITE(:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(1379,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1294,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(1294,3)
+      remark #15388: vectorization support: reference L_ATOM_SITE(:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(1294,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_READ_LOOP3
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(1486,5)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(1558,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_WRITE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(2232,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(2261,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(2297,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_GET_ISO_FROM_ANI
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(585,3)
+   remark #15388: vectorization support: reference a1(:) has aligned access
+   remark #15388: vectorization support: reference aa1(:) has aligned access   [ ../common/cifio.f90(586,3) ]
+   remark #15388: vectorization support: reference a0(:) has aligned access   [ ../common/cifio.f90(587,3) ]
+   remark #15388: vectorization support: reference at (587:3) has aligned access   [ ../common/cifio.f90(587,3) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15301: FUSED LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 11 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 1.650 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(586,3)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(587,3)
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(585,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(589,3)
+   remark #15388: vectorization support: reference adp(:,1) has aligned access
+   remark #15388: vectorization support: reference at (589:3) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(591,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(589,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(591,3)
+   remark #15388: vectorization support: reference adp(:,2) has aligned access
+   remark #15389: vectorization support: reference at (591:3) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 2.500 
+   remark #15478: estimated potential speedup: 1.330 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(593,3)
+   remark #15388: vectorization support: reference adp(:,3) has aligned access
+   remark #15388: vectorization support: reference at (593:3) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(593,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(596,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,27) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,27) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,33) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,33) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,39) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,39) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (598:7) and call:_for_emit_diagnostic (598:39)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (598:39) and call:_for_emit_diagnostic (598:7)
+
+   LOOP BEGIN at ../common/cifio.f90(597,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,33) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,33) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,39) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(598,39) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (598:7) and call:_for_emit_diagnostic (598:39)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (598:39) and call:_for_emit_diagnostic (598:7)
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_CREATE_ATOM_TYPE_LIST
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(2049,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(2049,3)
+      remark #15389: vectorization support: reference a(:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.300
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.450 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/cifio.f90(2049,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(2052,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/cifio.f90(2052,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/cifio.f90(2052,3)
+         remark #15389: vectorization support: reference TTMP(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/cifio.f90(2052,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(2062,20)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/cifio.f90(2061,7)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,20) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,50) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,50) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,50) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2062,50) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,48) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,48) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,48) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ ../common/cifio.f90(2064,48) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2062:20) and call:_for_emit_diagnostic (2064:48)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2064:48) and call:_for_emit_diagnostic (2062:20)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(2083,5)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2083:5) and call:_for_emit_diagnostic (2083:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2083:5) and call:_for_emit_diagnostic (2083:5)
+
+   LOOP BEGIN at ../common/cifio.f90(2083,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2083:5) and call:_for_emit_diagnostic (2083:5)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (2083:5) and call:_for_emit_diagnostic (2083:5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(207,3) inlined into ../common/cifio.f90(2094,8)
+   remark #15389: vectorization support: reference SCODE(Impl_lp+1) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(207,3) inlined into ../common/cifio.f90(2094,8)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: CIFIO::CIF_ERR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/cifio.f90(207,3)
+   remark #15389: vectorization support: reference scode(Impl_lp+1) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 16
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.160 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/cifio.f90(207,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================

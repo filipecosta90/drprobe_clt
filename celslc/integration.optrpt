@@ -1,0 +1,594 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: DSIMPSON
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(100,5) inlined into ../common/integration.f90(156,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(159,40) ]
+
+   LOOP BEGIN at ../common/integration.f90(107,2) inlined into ../common/integration.f90(156,10)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(108,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: DSIMP2D1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(216,5) inlined into ../common/integration.f90(320,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(320,10)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: DSIMP2D2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(265,5) inlined into ../common/integration.f90(376,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(376,10)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: DQSIMP2D
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(375,3) inlined into ../common/integration.f90(543,12)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(543,12)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(375,3) inlined into ../common/integration.f90(543,12)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(543,12)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(435,2) inlined into ../common/integration.f90(543,12)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(265,27) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(265,36) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between X (265:27) and X (437:4)
+   remark #15346: vector dependence: assumed OUTPUT dependence between X (437:4) and X (265:27)
+
+   LOOP BEGIN at ../common/integration.f90(375,3) inlined into ../common/integration.f90(543,12)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+      LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(543,12)
+         remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(319,3) inlined into ../common/integration.f90(545,12)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(545,12)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(319,3) inlined into ../common/integration.f90(545,12)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(545,12)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(486,2) inlined into ../common/integration.f90(545,12)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(216,27) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(216,36) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between Y (216:27) and Y (488:4)
+   remark #15346: vector dependence: assumed OUTPUT dependence between Y (488:4) and Y (216:27)
+
+   LOOP BEGIN at ../common/integration.f90(319,3) inlined into ../common/integration.f90(545,12)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+      LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(545,12)
+         remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      LOOP END
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at ../common/integration.f90(556,3)
+   remark #15533: loop was not vectorized: loop exceeds complexity limits. Consider overriding limits (-override-limits) or using simd directive.
+LOOP END
+===========================================================================
+
+Begin optimization report for: DSGRID1D
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(610,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(610,3)
+   remark #15388: vectorization support: reference TX1(i1) has aligned access   [ ../common/integration.f90(611,5) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.230
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 120 
+   remark #15477: vector cost: 43.500 
+   remark #15478: estimated potential speedup: 2.720 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(610,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(615,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/integration.f90(615,3)
+      remark #15388: vectorization support: reference Y(:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(615,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(617,3)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(619,13) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between cx1 (618:5) and cx1 (619:13)
+   remark #15346: vector dependence: assumed OUTPUT dependence between cx1 (619:13) and cx1 (618:5)
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(625,32)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(625,32)
+   remark #15388: vectorization support: reference Y(i1+1) has aligned access   [ ../common/integration.f90(625,16) ]
+   remark #15389: vectorization support: reference Y(i1) has unaligned access   [ ../common/integration.f90(625,24) ]
+   remark #15388: vectorization support: reference TX1(i1+1) has aligned access
+   remark #15389: vectorization support: reference TX1(i1) has unaligned access   [ ../common/integration.f90(625,42) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.589
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 14 
+   remark #15477: vector cost: 7.000 
+   remark #15478: estimated potential speedup: 1.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(625,32)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(625,32)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: DSGRID2D
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(686,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(686,3)
+   remark #15388: vectorization support: reference TX1(i1) has aligned access   [ ../common/integration.f90(687,5) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.230
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 120 
+   remark #15477: vector cost: 43.500 
+   remark #15478: estimated potential speedup: 2.720 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(686,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(690,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(690,3)
+   remark #15388: vectorization support: reference TX2(i2) has aligned access   [ ../common/integration.f90(691,5) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.230
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 120 
+   remark #15477: vector cost: 43.500 
+   remark #15478: estimated potential speedup: 2.720 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(690,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(695,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/integration.f90(695,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/integration.f90(695,3)
+         remark #15389: vectorization support: reference Y(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/integration.f90(695,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(697,3)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(701,18) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between cx2 (698:5) and cx2 (701:18)
+   remark #15346: vector dependence: assumed OUTPUT dependence between cx2 (701:18) and cx2 (698:5)
+
+   LOOP BEGIN at ../common/integration.f90(699,5)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(701,18) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between cx1 (700:7) and cx1 (701:18)
+      remark #15346: vector dependence: assumed OUTPUT dependence between cx1 (701:18) and cx1 (700:7)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(706,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/integration.f90(706,3)
+      remark #15388: vectorization support: reference SX2(:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 2
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(706,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(708,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+      remark #15389: vectorization support: reference Y(i1+1,i2) has unaligned access   [ ../common/integration.f90(710,28) ]
+      remark #15389: vectorization support: reference Y(i1,i2) has unaligned access   [ ../common/integration.f90(710,39) ]
+      remark #15388: vectorization support: reference TX1(i1+1) has aligned access   [ ../common/integration.f90(710,50) ]
+      remark #15389: vectorization support: reference TX1(i1) has unaligned access   [ ../common/integration.f90(710,60) ]
+      remark #15388: vectorization support: reference Y(i1+1,i2) has aligned access   [ ../common/integration.f90(710,28) ]
+      remark #15389: vectorization support: reference Y(i1,i2) has unaligned access   [ ../common/integration.f90(710,39) ]
+      remark #15388: vectorization support: reference TX1(i1+1) has aligned access   [ ../common/integration.f90(710,50) ]
+      remark #15389: vectorization support: reference TX1(i1) has unaligned access   [ ../common/integration.f90(710,60) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.714
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15450: unmasked unaligned unit stride loads: 4 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 28 
+      remark #15477: vector cost: 14.000 
+      remark #15478: estimated potential speedup: 1.970 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(708,3)
+<Remainder>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+      remark #15388: vectorization support: reference Y(i1+1,i2) has aligned access   [ ../common/integration.f90(710,28) ]
+      remark #15389: vectorization support: reference Y(i1,i2) has unaligned access   [ ../common/integration.f90(710,39) ]
+      remark #15388: vectorization support: reference TX1(i1+1) has aligned access   [ ../common/integration.f90(710,50) ]
+      remark #15389: vectorization support: reference TX1(i1) has unaligned access   [ ../common/integration.f90(710,60) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.250
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 2 
+      remark #15450: unmasked unaligned unit stride loads: 2 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 14 
+      remark #15477: vector cost: 7.000 
+      remark #15478: estimated potential speedup: 1.960 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at ../common/integration.f90(709,5)
+   <Remainder loop for vectorization>
+      remark #15389: vectorization support: reference Y(i1+1,i2) has unaligned access   [ ../common/integration.f90(710,28) ]
+      remark #15389: vectorization support: reference Y(i1,i2) has unaligned access   [ ../common/integration.f90(710,39) ]
+      remark #15388: vectorization support: reference TX1(i1+1) has aligned access   [ ../common/integration.f90(710,50) ]
+      remark #15389: vectorization support: reference TX1(i1) has unaligned access   [ ../common/integration.f90(710,60) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.696
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(713,3)
+   remark #15388: vectorization support: reference SX2(:) has aligned access
+   remark #15388: vectorization support: reference SX2(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 3.000 
+   remark #15478: estimated potential speedup: 1.970 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(713,3)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference SX2(:) has aligned access
+   remark #15388: vectorization support: reference SX2(:) has aligned access
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.000
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(715,3)
+<Peeled loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(715,3)
+   remark #15388: vectorization support: reference SX2(i2+1) has aligned access   [ ../common/integration.f90(716,16) ]
+   remark #15389: vectorization support: reference SX2(i2) has unaligned access   [ ../common/integration.f90(716,26) ]
+   remark #15388: vectorization support: reference TX2(i2+1) has aligned access   [ ../common/integration.f90(716,36) ]
+   remark #15389: vectorization support: reference TX2(i2) has unaligned access   [ ../common/integration.f90(716,46) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.589
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 14 
+   remark #15477: vector cost: 7.000 
+   remark #15478: estimated potential speedup: 1.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(715,3)
+<Alternate Alignment Vectorized Loop>
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(715,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: DTRAPZ2DO2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(216,5) inlined into ../common/integration.f90(479,29)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(479,29)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(215,8) inlined into ../common/integration.f90(479,52)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(479,52)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(486,2)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(216,27) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(216,36) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between y (216:27) and y (488:4)
+   remark #15346: vector dependence: assumed OUTPUT dependence between y (488:4) and y (216:27)
+
+   LOOP BEGIN at ../common/integration.f90(319,3) inlined into ../common/integration.f90(487,16)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(323,43) ]
+
+      LOOP BEGIN at ../common/integration.f90(223,2) inlined into ../common/integration.f90(487,16)
+         remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: DTRAPZ2DO1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(265,5) inlined into ../common/integration.f90(428,29)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(428,29)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(264,8) inlined into ../common/integration.f90(428,52)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+   LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(428,52)
+      remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/integration.f90(435,2)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(265,27) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(265,36) ]
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between x (265:27) and x (437:4)
+   remark #15346: vector dependence: assumed OUTPUT dependence between x (437:4) and x (265:27)
+
+   LOOP BEGIN at ../common/integration.f90(375,3) inlined into ../common/integration.f90(436,16)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/integration.f90(379,43) ]
+
+      LOOP BEGIN at ../common/integration.f90(272,2) inlined into ../common/integration.f90(436,16)
+         remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: DTRAPZ2D2
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(272,2)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(273,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+===========================================================================
+
+Begin optimization report for: DTRAPZ2D1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(223,2)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(224,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+===========================================================================
+
+Begin optimization report for: DTRAPEZ
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/integration.f90(107,2)
+   remark #15382: vectorization support: call to function (Indirect call) cannot be vectorized   [ ../common/integration.f90(108,16) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+===========================================================================

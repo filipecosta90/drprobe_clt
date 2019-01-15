@@ -1,0 +1,2718 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -check arg_temp_created -check bounds -g -traceback -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: M3DPOT::M3D_READASCTXT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(203,3)
+   remark #15388: vectorization support: reference nsd(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.200 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(204,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(203,3)
+<Distributed chunk2>
+   remark #15388: vectorization support: reference sd(:,:) has aligned access   [ 3dpot.f90(204,3) ]
+   remark #15388: vectorization support: reference ssd(:,:) has aligned access   [ 3dpot.f90(205,3) ]
+   remark #15389: vectorization support: reference sd(:,:) has unaligned access   [ 3dpot.f90(204,3) ]
+   remark #15389: vectorization support: reference ssd(:,:) has unaligned access   [ 3dpot.f90(205,3) ]
+   remark #15388: vectorization support: reference sd(:,:) has aligned access   [ 3dpot.f90(204,3) ]
+   remark #15388: vectorization support: reference ssd(:,:) has aligned access   [ 3dpot.f90(205,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 4 
+   remark #15451: unmasked unaligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 22 
+   remark #15477: vector cost: 11.000 
+   remark #15478: estimated potential speedup: 1.490 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(203,3)
+<Remainder loop for vectorization, Distributed chunk2>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(212,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(214,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(216,7)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at 3dpot.f90(223,11)
+            remark #15388: vectorization support: reference r0(:) has aligned access
+            remark #15388: vectorization support: reference r(:) has aligned access
+            remark #15305: vectorization support: vector length 2
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15449: unmasked aligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 4 
+            remark #15477: vector cost: 1.500 
+            remark #15478: estimated potential speedup: 1.710 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(225,11)
+            remark #15388: vectorization support: reference dr(:) has aligned access
+            remark #15388: vectorization support: reference r(:) has aligned access
+            remark #15388: vectorization support: reference r0(:) has aligned access
+            remark #15305: vectorization support: vector length 2
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 2 
+            remark #15449: unmasked aligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 6 
+            remark #15477: vector cost: 2.500 
+            remark #15478: estimated potential speedup: 1.630 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(227,13)
+            remark #15388: vectorization support: reference sd(:,1) has aligned access
+            remark #15388: vectorization support: reference sd(:,1) has aligned access
+            remark #15388: vectorization support: reference dr(:) has aligned access
+            remark #15388: vectorization support: reference ssd(:,1) has aligned access   [ 3dpot.f90(228,13) ]
+            remark #15388: vectorization support: reference ssd(:,1) has aligned access   [ 3dpot.f90(228,13) ]
+            remark #15388: vectorization support: reference dr(:) has aligned access   [ 3dpot.f90(228,13) ]
+            remark #15388: vectorization support: reference dr(:) has aligned access   [ 3dpot.f90(228,13) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.055
+            remark #15301: FUSED LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 5 
+            remark #15449: unmasked aligned unit stride stores: 2 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 99 
+            remark #15477: vector cost: 54.500 
+            remark #15478: estimated potential speedup: 1.380 
+            remark #15486: divides: 3 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(228,13)
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(232,13)
+            remark #15388: vectorization support: reference sd(:,2) has aligned access
+            remark #15388: vectorization support: reference sd(:,2) has aligned access
+            remark #15389: vectorization support: reference dr(:) has unaligned access
+            remark #15388: vectorization support: reference ssd(:,2) has aligned access   [ 3dpot.f90(233,13) ]
+            remark #15388: vectorization support: reference ssd(:,2) has aligned access   [ 3dpot.f90(233,13) ]
+            remark #15389: vectorization support: reference dr(:) has unaligned access   [ 3dpot.f90(233,13) ]
+            remark #15389: vectorization support: reference dr(:) has unaligned access   [ 3dpot.f90(233,13) ]
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.052
+            remark #15301: FUSED LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 2 
+            remark #15449: unmasked aligned unit stride stores: 2 
+            remark #15450: unmasked unaligned unit stride loads: 3 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 99 
+            remark #15477: vector cost: 57.500 
+            remark #15478: estimated potential speedup: 1.350 
+            remark #15486: divides: 3 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(233,13)
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(237,13)
+            remark #15388: vectorization support: reference sd(:,3) has aligned access
+            remark #15388: vectorization support: reference sd(:,3) has aligned access
+            remark #15388: vectorization support: reference dr(:) has aligned access
+            remark #15388: vectorization support: reference ssd(:,3) has aligned access   [ 3dpot.f90(238,13) ]
+            remark #15388: vectorization support: reference ssd(:,3) has aligned access   [ 3dpot.f90(238,13) ]
+            remark #15388: vectorization support: reference dr(:) has aligned access   [ 3dpot.f90(238,13) ]
+            remark #15388: vectorization support: reference dr(:) has aligned access   [ 3dpot.f90(238,13) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.055
+            remark #15301: FUSED LOOP WAS VECTORIZED
+            remark #15448: unmasked aligned unit stride loads: 5 
+            remark #15449: unmasked aligned unit stride stores: 2 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 99 
+            remark #15477: vector cost: 54.500 
+            remark #15478: estimated potential speedup: 1.380 
+            remark #15486: divides: 3 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(238,13)
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(223,11)
+         <Remainder loop for vectorization>
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(225,11)
+         <Remainder loop for vectorization>
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(227,13)
+         <Remainder loop for vectorization>
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(232,13)
+         <Peeled loop for vectorization>
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(237,13)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(250,3)
+   remark #15388: vectorization support: reference rserr(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(250,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(251,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(259,7)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(259,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(259,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(259,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(259,29) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (259:29) and call:_for_emit_diagnostic (259:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (259:7) and call:_for_emit_diagnostic (259:29)
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(261,18)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (261:18) and call:_for_emit_diagnostic (261:18)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (261:18) and call:_for_emit_diagnostic (261:18)
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(254,7)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (254:7) and call:_for_emit_diagnostic (254:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (254:7) and call:_for_emit_diagnostic (254:7)
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(257,13)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (257:13) and call:_for_emit_diagnostic (257:13)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (257:13) and call:_for_emit_diagnostic (257:13)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(270,3)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15388: vectorization support: reference sd(:,1) has aligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(271,3) ]
+   remark #15389: vectorization support: reference sd(:,2) has unaligned access   [ 3dpot.f90(271,3) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(272,3) ]
+   remark #15388: vectorization support: reference sd(:,3) has aligned access   [ 3dpot.f90(272,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.360
+   remark #15301: FUSED LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 2 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 19 
+   remark #15477: vector cost: 12.500 
+   remark #15478: estimated potential speedup: 1.070 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(271,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(272,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(270,3)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_CELLDIMENSION
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(364,21)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(365,21) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(365,21) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(366,21) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(366,21) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15450: unmasked unaligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 25 
+   remark #15477: vector cost: 13.500 
+   remark #15478: estimated potential speedup: 0.630 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(365,21)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(366,21)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_CELLVOLUME
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(386,3)
+   remark #15388: vectorization support: reference v12(:) has aligned access
+   remark #15388: vectorization support: reference at (387:32) has aligned access   [ 3dpot.f90(387,32) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(387,8) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.400
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 10 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 0.880 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(387,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(387,8)
+   remark #15388: vectorization support: reference at (387:53) has aligned access   [ 3dpot.f90(387,53) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 0.750 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(388,15)
+   remark #15388: vectorization support: reference v12(:) has aligned access
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_CELLANGLES
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(408,16)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(409,16) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(409,16) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(410,16) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(410,16) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(412,10) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(412,10) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(413,10) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(413,10) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(414,10) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(414,10) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.412
+   remark #15450: unmasked unaligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 50 
+   remark #15477: vector cost: 25.500 
+   remark #15478: estimated potential speedup: 0.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(409,16)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(410,16)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(412,10)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(413,10)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(414,10)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_POSTCELLINFO
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(364,21) inlined into 3dpot.f90(439,8)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(365,21) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(365,21) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(366,21) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(366,21) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(408,16) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(408,16) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(409,16) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(409,16) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(410,16) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(410,16) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(412,10) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(412,10) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(413,10) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(413,10) ]
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(414,10) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(414,10) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.143
+   remark #15450: unmasked unaligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 75 
+   remark #15477: vector cost: 42.000 
+   remark #15478: estimated potential speedup: 0.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(365,21) inlined into 3dpot.f90(439,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(366,21) inlined into 3dpot.f90(439,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(408,16) inlined into 3dpot.f90(443,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(409,16) inlined into 3dpot.f90(443,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(410,16) inlined into 3dpot.f90(443,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(412,10) inlined into 3dpot.f90(443,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(413,10) inlined into 3dpot.f90(443,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(414,10) inlined into 3dpot.f90(443,8)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_OTHOGONALIZE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(408,16) inlined into 3dpot.f90(1546,8)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(409,16) inlined into 3dpot.f90(1546,8)
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(410,16) inlined into 3dpot.f90(1546,8)
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(412,10) inlined into 3dpot.f90(1546,8)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.500
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 0.550 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(413,10) inlined into 3dpot.f90(1546,8)
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.500
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 0.550 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(414,10) inlined into 3dpot.f90(1546,8)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.500
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 5.000 
+   remark #15478: estimated potential speedup: 0.550 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1552,10)
+   remark #15388: vectorization support: reference dpih(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.812
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 21 
+   remark #15477: vector cost: 16.000 
+   remark #15478: estimated potential speedup: 0.560 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1555,10)
+   remark #15388: vectorization support: reference dpih(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.812
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 21 
+   remark #15477: vector cost: 16.000 
+   remark #15478: estimated potential speedup: 0.560 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1558,10)
+   remark #15388: vectorization support: reference dpih(:) has aligned access
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.812
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 21 
+   remark #15477: vector cost: 16.000 
+   remark #15478: estimated potential speedup: 0.560 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1562,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1564,18) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1564,18) ]
+   remark #15382: vectorization support: call to function M3DPOT::M3D_ORTHOALPHA cannot be vectorized   [ 3dpot.f90(1566,12) ]
+   remark #15382: vectorization support: call to function M3DPOT::M3D_ORTHOBETA cannot be vectorized   [ 3dpot.f90(1568,12) ]
+   remark #15382: vectorization support: call to function M3DPOT::M3D_ORTHOGAMMA cannot be vectorized   [ 3dpot.f90(1570,12) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1564:18) and call:M3DPOT::M3D_ORTHOGAMMA (1570:12)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:M3DPOT::M3D_ORTHOGAMMA (1570:12) and call:_for_emit_diagnostic (1564:18)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_ORTHOGAMMA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(750,3)
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15388: vectorization support: reference b2(:) has aligned access   [ 3dpot.f90(751,3) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(751,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.750
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 1.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(751,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(770,16)
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15388: vectorization support: reference b2(:) has aligned access   [ 3dpot.f90(771,16) ]
+   remark #15388: vectorization support: reference b2(:) has aligned access   [ 3dpot.f90(771,16) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.375
+   remark #15448: unmasked aligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 17 
+   remark #15477: vector cost: 8.000 
+   remark #15478: estimated potential speedup: 0.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(771,16)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(780,3)
+   remark #15388: vectorization support: reference e2(:) has aligned access   [ 3dpot.f90(781,3) ]
+   remark #15388: vectorization support: reference b2(:) has aligned access   [ 3dpot.f90(781,3) ]
+   remark #15388: vectorization support: reference e1(:) has aligned access
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15388: vectorization support: reference e1(:) has aligned access   [ 3dpot.f90(782,10) ]
+   remark #15388: vectorization support: reference e2(:) has aligned access   [ 3dpot.f90(782,10) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.295
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 69 
+   remark #15477: vector cost: 39.000 
+   remark #15478: estimated potential speedup: 1.210 
+   remark #15486: divides: 2 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(781,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(782,10)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(801,3)
+   remark #15388: vectorization support: reference e2p(:) has aligned access
+   remark #15388: vectorization support: reference e2(:) has aligned access
+   remark #15388: vectorization support: reference e1(:) has aligned access
+   remark #15388: vectorization support: reference e2p(:) has aligned access   [ 3dpot.f90(802,17) ]
+   remark #15388: vectorization support: reference e2p(:) has aligned access   [ 3dpot.f90(802,17) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.312
+   remark #15448: unmasked aligned unit stride loads: 3 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 17 
+   remark #15477: vector cost: 8.000 
+   remark #15478: estimated potential speedup: 0.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(802,17)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(803,3)
+   remark #15388: vectorization support: reference e2p(:) has aligned access
+   remark #15388: vectorization support: reference e2p(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.057
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 17.500 
+   remark #15478: estimated potential speedup: 1.340 
+   remark #15486: divides: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(803,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(830,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between rmin (831:5) and rmin (841:11)
+   remark #15346: vector dependence: assumed FLOW dependence between rmin (841:11) and rmin (831:5)
+   remark #15346: vector dependence: assumed ANTI dependence between rmin (831:5) and rmin (841:11)
+
+   LOOP BEGIN at 3dpot.f90(831,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between rmin (840:17) and rmin (841:11)
+      remark #15346: vector dependence: assumed FLOW dependence between rmin (841:11) and rmin (840:17)
+      remark #15346: vector dependence: assumed FLOW dependence between rmin (841:11) and rmin (840:17)
+      remark #15346: vector dependence: assumed ANTI dependence between rmin (840:17) and rmin (841:11)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(900,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(900,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(900,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at 3dpot.f90(900,3)
+            remark #15389: vectorization support: reference POTCOPY(:,:,:) has unaligned access
+            remark #15389: vectorization support: reference m3d_pot_(:,:,:) has unaligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 1.000
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 7 
+            remark #15477: vector cost: 3.000 
+            remark #15478: estimated potential speedup: 2.000 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(900,3)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(918,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(918,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(918,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(918,3)
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.833
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.350 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(918,3)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(918,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(919,3)
+   remark #15388: vectorization support: reference CSHFT(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 4.440 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(919,3)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference CSHFT(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(919,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(922,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(923,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(925,7)
+         remark #15388: vectorization support: reference CSHFT(:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.440 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(925,7)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference CSHFT(:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(925,7)
+      <Remainder loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(926,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(928,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (928:20) and call:_for_emit_diagnostic (928:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (928:9) and call:_for_emit_diagnostic (928:20)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(942,20)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(942,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(942,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (942:20) and call:_for_emit_diagnostic (942:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (942:9) and call:_for_emit_diagnostic (942:20)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(948,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (948:9) and call:_for_emit_diagnostic (948:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (948:9) and call:_for_emit_diagnostic (948:9)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(950,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(951,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (951:39) and call:_for_emit_diagnostic (951:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (951:11) and call:_for_emit_diagnostic (951:39)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(977,3)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(977,12) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(978,3) ]
+   remark #15388: vectorization support: reference e2p(:) has aligned access   [ 3dpot.f90(978,12) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.765
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 13 
+   remark #15477: vector cost: 8.500 
+   remark #15478: estimated potential speedup: 0.900 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(978,3)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_ORTHOBETA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(1019,3)
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1020,3) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(1020,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.750
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 1.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1020,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1039,16)
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1040,16) ]
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1040,16) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.375
+   remark #15448: unmasked aligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 17 
+   remark #15477: vector cost: 8.000 
+   remark #15478: estimated potential speedup: 0.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1040,16)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1049,3)
+   remark #15388: vectorization support: reference e3(:) has aligned access   [ 3dpot.f90(1050,3) ]
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1050,3) ]
+   remark #15388: vectorization support: reference e1(:) has aligned access
+   remark #15388: vectorization support: reference b1(:) has aligned access
+   remark #15388: vectorization support: reference e1(:) has aligned access   [ 3dpot.f90(1051,10) ]
+   remark #15388: vectorization support: reference e3(:) has aligned access   [ 3dpot.f90(1051,10) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.295
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 69 
+   remark #15477: vector cost: 39.000 
+   remark #15478: estimated potential speedup: 1.210 
+   remark #15486: divides: 2 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1050,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1051,10)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1070,3)
+   remark #15388: vectorization support: reference e3p(:) has aligned access
+   remark #15388: vectorization support: reference e3(:) has aligned access
+   remark #15388: vectorization support: reference e1(:) has aligned access
+   remark #15388: vectorization support: reference e3p(:) has aligned access   [ 3dpot.f90(1071,17) ]
+   remark #15388: vectorization support: reference e3p(:) has aligned access   [ 3dpot.f90(1071,17) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.312
+   remark #15448: unmasked aligned unit stride loads: 3 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 17 
+   remark #15477: vector cost: 8.000 
+   remark #15478: estimated potential speedup: 0.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1071,17)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1072,3)
+   remark #15388: vectorization support: reference e3p(:) has aligned access
+   remark #15388: vectorization support: reference e3p(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.057
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 17.500 
+   remark #15478: estimated potential speedup: 1.340 
+   remark #15486: divides: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1072,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1099,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between rmin (1100:5) and rmin (1110:11)
+   remark #15346: vector dependence: assumed FLOW dependence between rmin (1110:11) and rmin (1100:5)
+   remark #15346: vector dependence: assumed ANTI dependence between rmin (1100:5) and rmin (1110:11)
+
+   LOOP BEGIN at 3dpot.f90(1100,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between rmin (1109:17) and rmin (1110:11)
+      remark #15346: vector dependence: assumed FLOW dependence between rmin (1110:11) and rmin (1109:17)
+      remark #15346: vector dependence: assumed FLOW dependence between rmin (1110:11) and rmin (1109:17)
+      remark #15346: vector dependence: assumed ANTI dependence between rmin (1109:17) and rmin (1110:11)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1169,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1169,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1169,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at 3dpot.f90(1169,3)
+            remark #15389: vectorization support: reference POTCOPY(:,:,:) has unaligned access
+            remark #15389: vectorization support: reference m3d_pot_(:,:,:) has unaligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 1.000
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 7 
+            remark #15477: vector cost: 3.000 
+            remark #15478: estimated potential speedup: 2.000 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(1169,3)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1187,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1187,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1187,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1187,3)
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.833
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.350 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1187,3)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1187,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1188,3)
+   remark #15388: vectorization support: reference CSHFT(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 4.440 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1188,3)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference CSHFT(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1188,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1191,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1192,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1194,7)
+         remark #15388: vectorization support: reference CSHFT(:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.440 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1194,7)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference CSHFT(:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1194,7)
+      <Remainder loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1195,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1197,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1197:20) and call:_for_emit_diagnostic (1197:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1197:9) and call:_for_emit_diagnostic (1197:20)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1211,20)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1211,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1211,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1211:20) and call:_for_emit_diagnostic (1211:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1211:9) and call:_for_emit_diagnostic (1211:20)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1217,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1217:9) and call:_for_emit_diagnostic (1217:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1217:9) and call:_for_emit_diagnostic (1217:9)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1219,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1220,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1220:39) and call:_for_emit_diagnostic (1220:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1220:11) and call:_for_emit_diagnostic (1220:39)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1246,3)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access   [ 3dpot.f90(1246,12) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(1248,3) ]
+   remark #15388: vectorization support: reference e3p(:) has aligned access   [ 3dpot.f90(1248,12) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.765
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 13 
+   remark #15477: vector cost: 8.500 
+   remark #15478: estimated potential speedup: 0.900 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1248,3)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_ORTHOALPHA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(1286,3)
+   remark #15388: vectorization support: reference b2(:) has aligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1287,3) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(1287,3) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.750
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15450: unmasked unaligned unit stride loads: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 1.000 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1287,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1306,16)
+   remark #15388: vectorization support: reference b2(:) has aligned access
+   remark #15388: vectorization support: reference b2(:) has aligned access
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1307,16) ]
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1307,16) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.375
+   remark #15448: unmasked aligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 17 
+   remark #15477: vector cost: 8.000 
+   remark #15478: estimated potential speedup: 0.710 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1307,16)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1316,3)
+   remark #15388: vectorization support: reference e3(:) has aligned access   [ 3dpot.f90(1317,3) ]
+   remark #15388: vectorization support: reference b3(:) has aligned access   [ 3dpot.f90(1317,3) ]
+   remark #15388: vectorization support: reference e2(:) has aligned access
+   remark #15388: vectorization support: reference b2(:) has aligned access
+   remark #15388: vectorization support: reference e2(:) has aligned access   [ 3dpot.f90(1318,10) ]
+   remark #15388: vectorization support: reference e3(:) has aligned access   [ 3dpot.f90(1318,10) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.295
+   remark #15448: unmasked aligned unit stride loads: 4 
+   remark #15449: unmasked aligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 69 
+   remark #15477: vector cost: 39.000 
+   remark #15478: estimated potential speedup: 1.210 
+   remark #15486: divides: 2 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1317,3)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1318,10)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1337,3)
+   remark #15388: vectorization support: reference e3p(:) has aligned access
+   remark #15388: vectorization support: reference e3(:) has aligned access
+   remark #15388: vectorization support: reference e2(:) has aligned access
+   remark #15388: vectorization support: reference e3p(:) has aligned access   [ 3dpot.f90(1338,17) ]
+   remark #15388: vectorization support: reference e3p(:) has aligned access   [ 3dpot.f90(1338,17) ]
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 1.312
+   remark #15448: unmasked aligned unit stride loads: 3 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 17 
+   remark #15477: vector cost: 8.000 
+   remark #15478: estimated potential speedup: 0.940 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1338,17)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1339,3)
+   remark #15388: vectorization support: reference e3p(:) has aligned access
+   remark #15388: vectorization support: reference e3p(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.057
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 17.500 
+   remark #15478: estimated potential speedup: 1.340 
+   remark #15486: divides: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1339,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1366,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between rmin (1367:5) and rmin (1377:11)
+   remark #15346: vector dependence: assumed FLOW dependence between rmin (1377:11) and rmin (1367:5)
+   remark #15346: vector dependence: assumed ANTI dependence between rmin (1367:5) and rmin (1377:11)
+
+   LOOP BEGIN at 3dpot.f90(1367,5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between rmin (1376:17) and rmin (1377:11)
+      remark #15346: vector dependence: assumed FLOW dependence between rmin (1377:11) and rmin (1376:17)
+      remark #15346: vector dependence: assumed FLOW dependence between rmin (1377:11) and rmin (1376:17)
+      remark #15346: vector dependence: assumed ANTI dependence between rmin (1376:17) and rmin (1377:11)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1436,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1436,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1436,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at 3dpot.f90(1436,3)
+            remark #15389: vectorization support: reference POTCOPY(:,:,:) has unaligned access
+            remark #15389: vectorization support: reference m3d_pot_(:,:,:) has unaligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 1.000
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 7 
+            remark #15477: vector cost: 3.000 
+            remark #15478: estimated potential speedup: 2.000 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at 3dpot.f90(1436,3)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1454,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1454,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1454,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1454,3)
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.833
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.350 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1454,3)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference m3d_pot_(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1454,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1455,3)
+   remark #15388: vectorization support: reference CSHFT(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 4.440 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1455,3)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference CSHFT(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1455,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1458,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1459,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1461,7)
+         remark #15388: vectorization support: reference CSHFT(:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.440 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1461,7)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference CSHFT(:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1461,7)
+      <Remainder loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1462,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,20) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1464,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1464:20) and call:_for_emit_diagnostic (1464:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1464:9) and call:_for_emit_diagnostic (1464:20)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1478,20)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1478,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1478,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1478:20) and call:_for_emit_diagnostic (1478:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1478:9) and call:_for_emit_diagnostic (1478:20)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1484,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1485,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1485:39) and call:_for_emit_diagnostic (1485:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1485:11) and call:_for_emit_diagnostic (1485:39)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1488,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,39) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1489,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1489:39) and call:_for_emit_diagnostic (1489:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1489:11) and call:_for_emit_diagnostic (1489:39)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1516,3)
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(1516,12) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(1517,3) ]
+   remark #15388: vectorization support: reference e3p(:) has aligned access   [ 3dpot.f90(1517,12) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.765
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 2 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 13 
+   remark #15477: vector cost: 8.500 
+   remark #15478: estimated potential speedup: 0.900 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1517,3)
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_DIFFRACTIONFILTER
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(1616,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1616,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at 3dpot.f90(1616,3)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1616,3)
+         remark #15388: vectorization support: reference CPOTFT(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15399: vectorization support: unroll factor set to 4
+         remark #15309: vectorization support: normalized vectorization overhead 0.833
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 7 
+         remark #15477: vector cost: 1.500 
+         remark #15478: estimated potential speedup: 4.350 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1616,3)
+      <Remainder loop for vectorization>
+         remark #15388: vectorization support: reference CPOTFT(:,:,:) has aligned access
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 2.000
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(1616,3)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(364,21) inlined into 3dpot.f90(1619,8)
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b1(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(365,21) ]
+   remark #15389: vectorization support: reference m3d_b2(:) has unaligned access   [ 3dpot.f90(365,21) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(366,21) ]
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access   [ 3dpot.f90(366,21) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15450: unmasked unaligned unit stride loads: 3 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 25 
+   remark #15477: vector cost: 13.500 
+   remark #15478: estimated potential speedup: 0.630 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(365,21) inlined into 3dpot.f90(1619,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(366,21) inlined into 3dpot.f90(1619,8)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1683,3) inlined into 3dpot.f90(1628,10)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1685,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1685,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1685:5) and call:_for_emit_diagnostic (1685:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1685:5) and call:_for_emit_diagnostic (1685:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1683,3) inlined into 3dpot.f90(1628,10)
+   remark #15388: vectorization support: reference AGX(J) has aligned access   [ 3dpot.f90(1685,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1683,3) inlined into 3dpot.f90(1628,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1688,3) inlined into 3dpot.f90(1628,10)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1690,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1690,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1690:5) and call:_for_emit_diagnostic (1690:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1690:5) and call:_for_emit_diagnostic (1690:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1688,3) inlined into 3dpot.f90(1628,10)
+   remark #15388: vectorization support: reference AGY(I) has aligned access   [ 3dpot.f90(1690,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1688,3) inlined into 3dpot.f90(1628,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1693,3) inlined into 3dpot.f90(1628,10)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1695,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1695,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1695:5) and call:_for_emit_diagnostic (1695:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1695:5) and call:_for_emit_diagnostic (1695:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1693,3) inlined into 3dpot.f90(1628,10)
+   remark #15388: vectorization support: reference AGZ(K) has aligned access   [ 3dpot.f90(1695,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1693,3) inlined into 3dpot.f90(1628,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1698,3) inlined into 3dpot.f90(1628,10)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(1704,5) inlined into 3dpot.f90(1628,10)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1705,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1705,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1705:12) and call:_for_emit_diagnostic (1713:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1713:9) and call:_for_emit_diagnostic (1705:12)
+
+      LOOP BEGIN at 3dpot.f90(1707,7) inlined into 3dpot.f90(1628,10)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1708:14) and call:_for_emit_diagnostic (1713:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1713:9) and call:_for_emit_diagnostic (1708:14)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1757,3) inlined into 3dpot.f90(1632,10)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1759,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1759,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:5) and call:_for_emit_diagnostic (1759:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:5) and call:_for_emit_diagnostic (1759:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1757,3) inlined into 3dpot.f90(1632,10)
+   remark #15388: vectorization support: reference AGX(J) has aligned access   [ 3dpot.f90(1759,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1757,3) inlined into 3dpot.f90(1632,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1762,3) inlined into 3dpot.f90(1632,10)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1764,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1764,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1764:5) and call:_for_emit_diagnostic (1764:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1764:5) and call:_for_emit_diagnostic (1764:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1762,3) inlined into 3dpot.f90(1632,10)
+   remark #15388: vectorization support: reference AGY(I) has aligned access   [ 3dpot.f90(1764,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1762,3) inlined into 3dpot.f90(1632,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1767,3) inlined into 3dpot.f90(1632,10)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1769,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1769,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1769:5) and call:_for_emit_diagnostic (1769:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1769:5) and call:_for_emit_diagnostic (1769:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1767,3) inlined into 3dpot.f90(1632,10)
+   remark #15388: vectorization support: reference AGZ(K) has aligned access   [ 3dpot.f90(1769,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1767,3) inlined into 3dpot.f90(1632,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1772,3) inlined into 3dpot.f90(1632,10)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(1776,5) inlined into 3dpot.f90(1632,10)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1777,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1777,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1777:12) and call:_for_emit_diagnostic (1785:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1785:9) and call:_for_emit_diagnostic (1777:12)
+
+      LOOP BEGIN at 3dpot.f90(1779,7) inlined into 3dpot.f90(1632,10)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1780:14) and call:_for_emit_diagnostic (1785:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1785:9) and call:_for_emit_diagnostic (1780:14)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_FFT3D
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(633,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(633,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(633,5)
+      remark #15388: vectorization support: reference CTMP2D(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.833
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 7 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 4.350 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(633,5)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference CTMP2D(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 2.000
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(633,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(634,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(636,9)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (636:9) and call:_for_emit_diagnostic (636:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (636:9) and call:_for_emit_diagnostic (636:9)
+
+      LOOP BEGIN at 3dpot.f90(636,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (636:9) and call:_for_emit_diagnostic (636:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (636:9) and call:_for_emit_diagnostic (636:9)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(640,7)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(641,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (641:9) and call:_for_emit_diagnostic (641:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (641:9) and call:_for_emit_diagnostic (641:9)
+
+      LOOP BEGIN at 3dpot.f90(641,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (641:9) and call:_for_emit_diagnostic (641:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (641:9) and call:_for_emit_diagnostic (641:9)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(645,5)
+   remark #15388: vectorization support: reference CTMP1D(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 4.440 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(645,5)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference CTMP1D(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(645,5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(646,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(647,7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at 3dpot.f90(649,11)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(649,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(649,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(649,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(649,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(649,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(649,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (649:23) and call:_for_emit_diagnostic (649:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (649:11) and call:_for_emit_diagnostic (649:23)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(652,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,25) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,25) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(653,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (653:25) and call:_for_emit_diagnostic (653:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (653:11) and call:_for_emit_diagnostic (653:25)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(665,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(665,5)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(665,5)
+      remark #15388: vectorization support: reference CTMP2D(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.833
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 7 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 4.350 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(665,5)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference CTMP2D(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 2.000
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(665,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(666,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(668,9)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (668:9) and call:_for_emit_diagnostic (668:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (668:9) and call:_for_emit_diagnostic (668:9)
+
+      LOOP BEGIN at 3dpot.f90(668,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (668:9) and call:_for_emit_diagnostic (668:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (668:9) and call:_for_emit_diagnostic (668:9)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(672,7)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(673,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (673:9) and call:_for_emit_diagnostic (673:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (673:9) and call:_for_emit_diagnostic (673:9)
+
+      LOOP BEGIN at 3dpot.f90(673,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (673:9) and call:_for_emit_diagnostic (673:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (673:9) and call:_for_emit_diagnostic (673:9)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(677,5)
+   remark #15388: vectorization support: reference CTMP1D(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 7 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 4.440 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(677,5)
+<Remainder loop for vectorization>
+   remark #15388: vectorization support: reference CTMP1D(:) has aligned access
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.000
+   remark #15301: REMAINDER LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(677,5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(678,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(679,7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at 3dpot.f90(681,11)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(681,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(681,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(681,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(681,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(681,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(681,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (681:23) and call:_for_emit_diagnostic (681:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (681:11) and call:_for_emit_diagnostic (681:23)
+      LOOP END
+
+      LOOP BEGIN at 3dpot.f90(684,9)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,25) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,25) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,11) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(685,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (685:25) and call:_for_emit_diagnostic (685:11)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (685:11) and call:_for_emit_diagnostic (685:25)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_APPLYDIFFAPAUTO
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(1683,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1685,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1685,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1685:5) and call:_for_emit_diagnostic (1685:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1685:5) and call:_for_emit_diagnostic (1685:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1683,3)
+   remark #15388: vectorization support: reference agx(j) has aligned access   [ 3dpot.f90(1685,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1683,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1688,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1690,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1690,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1690:5) and call:_for_emit_diagnostic (1690:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1690:5) and call:_for_emit_diagnostic (1690:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1688,3)
+   remark #15388: vectorization support: reference agy(i) has aligned access   [ 3dpot.f90(1690,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1688,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1693,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1695,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1695,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1695:5) and call:_for_emit_diagnostic (1695:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1695:5) and call:_for_emit_diagnostic (1695:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1693,3)
+   remark #15388: vectorization support: reference agz(k) has aligned access   [ 3dpot.f90(1695,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1693,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1698,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(1704,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1705,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1705,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1705:12) and call:_for_emit_diagnostic (1713:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1713:9) and call:_for_emit_diagnostic (1705:12)
+
+      LOOP BEGIN at 3dpot.f90(1707,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1708,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1713,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1708:14) and call:_for_emit_diagnostic (1713:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1713:9) and call:_for_emit_diagnostic (1708:14)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_APPLYDWF
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(1757,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1759,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1759,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:5) and call:_for_emit_diagnostic (1759:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1759:5) and call:_for_emit_diagnostic (1759:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1757,3)
+   remark #15388: vectorization support: reference agx(j) has aligned access   [ 3dpot.f90(1759,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1757,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1762,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1764,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1764,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1764:5) and call:_for_emit_diagnostic (1764:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1764:5) and call:_for_emit_diagnostic (1764:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1762,3)
+   remark #15388: vectorization support: reference agy(i) has aligned access   [ 3dpot.f90(1764,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1762,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1767,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1769,5) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1769,5) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1769:5) and call:_for_emit_diagnostic (1769:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1769:5) and call:_for_emit_diagnostic (1769:5)
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1767,3)
+   remark #15388: vectorization support: reference agz(k) has aligned access   [ 3dpot.f90(1769,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.123
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 30 
+   remark #15477: vector cost: 20.250 
+   remark #15478: estimated potential speedup: 1.470 
+   remark #15482: vectorized math library calls: 1 
+   remark #15487: type converts: 1 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1767,3)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1772,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(1776,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1777,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1777,12) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1777:12) and call:_for_emit_diagnostic (1785:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1785:9) and call:_for_emit_diagnostic (1777:12)
+
+      LOOP BEGIN at 3dpot.f90(1779,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1780,14) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,23) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1785,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1780:14) and call:_for_emit_diagnostic (1785:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1785:9) and call:_for_emit_diagnostic (1780:14)
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: M3DPOT::M3D_GETSLICE_PGR
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at 3dpot.f90(1849,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at 3dpot.f90(1849,3)
+   <Peeled loop for vectorization>
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(1849,3)
+      remark #15388: vectorization support: reference m3d_slcpot_(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15399: vectorization support: unroll factor set to 4
+      remark #15309: vectorization support: normalized vectorization overhead 0.833
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 7 
+      remark #15477: vector cost: 1.500 
+      remark #15478: estimated potential speedup: 4.350 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(1849,3)
+   <Remainder loop for vectorization>
+      remark #15388: vectorization support: reference m3d_slcpot_(:,:) has aligned access
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 2.000
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at 3dpot.f90(1849,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1853,15)
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15389: vectorization support: reference m3d_b3(:) has unaligned access
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15305: vectorization support: vector length 2
+   remark #15309: vectorization support: normalized vectorization overhead 2.444
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 8 
+   remark #15477: vector cost: 4.500 
+   remark #15478: estimated potential speedup: 0.610 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1886,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at 3dpot.f90(1892,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1894:27) and call:_for_emit_diagnostic (1894:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1894:9) and call:_for_emit_diagnostic (1894:27)
+
+      LOOP BEGIN at 3dpot.f90(1893,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,27) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,56) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1894,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1894:27) and call:_for_emit_diagnostic (1894:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1894:9) and call:_for_emit_diagnostic (1894:27)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1900,3)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+
+   LOOP BEGIN at 3dpot.f90(1901,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+
+      LOOP BEGIN at 3dpot.f90(1905,7)
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1907,9) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+
+         LOOP BEGIN at 3dpot.f90(1907,9)
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+            remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1907:9) and call:_for_emit_diagnostic (1907:9)
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at 3dpot.f90(1918,24)
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+   remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1918:31) and call:_for_emit_diagnostic (1919:7)
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1919:7) and call:_for_emit_diagnostic (1918:31)
+
+   LOOP BEGIN at 3dpot.f90(1917,5)
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1918,31) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+      remark #15382: vectorization support: call to function _for_emit_diagnostic cannot be vectorized   [ 3dpot.f90(1919,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1918:31) and call:_for_emit_diagnostic (1919:7)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:_for_emit_diagnostic (1919:7) and call:_for_emit_diagnostic (1918:31)
+   LOOP END
+LOOP END
+===========================================================================

@@ -1,0 +1,945 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 18.0.3.185 Build 20180410
+
+Compiler options: -c -g -nologo -O3 -recursive -132 -assume byterecl -threads -static-intel -qopt-report-phase=vec -qopt-report5
+
+Begin optimization report for: EMSDATA::EMS_GETFREELFU
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(544,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_SETTITLE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(591,24)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_PRMREAD_REAL32
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(754,35)
+   remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(91,5) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(91,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.188
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.840 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_LOADDATA
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(544,3) inlined into ../common/emsdata.f90(1683,8)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1699,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(1699,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/emsdata.f90(1699,3)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at ../common/emsdata.f90(1699,3)
+            remark #15389: vectorization support: reference at (1699:31) has unaligned access   [ ../common/emsdata.f90(1699,31) ]
+            remark #15389: vectorization support: reference cdata(:,:,:) has unaligned access   [ ../common/emsdata.f90(1699,31) ]
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 1.000
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 7 
+            remark #15477: vector cost: 3.000 
+            remark #15478: estimated potential speedup: 2.000 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/emsdata.f90(1699,3)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1699,31)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(1699,31)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/emsdata.f90(1699,31)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at ../common/emsdata.f90(1699,31)
+            remark #15389: vectorization support: reference cdata(:,:,:) has unaligned access
+            remark #15389: vectorization support: reference at (1699:31) has unaligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 2
+            remark #15309: vectorization support: normalized vectorization overhead 1.000
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15450: unmasked unaligned unit stride loads: 1 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 7 
+            remark #15477: vector cost: 3.000 
+            remark #15478: estimated potential speedup: 2.000 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/emsdata.f90(1699,31)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1707,5)
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+   remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+   remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+
+   LOOP BEGIN at ../common/emsdata.f90(1708,7)
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+      remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+      remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+
+      LOOP BEGIN at ../common/emsdata.f90(1709,9)
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+         remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+         remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+
+         LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(1712,19)
+            remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(91,5) ]
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+            remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(91,16) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15427: loop was completely unrolled
+            remark #15399: vectorization support: unroll factor set to 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.188
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15452: unmasked strided loads: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 4 
+            remark #15477: vector cost: 4.000 
+            remark #15478: estimated potential speedup: 0.840 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(1713,19)
+            remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(91,5) ]
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+            remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(91,16) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15427: loop was completely unrolled
+            remark #15399: vectorization support: unroll factor set to 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.188
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15452: unmasked strided loads: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 4 
+            remark #15477: vector cost: 4.000 
+            remark #15478: estimated potential speedup: 0.840 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_LOADPARAMS
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(544,3) inlined into ../common/emsdata.f90(1785,8)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_PRMREAD_INT32
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(60,3) inlined into ../common/emsdata.f90(651,35)
+   remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(62,5) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(62,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.188
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.840 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_LOAD_ITAB
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(1264,7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/emsdata.f90(1289,9)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/emsdata.f90(1292,19) ]
+
+      LOOP BEGIN at ../common/emsdata.f90(1291,11)
+         remark #15388: vectorization support: reference at (1291:39) has aligned access   [ ../common/emsdata.f90(1291,39) ]
+         remark #15389: vectorization support: reference ems_sli_data_iaatpo_(:,k,i) has unaligned access   [ ../common/emsdata.f90(1291,39) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.750
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.000 
+         remark #15478: estimated potential speedup: 1.090 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/emsdata.f90(1291,39)
+         remark #15389: vectorization support: reference ems_sli_data_iaatpo_(:,k,i) has unaligned access
+         remark #15388: vectorization support: reference at (1291:39) has aligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.600
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.000 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1312,9)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/emsdata.f90(1320,19) ]
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1272,7)
+      remark #15388: vectorization support: reference at (1272:35) has aligned access   [ ../common/emsdata.f90(1272,35) ]
+      remark #15389: vectorization support: reference ems_sli_data_atdat_(:,i) has unaligned access   [ ../common/emsdata.f90(1272,35) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.750
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.000 
+      remark #15478: estimated potential speedup: 1.090 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1272,35)
+      remark #15389: vectorization support: reference ems_sli_data_atdat_(:,i) has unaligned access
+      remark #15388: vectorization support: reference at (1272:35) has aligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.600
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1336,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/emsdata.f90(1341,17)
+      remark #15382: vectorization support: call to function SWAPREAL4 cannot be vectorized   [ ../common/emsdata.f90(1342,17) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between rtmp1 (1341:9) and rtmp1 (1342:17)
+      remark #15346: vector dependence: assumed OUTPUT dependence between rtmp1 (1342:17) and rtmp1 (1341:9)
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1348,7)
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(59,8) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(59,3) ]
+      remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(64,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(64,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+      remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (59:8) and at (59:8)
+      remark #15346: vector dependence: assumed OUTPUT dependence between at (59:8) and at (59:8)
+
+      LOOP BEGIN at ../common/emsdata.f90(60,3) inlined into ../common/emsdata.f90(1350,17)
+         remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(62,5) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(62,16) ]
+         remark #15305: vectorization support: vector length 2
+         remark #15427: loop was completely unrolled
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.188
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15452: unmasked strided loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 4.000 
+         remark #15478: estimated potential speedup: 0.840 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(1353,17)
+         remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(91,5) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(91,16) ]
+         remark #15305: vectorization support: vector length 2
+         remark #15427: loop was completely unrolled
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.188
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15452: unmasked strided loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 4.000 
+         remark #15478: estimated potential speedup: 0.840 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1359,7)
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+      remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between rtmp1 (1361:11) and rtmp1 (1361:11)
+      remark #15346: vector dependence: assumed OUTPUT dependence between rtmp1 (1361:11) and rtmp1 (1361:11)
+
+      LOOP BEGIN at ../common/emsdata.f90(1360,9)
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,8) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(88,3) ]
+         remark #15382: vectorization support: call to function _memcpy cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+         remark #15382: vectorization support: call to function _memmove cannot be vectorized   [ ../common/emsdata.f90(93,11) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+         remark #15346: vector dependence: assumed OUTPUT dependence between at (88:8) and at (88:8)
+
+         LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(1362,19)
+            remark #15389: vectorization support: reference CHS(I-1) has unaligned access   [ ../common/emsdata.f90(91,5) ]
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+            remark #15328: vectorization support: non-unit strided load was emulated for the variable <CH(I+5-1)>, stride is -1   [ ../common/emsdata.f90(91,16) ]
+            remark #15305: vectorization support: vector length 2
+            remark #15427: loop was completely unrolled
+            remark #15399: vectorization support: unroll factor set to 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.188
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15452: unmasked strided loads: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 4 
+            remark #15477: vector cost: 4.000 
+            remark #15478: estimated potential speedup: 0.840 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(1362,19)
+         LOOP END
+
+         LOOP BEGIN at ../common/emsdata.f90(89,3) inlined into ../common/emsdata.f90(1362,19)
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: SWAPINT4
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(60,3)
+   remark #15389: vectorization support: reference chs(i-1) has unaligned access   [ ../common/emsdata.f90(62,5) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <ch(i+5-1)>, stride is -1   [ ../common/emsdata.f90(62,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.188
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.840 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: SWAPREAL4
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(89,3)
+   remark #15389: vectorization support: reference chs(i-1) has unaligned access   [ ../common/emsdata.f90(91,5) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <ch(i+5-1)>, stride is -1   [ ../common/emsdata.f90(91,16) ]
+   remark #15305: vectorization support: vector length 2
+   remark #15427: loop was completely unrolled
+   remark #15399: vectorization support: unroll factor set to 2
+   remark #15309: vectorization support: normalized vectorization overhead 0.188
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15452: unmasked strided loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 4.000 
+   remark #15478: estimated potential speedup: 0.840 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_SAVE
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(2045,3)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(544,3) inlined into ../common/emsdata.f90(2051,8)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_SAVE_ITAB
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(1464,19)
+   remark #15388: vectorization support: reference ems_sli_data_niatr_(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.824
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 4.250 
+   remark #15478: estimated potential speedup: 1.370 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1464,19)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1517,7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ../common/emsdata.f90(1533,9)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/emsdata.f90(1536,19) ]
+
+      LOOP BEGIN at ../common/emsdata.f90(1535,11)
+         remark #15388: vectorization support: reference at (1535:40) has aligned access   [ ../common/emsdata.f90(1535,40) ]
+         remark #15389: vectorization support: reference ems_sli_data_iaatpo_(:,k,i) has unaligned access   [ ../common/emsdata.f90(1535,40) ]
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.750
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.000 
+         remark #15478: estimated potential speedup: 1.090 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1554,9)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/emsdata.f90(1562,19) ]
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(1517,7)
+      remark #15388: vectorization support: reference at (1517:36) has aligned access   [ ../common/emsdata.f90(1517,36) ]
+      remark #15389: vectorization support: reference ems_sli_data_atdat_(:,i) has unaligned access   [ ../common/emsdata.f90(1517,36) ]
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 0.750
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.000 
+      remark #15478: estimated potential speedup: 1.090 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_SETTAB1
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(2283,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(2283,3)
+      remark #15388: vectorization support: reference natp(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(2283,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2284,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(2284,3)
+      remark #15388: vectorization support: reference atty(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(2284,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2301,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between ATDAT(3,i2) (2322:15) and ATDAT(3,naty) (2347:5)
+   remark #15346: vector dependence: assumed FLOW dependence between ATDAT(3,naty) (2347:5) and ATDAT(3,i2) (2322:15)
+
+   LOOP BEGIN at ../common/emsdata.f90(2317,7)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ../common/emsdata.f90(2324,11) ]
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2369,13)
+   remark #15388: vectorization support: reference natp(:) has aligned access
+   remark #15305: vectorization support: vector length 4
+   remark #15309: vectorization support: normalized vectorization overhead 1.824
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15448: unmasked aligned unit stride loads: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 6 
+   remark #15477: vector cost: 4.250 
+   remark #15478: estimated potential speedup: 1.370 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2369,13)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2375,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(2375,3)
+      remark #15388: vectorization support: reference ems_sli_data_attyz_(:) has aligned access
+      remark #15388: vectorization support: reference atty(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.333
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 4.360 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(2375,3)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(2375,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2376,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <ems_sli_data_atdat_(:,:)>, stride is unknown to compiler
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <ATDAT(:,:)>, stride is unknown to compiler
+   remark #15305: vectorization support: vector length 4
+   remark #15452: unmasked strided loads: 1 
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 18.500 
+   remark #15478: estimated potential speedup: 0.270 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/emsdata.f90(2376,3)
+      remark #15389: vectorization support: reference ems_sli_data_atdat_(:,:) has unaligned access
+      remark #15389: vectorization support: reference ATDAT(:,:) has unaligned access
+      remark #15381: vectorization support: unaligned access used inside loop body
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15305: vectorization support: vector length 2
+      remark #15309: vectorization support: normalized vectorization overhead 1.000
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 0.750 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2377,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(2377,3)
+      remark #15388: vectorization support: reference ems_sli_data_niatp_(:) has aligned access
+      remark #15388: vectorization support: reference natp(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15309: vectorization support: normalized vectorization overhead 1.333
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15448: unmasked aligned unit stride loads: 1 
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 4.360 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(2377,3)
+   <Alternate Alignment Vectorized Loop>
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(2377,3)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(2378,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15329: vectorization support: non-unit strided store was emulated for the variable <ems_sli_data_iaatpo_(:,:,:)>, stride is unknown to compiler
+   remark #15328: vectorization support: non-unit strided load was emulated for the variable <ATPOS(:,:,:)>, stride is unknown to compiler
+   remark #15305: vectorization support: vector length 4
+   remark #15452: unmasked strided loads: 1 
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 18.750 
+   remark #15478: estimated potential speedup: 0.210 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at ../common/emsdata.f90(2378,3)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15329: vectorization support: non-unit strided store was emulated for the variable <ems_sli_data_iaatpo_(:,:,:)>, stride is unknown to compiler
+      remark #15328: vectorization support: non-unit strided load was emulated for the variable <ATPOS(:,:,:)>, stride is unknown to compiler
+      remark #15305: vectorization support: vector length 4
+      remark #15452: unmasked strided loads: 1 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 18.500 
+      remark #15478: estimated potential speedup: 0.210 
+      remark #15488: --- end vector cost summary ---
+
+      LOOP BEGIN at ../common/emsdata.f90(2378,3)
+         remark #15389: vectorization support: reference ems_sli_data_iaatpo_(:,:,:) has unaligned access
+         remark #15389: vectorization support: reference ATPOS(:,:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+         remark #15305: vectorization support: vector length 2
+         remark #15309: vectorization support: normalized vectorization overhead 1.000
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 3.000 
+         remark #15478: estimated potential speedup: 0.750 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_SLI_ALLOC_ITAB
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(972,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(972,5)
+      remark #15388: vectorization support: reference ems_sli_data_attyz_(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(972,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(979,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(979,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/emsdata.f90(979,5)
+         remark #15389: vectorization support: reference ems_sli_data_atdat_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/emsdata.f90(979,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(985,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(985,5)
+      remark #15388: vectorization support: reference ems_sli_data_niatr_(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(985,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(991,5)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(991,5)
+      remark #15388: vectorization support: reference ems_sli_data_niatp_(:) has aligned access
+      remark #15305: vectorization support: vector length 4
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 2 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 2.660 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at ../common/emsdata.f90(991,5)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1000,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(1000,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/emsdata.f90(1000,7)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at ../common/emsdata.f90(1000,7)
+         remark #15388: vectorization support: reference ems_sli_data_iatrcd_(:,:) has aligned access
+         remark #15305: vectorization support: vector length 4
+         remark #15309: vectorization support: normalized vectorization overhead 3.333
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 2 
+         remark #15477: vector cost: 0.750 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/emsdata.f90(1000,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1006,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(1006,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/emsdata.f90(1006,7)
+         remark #15389: vectorization support: reference ems_sli_data_iatren_(:,:) has unaligned access
+         remark #15381: vectorization support: unaligned access used inside loop body
+         remark #15305: vectorization support: vector length 4
+         remark #15399: vectorization support: unroll factor set to 2
+         remark #15309: vectorization support: normalized vectorization overhead 0.300
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 3 
+         remark #15477: vector cost: 1.250 
+         remark #15478: estimated potential speedup: 2.180 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at ../common/emsdata.f90(1006,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ../common/emsdata.f90(1016,7)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at ../common/emsdata.f90(1016,7)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at ../common/emsdata.f90(1016,7)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at ../common/emsdata.f90(1016,7)
+            remark #15389: vectorization support: reference ems_sli_data_iaatpo_(:,:,:) has unaligned access
+            remark #15381: vectorization support: unaligned access used inside loop body
+            remark #15305: vectorization support: vector length 4
+            remark #15399: vectorization support: unroll factor set to 2
+            remark #15309: vectorization support: normalized vectorization overhead 0.300
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 2.180 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at ../common/emsdata.f90(1016,7)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: EMSDATA::EMS_INIT
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at ../common/emsdata.f90(424,12)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+LOOP END
+===========================================================================
